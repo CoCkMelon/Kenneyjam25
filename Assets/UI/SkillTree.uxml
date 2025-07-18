@@ -1,0 +1,150 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="skill-tree-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.9); position: absolute; width: 100%; height: 100%;">
+        
+        <!-- Header -->
+        <ui:VisualElement name="header" style="flex-direction: row; justify-content: space-between; align-items: center; padding: 20px; background-color: rgba(20, 20, 20, 0.8); border-bottom-width: 2px; border-bottom-color: rgba(255, 255, 255, 0.3);">
+            <ui:VisualElement name="title-section" style="flex-direction: row; align-items: center;">
+                <ui:Label text="Skill Tree" name="title" style="font-size: 24px; color: rgb(255, 255, 255); font-weight: bold; margin-right: 20px; -unity-font-style: bold;" />
+                <ui:VisualElement name="player-info" style="flex-direction: row; align-items: center;">
+                    <ui:Label text="Level 12" name="player-level" style="font-size: 16px; color: rgb(255, 215, 0); margin-right: 15px; background-color: rgba(255, 215, 0, 0.2); padding: 4px 8px; border-radius: 12px;" />
+                    <ui:Label text="Skill Points: 5" name="skill-points" style="font-size: 16px; color: rgb(0, 255, 0); background-color: rgba(0, 255, 0, 0.2); padding: 4px 8px; border-radius: 12px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button name="close-button" text="✕" style="width: 40px; height: 40px; background-color: rgba(255, 0, 0, 0.3); border-radius: 20px; font-size: 18px; color: rgb(255, 255, 255); font-weight: bold;" />
+        </ui:VisualElement>
+        
+        <!-- Main Content -->
+        <ui:VisualElement name="main-content" style="flex-grow: 1; flex-direction: row;">
+            
+            <!-- Skill Tree Categories -->
+            <ui:VisualElement name="categories-panel" style="width: 200px; background-color: rgba(30, 30, 30, 0.8); padding: 20px; border-right-width: 2px; border-right-color: rgba(255, 255, 255, 0.2);">
+                <ui:Label text="Skill Categories" name="categories-title" style="font-size: 16px; color: rgb(255, 255, 255); font-weight: bold; margin-bottom: 15px; -unity-font-style: bold;" />
+                
+                <ui:Button name="combat-category" text="⚔️ Combat" class="category-button" style="width: 100%; margin-bottom: 10px; padding: 12px; background-color: rgba(255, 0, 0, 0.3); border-radius: 8px; color: rgb(255, 255, 255); font-size: 14px; border-left-width: 4px; border-left-color: rgb(255, 100, 100);" />
+                <ui:Button name="magic-category" text="🔮 Magic" class="category-button" style="width: 100%; margin-bottom: 10px; padding: 12px; background-color: rgba(0, 0, 255, 0.3); border-radius: 8px; color: rgb(255, 255, 255); font-size: 14px; border-left-width: 4px; border-left-color: rgb(100, 100, 255);" />
+                <ui:Button name="exploration-category" text="🗺️ Exploration" class="category-button" style="width: 100%; margin-bottom: 10px; padding: 12px; background-color: rgba(0, 255, 0, 0.3); border-radius: 8px; color: rgb(255, 255, 255); font-size: 14px; border-left-width: 4px; border-left-color: rgb(100, 255, 100);" />
+                <ui:Button name="utility-category" text="🛠️ Utility" class="category-button" style="width: 100%; margin-bottom: 10px; padding: 12px; background-color: rgba(255, 255, 0, 0.3); border-radius: 8px; color: rgb(0, 0, 0); font-size: 14px; border-left-width: 4px; border-left-color: rgb(255, 255, 100);" />
+                
+                <!-- Reset Button -->
+                <ui:Button name="reset-skills" text="Reset Skills" style="width: 100%; margin-top: 20px; padding: 10px; background-color: rgba(255, 100, 100, 0.3); border-radius: 8px; color: rgb(255, 255, 255); font-size: 12px;" />
+            </ui:VisualElement>
+            
+            <!-- Skill Tree Display -->
+            <ui:VisualElement name="skill-tree-display" style="flex-grow: 1; padding: 20px; position: relative;">
+                <ui:ScrollView name="skill-tree-scroll" style="flex-grow: 1;">
+                    
+                    <!-- Combat Skills Section -->
+                    <ui:VisualElement name="combat-skills" class="skill-section" style="margin-bottom: 30px;">
+                        <ui:Label text="Combat Skills" name="section-title" style="font-size: 20px; color: rgb(255, 100, 100); font-weight: bold; margin-bottom: 20px; -unity-font-style: bold;" />
+                        
+                        <!-- Skill Tree Tiers -->
+                        <ui:VisualElement name="tier-1" class="skill-tier" style="flex-direction: row; justify-content: space-around; margin-bottom: 30px;">
+                            
+                            <!-- Skill Node Template -->
+                            <ui:VisualElement name="skill-node" class="skill-node unlocked" style="width: 80px; height: 80px; background-color: rgba(255, 0, 0, 0.8); border-radius: 40px; border-width: 3px; border-color: rgb(255, 255, 255); align-items: center; justify-content: center; position: relative;">
+                                <ui:Label text="⚔️" name="skill-icon" style="font-size: 24px; color: rgb(255, 255, 255);" />
+                                <ui:Label text="3/5" name="skill-level" style="position: absolute; bottom: -5px; right: -5px; font-size: 10px; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.8); padding: 2px 4px; border-radius: 8px;" />
+                            </ui:VisualElement>
+                            
+                            <ui:VisualElement name="skill-node" class="skill-node available" style="width: 80px; height: 80px; background-color: rgba(100, 100, 100, 0.5); border-radius: 40px; border-width: 3px; border-color: rgb(150, 150, 150); align-items: center; justify-content: center; position: relative;">
+                                <ui:Label text="🛡️" name="skill-icon" style="font-size: 24px; color: rgb(200, 200, 200);" />
+                                <ui:Label text="0/3" name="skill-level" style="position: absolute; bottom: -5px; right: -5px; font-size: 10px; color: rgb(200, 200, 200); background-color: rgba(0, 0, 0, 0.8); padding: 2px 4px; border-radius: 8px;" />
+                            </ui:VisualElement>
+                            
+                            <ui:VisualElement name="skill-node" class="skill-node locked" style="width: 80px; height: 80px; background-color: rgba(50, 50, 50, 0.5); border-radius: 40px; border-width: 3px; border-color: rgb(80, 80, 80); align-items: center; justify-content: center; position: relative;">
+                                <ui:Label text="🔒" name="skill-icon" style="font-size: 24px; color: rgb(100, 100, 100);" />
+                                <ui:Label text="0/5" name="skill-level" style="position: absolute; bottom: -5px; right: -5px; font-size: 10px; color: rgb(100, 100, 100); background-color: rgba(0, 0, 0, 0.8); padding: 2px 4px; border-radius: 8px;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        
+                        <!-- Connection Lines -->
+                        <ui:VisualElement name="connection-lines" style="flex-direction: row; justify-content: space-around; align-items: center; margin-bottom: 10px;">
+                            <ui:VisualElement name="line-active" style="width: 60px; height: 3px; background-color: rgb(255, 255, 255);" />
+                            <ui:VisualElement name="line-inactive" style="width: 60px; height: 3px; background-color: rgb(100, 100, 100);" />
+                        </ui:VisualElement>
+                        
+                        <!-- Tier 2 -->
+                        <ui:VisualElement name="tier-2" class="skill-tier" style="flex-direction: row; justify-content: space-around; margin-bottom: 30px;">
+                            <ui:VisualElement name="skill-node" class="skill-node available" style="width: 80px; height: 80px; background-color: rgba(100, 100, 100, 0.5); border-radius: 40px; border-width: 3px; border-color: rgb(150, 150, 150); align-items: center; justify-content: center; position: relative;">
+                                <ui:Label text="💥" name="skill-icon" style="font-size: 24px; color: rgb(200, 200, 200);" />
+                                <ui:Label text="0/3" name="skill-level" style="position: absolute; bottom: -5px; right: -5px; font-size: 10px; color: rgb(200, 200, 200); background-color: rgba(0, 0, 0, 0.8); padding: 2px 4px; border-radius: 8px;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    
+                    <!-- Magic Skills Section -->
+                    <ui:VisualElement name="magic-skills" class="skill-section" style="margin-bottom: 30px; display: none;">
+                        <ui:Label text="Magic Skills" name="section-title" style="font-size: 20px; color: rgb(100, 100, 255); font-weight: bold; margin-bottom: 20px; -unity-font-style: bold;" />
+                        
+                        <ui:VisualElement name="tier-1" class="skill-tier" style="flex-direction: row; justify-content: space-around; margin-bottom: 30px;">
+                            <ui:VisualElement name="skill-node" class="skill-node unlocked" style="width: 80px; height: 80px; background-color: rgba(0, 0, 255, 0.8); border-radius: 40px; border-width: 3px; border-color: rgb(255, 255, 255); align-items: center; justify-content: center; position: relative;">
+                                <ui:Label text="🔮" name="skill-icon" style="font-size: 24px; color: rgb(255, 255, 255);" />
+                                <ui:Label text="2/5" name="skill-level" style="position: absolute; bottom: -5px; right: -5px; font-size: 10px; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.8); padding: 2px 4px; border-radius: 8px;" />
+                            </ui:VisualElement>
+                            
+                            <ui:VisualElement name="skill-node" class="skill-node available" style="width: 80px; height: 80px; background-color: rgba(100, 100, 100, 0.5); border-radius: 40px; border-width: 3px; border-color: rgb(150, 150, 150); align-items: center; justify-content: center; position: relative;">
+                                <ui:Label text="⚡" name="skill-icon" style="font-size: 24px; color: rgb(200, 200, 200);" />
+                                <ui:Label text="0/3" name="skill-level" style="position: absolute; bottom: -5px; right: -5px; font-size: 10px; color: rgb(200, 200, 200); background-color: rgba(0, 0, 0, 0.8); padding: 2px 4px; border-radius: 8px;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    
+                </ui:ScrollView>
+            </ui:VisualElement>
+            
+            <!-- Skill Details Panel -->
+            <ui:VisualElement name="skill-details-panel" style="width: 300px; background-color: rgba(30, 30, 30, 0.8); padding: 20px; border-left-width: 2px; border-left-color: rgba(255, 255, 255, 0.2);">
+                <ui:Label text="Skill Details" name="details-title" style="font-size: 18px; color: rgb(255, 255, 255); font-weight: bold; margin-bottom: 15px; -unity-font-style: bold;" />
+                
+                <ui:VisualElement name="skill-info" style="background-color: rgba(0, 0, 0, 0.5); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                    <ui:VisualElement name="skill-header" style="flex-direction: row; align-items: center; margin-bottom: 10px;">
+                        <ui:Label text="⚔️" name="selected-skill-icon" style="font-size: 24px; margin-right: 10px; color: rgb(255, 255, 255);" />
+                        <ui:Label text="Sword Mastery" name="selected-skill-name" style="font-size: 16px; color: rgb(255, 255, 255); font-weight: bold; flex-grow: 1; -unity-font-style: bold;" />
+                    </ui:VisualElement>
+                    
+                    <ui:VisualElement name="skill-level-info" style="flex-direction: row; justify-content: space-between; margin-bottom: 10px;">
+                        <ui:Label text="Level 3/5" name="skill-current-level" style="font-size: 14px; color: rgb(255, 215, 0);" />
+                        <ui:Label text="Cost: 1 SP" name="skill-cost" style="font-size: 14px; color: rgb(0, 255, 0);" />
+                    </ui:VisualElement>
+                    
+                    <ui:Label text="Increases sword damage by 15% per level. Current bonus: +45%" name="skill-description" style="font-size: 12px; color: rgb(200, 200, 200); margin-bottom: 10px; white-space: normal;" />
+                    
+                    <ui:VisualElement name="skill-requirements" style="margin-bottom: 10px;">
+                        <ui:Label text="Requirements:" name="requirements-label" style="font-size: 12px; color: rgb(255, 215, 0); margin-bottom: 5px;" />
+                        <ui:Label text="• Player Level 5" name="requirement-item" style="font-size: 11px; color: rgb(0, 255, 0); margin-bottom: 2px;" />
+                        <ui:Label text="• Combat Basics (Level 1)" name="requirement-item" style="font-size: 11px; color: rgb(255, 0, 0); margin-bottom: 2px;" />
+                    </ui:VisualElement>
+                    
+                    <ui:VisualElement name="next-level-preview" style="background-color: rgba(0, 0, 0, 0.3); padding: 8px; border-radius: 4px; margin-bottom: 10px;">
+                        <ui:Label text="Next Level (4/5):" name="next-level-label" style="font-size: 12px; color: rgb(255, 215, 0); margin-bottom: 4px;" />
+                        <ui:Label text="Sword damage bonus: +60%" name="next-level-effect" style="font-size: 11px; color: rgb(180, 180, 180);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- Action Buttons -->
+                <ui:VisualElement name="action-buttons" style="flex-direction: column;">
+                    <ui:Button name="upgrade-skill" text="Upgrade Skill (1 SP)" style="width: 100%; margin-bottom: 10px; padding: 12px; background-color: rgba(0, 255, 0, 0.3); border-radius: 8px; color: rgb(255, 255, 255); font-size: 14px; font-weight: bold;" />
+                    <ui:Button name="max-upgrade" text="Max Upgrade (2 SP)" style="width: 100%; margin-bottom: 10px; padding: 12px; background-color: rgba(255, 215, 0, 0.3); border-radius: 8px; color: rgb(0, 0, 0); font-size: 14px; font-weight: bold;" />
+                    <ui:Button name="preview-build" text="Preview Build" style="width: 100%; margin-bottom: 10px; padding: 8px; background-color: rgba(100, 100, 100, 0.3); border-radius: 8px; color: rgb(255, 255, 255); font-size: 12px;" />
+                </ui:VisualElement>
+                
+                <!-- Build Templates -->
+                <ui:VisualElement name="build-templates" style="margin-top: 20px;">
+                    <ui:Label text="Quick Builds" name="builds-title" style="font-size: 14px; color: rgb(255, 255, 255); font-weight: bold; margin-bottom: 10px; -unity-font-style: bold;" />
+                    <ui:Button name="warrior-build" text="Warrior Build" style="width: 100%; margin-bottom: 5px; padding: 8px; background-color: rgba(255, 0, 0, 0.2); border-radius: 4px; color: rgb(255, 255, 255); font-size: 12px;" />
+                    <ui:Button name="mage-build" text="Mage Build" style="width: 100%; margin-bottom: 5px; padding: 8px; background-color: rgba(0, 0, 255, 0.2); border-radius: 4px; color: rgb(255, 255, 255); font-size: 12px;" />
+                    <ui:Button name="explorer-build" text="Explorer Build" style="width: 100%; margin-bottom: 5px; padding: 8px; background-color: rgba(0, 255, 0, 0.2); border-radius: 4px; color: rgb(255, 255, 255); font-size: 12px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- Footer -->
+        <ui:VisualElement name="footer" style="flex-direction: row; justify-content: space-between; align-items: center; padding: 15px; background-color: rgba(20, 20, 20, 0.8); border-top-width: 2px; border-top-color: rgba(255, 255, 255, 0.2);">
+            <ui:Label text="Click on skills to view details • Right-click to upgrade • Press K to close" name="instructions" style="font-size: 12px; color: rgb(150, 150, 150);" />
+            <ui:VisualElement name="footer-stats" style="flex-direction: row;">
+                <ui:Label text="Total SP Spent: 8" name="total-sp" style="font-size: 12px; color: rgb(255, 215, 0); margin-right: 15px;" />
+                <ui:Label text="Build Efficiency: 85%" name="build-efficiency" style="font-size: 12px; color: rgb(0, 255, 0);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

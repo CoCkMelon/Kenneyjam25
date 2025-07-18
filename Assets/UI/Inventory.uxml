@@ -1,0 +1,197 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="inventory-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.9); position: absolute; width: 100%; height: 100%;">
+        
+        <!-- Header -->
+        <ui:VisualElement name="header" style="flex-direction: row; justify-content: space-between; align-items: center; padding: 20px; background-color: rgba(30, 30, 30, 0.8); border-bottom-width: 2px; border-bottom-color: rgba(255, 255, 255, 0.3);">
+            <ui:VisualElement name="title-section" style="flex-direction: row; align-items: center;">
+                <ui:Label text="Inventory" name="title" style="font-size: 24px; color: rgb(255, 255, 255); font-weight: bold; margin-right: 20px; -unity-font-style: bold;" />
+                <ui:VisualElement name="weight-info" style="flex-direction: row; align-items: center;">
+                    <ui:Label text="Weight: 45/120" name="weight-display" style="font-size: 14px; color: rgb(255, 215, 0); margin-right: 15px; background-color: rgba(255, 215, 0, 0.2); padding: 4px 8px; border-radius: 8px;" />
+                    <ui:VisualElement name="weight-bar" style="width: 100px; height: 8px; background-color: rgba(255, 255, 255, 0.2); border-radius: 4px; margin-right: 15px;">
+                        <ui:VisualElement name="weight-fill" style="width: 37%; height: 100%; background-color: rgb(255, 215, 0); border-radius: 4px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="currency-section" style="flex-direction: row; align-items: center;">
+                <ui:Label text="💰 1,250 Gold" name="currency-display" style="font-size: 16px; color: rgb(255, 215, 0); margin-right: 15px; background-color: rgba(255, 215, 0, 0.2); padding: 6px 12px; border-radius: 12px;" />
+                <ui:Button name="close-button" text="✕" style="width: 40px; height: 40px; background-color: rgba(255, 0, 0, 0.3); border-radius: 20px; font-size: 18px; color: rgb(255, 255, 255); font-weight: bold;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- Main Content -->
+        <ui:VisualElement name="main-content" style="flex-grow: 1; flex-direction: row;">
+            
+            <!-- Left Panel - Inventory Grid -->
+            <ui:VisualElement name="inventory-panel" style="flex-grow: 1; padding: 20px; background-color: rgba(20, 20, 20, 0.5);">
+                
+                <!-- Category Tabs -->
+                <ui:VisualElement name="category-tabs" style="flex-direction: row; margin-bottom: 20px; border-bottom-width: 2px; border-bottom-color: rgba(255, 255, 255, 0.2);">
+                    <ui:Button name="all-tab" text="All" class="category-tab active" style="padding: 10px 20px; background-color: rgba(255, 255, 255, 0.2); border-radius: 8px 8px 0 0; color: rgb(255, 255, 255); font-size: 14px; margin-right: 5px; border-bottom-width: 3px; border-bottom-color: rgb(255, 215, 0);" />
+                    <ui:Button name="weapons-tab" text="⚔️ Weapons" class="category-tab" style="padding: 10px 20px; background-color: rgba(100, 100, 100, 0.2); border-radius: 8px 8px 0 0; color: rgb(200, 200, 200); font-size: 14px; margin-right: 5px;" />
+                    <ui:Button name="armor-tab" text="🛡️ Armor" class="category-tab" style="padding: 10px 20px; background-color: rgba(100, 100, 100, 0.2); border-radius: 8px 8px 0 0; color: rgb(200, 200, 200); font-size: 14px; margin-right: 5px;" />
+                    <ui:Button name="consumables-tab" text="🧪 Consumables" class="category-tab" style="padding: 10px 20px; background-color: rgba(100, 100, 100, 0.2); border-radius: 8px 8px 0 0; color: rgb(200, 200, 200); font-size: 14px; margin-right: 5px;" />
+                    <ui:Button name="misc-tab" text="📦 Misc" class="category-tab" style="padding: 10px 20px; background-color: rgba(100, 100, 100, 0.2); border-radius: 8px 8px 0 0; color: rgb(200, 200, 200); font-size: 14px;" />
+                </ui:VisualElement>
+                
+                <!-- Search and Sort -->
+                <ui:VisualElement name="search-sort-bar" style="flex-direction: row; margin-bottom: 20px; align-items: center;">
+                    <ui:TextField name="search-field" placeholder-text="Search items..." style="flex-grow: 1; height: 30px; margin-right: 10px; background-color: rgba(255, 255, 255, 0.1); border-radius: 15px; padding: 0 12px; color: rgb(255, 255, 255);" />
+                    <ui:DropdownField name="sort-dropdown" label="Sort:" choices="Name,Type,Value,Weight" index="0" style="width: 150px; height: 30px; color: rgb(255, 255, 255); background-color: rgba(255, 255, 255, 0.1); border-radius: 6px;" />
+                </ui:VisualElement>
+                
+                <!-- Inventory Grid -->
+                <ui:ScrollView name="inventory-scroll" style="flex-grow: 1;">
+                    <ui:VisualElement name="inventory-grid" style="flex-direction: row; flex-wrap: wrap; justify-content: flex-start;">
+                        
+                        <!-- Inventory Slot Template -->
+                        <ui:VisualElement name="inventory-slot" class="inventory-slot" style="width: 70px; height: 70px; background-color: rgba(100, 100, 100, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgba(255, 255, 255, 0.2); align-items: center; justify-content: center;">
+                            <ui:VisualElement name="item-icon" style="width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1); border-radius: 4px; align-items: center; justify-content: center;">
+                                <ui:Label text="⚔️" name="icon-label" style="font-size: 24px; color: rgb(255, 255, 255);" />
+                            </ui:VisualElement>
+                            <ui:Label text="5" name="stack-count" style="position: absolute; bottom: 2px; right: 2px; font-size: 10px; color: rgb(255, 255, 255); background-color: rgba(0, 0, 0, 0.8); padding: 1px 4px; border-radius: 6px;" />
+                            <ui:VisualElement name="rarity-indicator" style="position: absolute; top: 2px; left: 2px; width: 8px; height: 8px; background-color: rgb(0, 255, 0); border-radius: 4px;" />
+                        </ui:VisualElement>
+                        
+                        <!-- Equipped Item Slot -->
+                        <ui:VisualElement name="inventory-slot" class="inventory-slot equipped" style="width: 70px; height: 70px; background-color: rgba(255, 215, 0, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgb(255, 215, 0); align-items: center; justify-content: center;">
+                            <ui:VisualElement name="item-icon" style="width: 40px; height: 40px; background-color: rgba(255, 255, 255, 0.1); border-radius: 4px; align-items: center; justify-content: center;">
+                                <ui:Label text="🗡️" name="icon-label" style="font-size: 24px; color: rgb(255, 255, 255);" />
+                            </ui:VisualElement>
+                            <ui:Label text="E" name="equipped-indicator" style="position: absolute; top: 2px; right: 2px; font-size: 8px; color: rgb(255, 215, 0); background-color: rgba(0, 0, 0, 0.8); padding: 1px 3px; border-radius: 4px;" />
+                            <ui:VisualElement name="rarity-indicator" style="position: absolute; top: 2px; left: 2px; width: 8px; height: 8px; background-color: rgb(0, 100, 255); border-radius: 4px;" />
+                        </ui:VisualElement>
+                        
+                        <!-- Empty Slot -->
+                        <ui:VisualElement name="inventory-slot" class="inventory-slot empty" style="width: 70px; height: 70px; background-color: rgba(50, 50, 50, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgba(100, 100, 100, 0.2); align-items: center; justify-content: center;">
+                            <ui:Label text="+" name="empty-indicator" style="font-size: 20px; color: rgba(255, 255, 255, 0.3);" />
+                        </ui:VisualElement>
+                        
+                        <!-- Repeat empty slots for grid -->
+                        <ui:VisualElement name="inventory-slot" class="inventory-slot empty" style="width: 70px; height: 70px; background-color: rgba(50, 50, 50, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgba(100, 100, 100, 0.2); align-items: center; justify-content: center;">
+                            <ui:Label text="+" name="empty-indicator" style="font-size: 20px; color: rgba(255, 255, 255, 0.3);" />
+                        </ui:VisualElement>
+                        
+                    </ui:VisualElement>
+                </ui:ScrollView>
+                
+                <!-- Quick Actions -->
+                <ui:VisualElement name="quick-actions" style="flex-direction: row; margin-top: 15px; padding-top: 15px; border-top-width: 2px; border-top-color: rgba(255, 255, 255, 0.2);">
+                    <ui:Button name="sort-button" text="Sort Items" style="flex-grow: 1; margin-right: 10px; padding: 8px; background-color: rgba(0, 255, 0, 0.3); border-radius: 6px; color: rgb(255, 255, 255); font-size: 12px;" />
+                    <ui:Button name="sell-all-button" text="Sell Junk" style="flex-grow: 1; margin-right: 10px; padding: 8px; background-color: rgba(255, 215, 0, 0.3); border-radius: 6px; color: rgb(0, 0, 0); font-size: 12px;" />
+                    <ui:Button name="expand-button" text="Expand Bag" style="flex-grow: 1; padding: 8px; background-color: rgba(100, 100, 100, 0.3); border-radius: 6px; color: rgb(255, 255, 255); font-size: 12px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            
+            <!-- Right Panel - Item Details & Equipment -->
+            <ui:VisualElement name="details-panel" style="width: 350px; background-color: rgba(30, 30, 30, 0.8); padding: 20px; border-left-width: 2px; border-left-color: rgba(255, 255, 255, 0.2);">
+                
+                <!-- Equipment Section -->
+                <ui:VisualElement name="equipment-section" style="margin-bottom: 30px;">
+                    <ui:Label text="Equipment" name="equipment-title" style="font-size: 18px; color: rgb(255, 255, 255); font-weight: bold; margin-bottom: 15px; -unity-font-style: bold;" />
+                    
+                    <!-- Equipment Slots -->
+                    <ui:VisualElement name="equipment-grid" style="flex-direction: row; flex-wrap: wrap; justify-content: space-between;">
+                        
+                        <!-- Helmet -->
+                        <ui:VisualElement name="helmet-slot" class="equipment-slot" style="width: 60px; height: 60px; background-color: rgba(100, 100, 100, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgba(255, 255, 255, 0.2); align-items: center; justify-content: center;">
+                            <ui:Label text="🪖" name="slot-icon" style="font-size: 20px; color: rgba(255, 255, 255, 0.5);" />
+                            <ui:Label text="Helmet" name="slot-label" style="position: absolute; bottom: -15px; font-size: 8px; color: rgba(255, 255, 255, 0.7); text-align: center; width: 100%;" />
+                        </ui:VisualElement>
+                        
+                        <!-- Armor -->
+                        <ui:VisualElement name="armor-slot" class="equipment-slot" style="width: 60px; height: 60px; background-color: rgba(100, 100, 100, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgba(255, 255, 255, 0.2); align-items: center; justify-content: center;">
+                            <ui:Label text="🛡️" name="slot-icon" style="font-size: 20px; color: rgba(255, 255, 255, 0.5);" />
+                            <ui:Label text="Armor" name="slot-label" style="position: absolute; bottom: -15px; font-size: 8px; color: rgba(255, 255, 255, 0.7); text-align: center; width: 100%;" />
+                        </ui:VisualElement>
+                        
+                        <!-- Gloves -->
+                        <ui:VisualElement name="gloves-slot" class="equipment-slot" style="width: 60px; height: 60px; background-color: rgba(100, 100, 100, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgba(255, 255, 255, 0.2); align-items: center; justify-content: center;">
+                            <ui:Label text="🧤" name="slot-icon" style="font-size: 20px; color: rgba(255, 255, 255, 0.5);" />
+                            <ui:Label text="Gloves" name="slot-label" style="position: absolute; bottom: -15px; font-size: 8px; color: rgba(255, 255, 255, 0.7); text-align: center; width: 100%;" />
+                        </ui:VisualElement>
+                        
+                        <!-- Weapon -->
+                        <ui:VisualElement name="weapon-slot" class="equipment-slot equipped" style="width: 60px; height: 60px; background-color: rgba(255, 215, 0, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgb(255, 215, 0); align-items: center; justify-content: center;">
+                            <ui:Label text="⚔️" name="slot-icon" style="font-size: 20px; color: rgb(255, 255, 255);" />
+                            <ui:Label text="Weapon" name="slot-label" style="position: absolute; bottom: -15px; font-size: 8px; color: rgba(255, 255, 255, 0.7); text-align: center; width: 100%;" />
+                        </ui:VisualElement>
+                        
+                        <!-- Boots -->
+                        <ui:VisualElement name="boots-slot" class="equipment-slot" style="width: 60px; height: 60px; background-color: rgba(100, 100, 100, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgba(255, 255, 255, 0.2); align-items: center; justify-content: center;">
+                            <ui:Label text="🥾" name="slot-icon" style="font-size: 20px; color: rgba(255, 255, 255, 0.5);" />
+                            <ui:Label text="Boots" name="slot-label" style="position: absolute; bottom: -15px; font-size: 8px; color: rgba(255, 255, 255, 0.7); text-align: center; width: 100%;" />
+                        </ui:VisualElement>
+                        
+                        <!-- Accessory -->
+                        <ui:VisualElement name="accessory-slot" class="equipment-slot" style="width: 60px; height: 60px; background-color: rgba(100, 100, 100, 0.3); border-radius: 8px; margin: 5px; position: relative; border-width: 2px; border-color: rgba(255, 255, 255, 0.2); align-items: center; justify-content: center;">
+                            <ui:Label text="💍" name="slot-icon" style="font-size: 20px; color: rgba(255, 255, 255, 0.5);" />
+                            <ui:Label text="Ring" name="slot-label" style="position: absolute; bottom: -15px; font-size: 8px; color: rgba(255, 255, 255, 0.7); text-align: center; width: 100%;" />
+                        </ui:VisualElement>
+                        
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- Item Details Section -->
+                <ui:VisualElement name="item-details-section" style="background-color: rgba(0, 0, 0, 0.5); padding: 15px; border-radius: 8px; margin-bottom: 15px;">
+                    <ui:Label text="Item Details" name="details-title" style="font-size: 16px; color: rgb(255, 255, 255); font-weight: bold; margin-bottom: 10px; -unity-font-style: bold;" />
+                    
+                    <ui:VisualElement name="item-header" style="flex-direction: row; align-items: center; margin-bottom: 10px;">
+                        <ui:Label text="⚔️" name="item-icon" style="font-size: 24px; margin-right: 10px; color: rgb(255, 255, 255);" />
+                        <ui:VisualElement name="item-name-section" style="flex-grow: 1;">
+                            <ui:Label text="Iron Sword" name="item-name" style="font-size: 14px; color: rgb(255, 255, 255); font-weight: bold; -unity-font-style: bold;" />
+                            <ui:Label text="Rare Weapon" name="item-type" style="font-size: 12px; color: rgb(0, 100, 255);" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                    
+                    <ui:VisualElement name="item-stats" style="margin-bottom: 10px;">
+                        <ui:Label text="Damage: 45-52" name="stat-damage" style="font-size: 12px; color: rgb(255, 100, 100); margin-bottom: 2px;" />
+                        <ui:Label text="Speed: 1.2" name="stat-speed" style="font-size: 12px; color: rgb(100, 255, 100); margin-bottom: 2px;" />
+                        <ui:Label text="Durability: 85/100" name="stat-durability" style="font-size: 12px; color: rgb(255, 215, 0); margin-bottom: 2px;" />
+                        <ui:Label text="Weight: 3.2 kg" name="stat-weight" style="font-size: 12px; color: rgb(180, 180, 180); margin-bottom: 2px;" />
+                    </ui:VisualElement>
+                    
+                    <ui:Label text="A well-crafted iron sword with a sharp edge. Provides reliable damage in combat." name="item-description" style="font-size: 11px; color: rgb(200, 200, 200); margin-bottom: 10px; white-space: normal;" />
+                    
+                    <ui:VisualElement name="item-value" style="flex-direction: row; justify-content: space-between; margin-bottom: 10px;">
+                        <ui:Label text="Value: 125 Gold" name="item-price" style="font-size: 12px; color: rgb(255, 215, 0);" />
+                        <ui:Label text="Level Req: 8" name="item-level" style="font-size: 12px; color: rgb(255, 100, 100);" />
+                    </ui:VisualElement>
+                    
+                    <!-- Special Effects -->
+                    <ui:VisualElement name="special-effects" style="background-color: rgba(0, 0, 0, 0.3); padding: 8px; border-radius: 4px; margin-bottom: 10px;">
+                        <ui:Label text="Special Effects:" name="effects-label" style="font-size: 12px; color: rgb(255, 215, 0); margin-bottom: 4px;" />
+                        <ui:Label text="• +10% Critical Hit Chance" name="effect-item" style="font-size: 11px; color: rgb(0, 255, 0); margin-bottom: 2px;" />
+                        <ui:Label text="• +5 Strength" name="effect-item" style="font-size: 11px; color: rgb(0, 255, 0);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- Action Buttons -->
+                <ui:VisualElement name="action-buttons" style="flex-direction: column;">
+                    <ui:Button name="equip-button" text="Equip Item" style="width: 100%; margin-bottom: 10px; padding: 12px; background-color: rgba(0, 255, 0, 0.3); border-radius: 8px; color: rgb(255, 255, 255); font-size: 14px; font-weight: bold;" />
+                    <ui:Button name="use-button" text="Use Item" style="width: 100%; margin-bottom: 10px; padding: 12px; background-color: rgba(255, 215, 0, 0.3); border-radius: 8px; color: rgb(0, 0, 0); font-size: 14px; font-weight: bold;" />
+                    <ui:VisualElement name="secondary-actions" style="flex-direction: row;">
+                        <ui:Button name="drop-button" text="Drop" style="flex-grow: 1; margin-right: 5px; padding: 8px; background-color: rgba(255, 100, 100, 0.3); border-radius: 6px; color: rgb(255, 255, 255); font-size: 12px;" />
+                        <ui:Button name="sell-button" text="Sell" style="flex-grow: 1; margin-left: 5px; padding: 8px; background-color: rgba(255, 215, 0, 0.3); border-radius: 6px; color: rgb(0, 0, 0); font-size: 12px;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- Crafting Quick Access -->
+                <ui:VisualElement name="crafting-section" style="margin-top: 20px; padding-top: 15px; border-top-width: 2px; border-top-color: rgba(255, 255, 255, 0.2);">
+                    <ui:Label text="Quick Crafting" name="crafting-title" style="font-size: 14px; color: rgb(255, 255, 255); font-weight: bold; margin-bottom: 10px; -unity-font-style: bold;" />
+                    <ui:Button name="repair-button" text="Repair All" style="width: 100%; margin-bottom: 5px; padding: 8px; background-color: rgba(100, 100, 100, 0.3); border-radius: 6px; color: rgb(255, 255, 255); font-size: 12px;" />
+                    <ui:Button name="enhance-button" text="Enhance Item" style="width: 100%; margin-bottom: 5px; padding: 8px; background-color: rgba(0, 100, 255, 0.3); border-radius: 6px; color: rgb(255, 255, 255); font-size: 12px;" />
+                    <ui:Button name="dismantle-button" text="Dismantle" style="width: 100%; padding: 8px; background-color: rgba(255, 0, 0, 0.3); border-radius: 6px; color: rgb(255, 255, 255); font-size: 12px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <!-- Footer -->
+        <ui:VisualElement name="footer" style="flex-direction: row; justify-content: space-between; align-items: center; padding: 15px; background-color: rgba(20, 20, 20, 0.8); border-top-width: 2px; border-top-color: rgba(255, 255, 255, 0.2);">
+            <ui:Label text="Left-click to select • Right-click for context menu • Drag to move items • Press I to close" name="instructions" style="font-size: 12px; color: rgb(150, 150, 150);" />
+            <ui:VisualElement name="footer-stats" style="flex-direction: row;">
+                <ui:Label text="Items: 23/50" name="item-count" style="font-size: 12px; color: rgb(255, 215, 0); margin-right: 15px;" />
+                <ui:Label text="Total Value: 2,450 Gold" name="total-value" style="font-size: 12px; color: rgb(0, 255, 0);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

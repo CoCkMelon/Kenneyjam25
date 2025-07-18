@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/theme.uss?fileID=7433441132597879392&amp;guid=b7c6cef5f2e8c11dcbf047d9d517e8ad&amp;type=3#theme" />
+    <ui:ScrollView>
+        <ui:Button text="Resume" name="resume" class="menu-button" style="border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-right-radius: 0; border-bottom-left-radius: 0; align-self: stretch; align-items: center;" />
+        <ui:Button text="Options" name="options" class="menu-button" style="align-items: center;" />
+        <ui:Button text="Back to main menu" name="to-menu" class="menu-button" style="align-items: center;" />
+        <ui:Button text="Quit" name="quit" class="menu-button" style="align-items: center;" />
+    </ui:ScrollView>
+</ui:UXML>

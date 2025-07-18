@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements"
+         xmlns:editor="UnityEditor.UIElements">
+  <!-- Root Visual Element for the Settings Menu -->
+  <ui:VisualElement name="settings-menu" class="settings-menu" style="flex-grow: 1;">
+
+    <!-- Title for the Settings Menu -->
+    <ui:Label text="Settings" name="menu-title" class="menu-title" style="unity-font-style: bold; font-size: 20px; margin-bottom: 10px;" />
+
+    <!-- Scrollable Container for All Option Sections -->
+    <ui:ScrollView name="settings-scroll-view" class="settings-scroll-view" style="flex-grow: 1; max-height: 500px; margin-bottom: 10px;">
+
+      <!-- Display Settings Section -->
+      <ui:VisualElement name="display-section" class="settings-section">
+        <ui:Label text="Display Settings" class="section-title" style="unity-font-style: bold; margin-top: 5px;" />
+
+        <!-- Screen Selection -->
+        <ui:VisualElement name="display-screen-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Screen:" class="option-label" style="width: 120px;" />
+          <ui:DropdownField name="screen-select" class="option-select" />
+        </ui:VisualElement>
+
+        <!-- Resolution Selection -->
+        <ui:VisualElement name="resolution-option" class="option-container" style="flex-direction: row; flex-wrap: wrap; align-items: center; margin: 3px 0;">
+          <ui:Label text="Resolution:" class="option-label" style="width: 120px;" />
+          <ui:DropdownField name="resolution-select" class="option-select" style="margin-right: 5px;" />
+          <ui:TextField name="resolution-width" class="option-textfield" tooltip="Width" style="width: 50px; margin-right: 5px;" />
+          <ui:TextField name="resolution-height" class="option-textfield" tooltip="Height" style="width: 50px;" />
+        </ui:VisualElement>
+
+        <!-- Window Mode -->
+        <ui:VisualElement name="window-mode-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Window Mode:" class="option-label" style="width: 120px;" />
+          <ui:DropdownField name="window-mode-select" class="option-select" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+
+      <!-- Graphics Settings Section -->
+      <ui:VisualElement name="graphics-section" class="settings-section" style="margin-top: 10px;">
+        <ui:Label text="Graphics Settings" class="section-title" style="unity-font-style: bold; margin-top: 5px;" />
+
+        <!-- VSync -->
+        <ui:VisualElement name="vsync-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="VSync:" class="option-label" style="width: 140px;" />
+          <ui:DropdownField name="vsync-select" class="option-select" />
+        </ui:VisualElement>
+
+        <!-- Anti-Aliasing -->
+        <ui:VisualElement name="aa-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Anti-Aliasing:" class="option-label" style="width: 140px;" />
+          <ui:DropdownField name="aa-select" class="option-select" />
+        </ui:VisualElement>
+
+        <!-- Graphics Quality -->
+        <ui:VisualElement name="graphics-quality-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Graphics Quality:" class="option-label" style="width: 140px;" />
+          <ui:DropdownField name="graphics-quality-select" class="option-select" />
+        </ui:VisualElement>
+
+        <!-- Additional Graphics Options -->
+        <ui:VisualElement name="shadows-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Shadow Quality:" class="option-label" style="width: 140px;" />
+          <ui:DropdownField name="shadow-quality-select" class="option-select" />
+        </ui:VisualElement>
+        <ui:VisualElement name="textures-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Texture Quality:" class="option-label" style="width: 140px;" />
+          <ui:DropdownField name="texture-quality-select" class="option-select" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+
+      <!-- Audio Settings Section -->
+      <ui:VisualElement name="audio-section" class="settings-section" style="margin-top: 10px;">
+        <ui:Label text="Audio Settings" class="section-title" style="unity-font-style: bold; margin-top: 5px;" />
+
+        <!-- Sound Volume -->
+        <ui:VisualElement name="sound-volume-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Sound Volume:" class="option-label" style="width: 140px;" />
+          <ui:Slider name="sound-volume-slider" lowValue="0" highValue="100" class="option-slider" style="flex-grow: 1;" />
+        </ui:VisualElement>
+
+        <!-- Music Volume -->
+        <ui:VisualElement name="music-volume-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Music Volume:" class="option-label" style="width: 140px;" />
+          <ui:Slider name="music-volume-slider" lowValue="0" highValue="100" class="option-slider" style="flex-grow: 1;" />
+        </ui:VisualElement>
+
+        <!-- Effects Volume -->
+        <ui:VisualElement name="effects-volume-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Effects Volume:" class="option-label" style="width: 140px;" />
+          <ui:Slider name="effects-volume-slider" lowValue="0" highValue="100" class="option-slider" style="flex-grow: 1;" />
+        </ui:VisualElement>
+
+        <!-- (Optional) Spatial Audio Toggle -->
+        <ui:VisualElement name="spatial-audio-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Spatial Audio:" class="option-label" style="width: 140px;" />
+          <ui:Toggle name="spatial-audio-toggle" class="option-toggle" text="Enable" />
+        </ui:VisualElement>
+      </ui:VisualElement>
+
+      <!-- Input Settings Section -->
+      <ui:VisualElement name="input-section" class="settings-section" style="margin-top: 10px;">
+        <ui:Label text="Input Settings" class="section-title" style="unity-font-style: bold; margin-top: 5px;" />
+
+        <!-- Mouse Sensitivity (for PC) -->
+        <ui:VisualElement name="mouse-sensitivity-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Mouse Sensitivity:" class="option-label" style="width: 160px;" />
+          <ui:Slider name="mouse-sensitivity-slider" lowValue="0.1" highValue="10" class="option-slider" style="flex-grow: 1;" />
+        </ui:VisualElement>
+
+        <!-- Keyboard Bindings (Button to open keybind remapper) -->
+        <ui:VisualElement name="keyboard-bindings-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Keyboard Bindings:" class="option-label" style="width: 160px;" />
+          <ui:Button text="Configure..." name="keyboard-config-button" class="option-button" />
+        </ui:VisualElement>
+
+        <!-- Gamepad Sensitivity -->
+        <ui:VisualElement name="gamepad-sensitivity-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+          <ui:Label text="Gamepad Sensitivity:" class="option-label" style="width: 160px;" />
+          <ui:Slider name="gamepad-sensitivity-slider" lowValue="0.1" highValue="10" class="option-slider" style="flex-grow: 1;" />
+        </ui:VisualElement>
+
+        <!-- Touch/Accelerometer Options for Mobile -->
+        <ui:VisualElement name="touch-options" class="option-container" style="flex-direction: column; margin: 3px 0;">
+          <ui:Label text="Mobile Input Options" class="subsection-title" style="unity-font-style: italic; margin-bottom: 5px;" />
+          <ui:VisualElement name="touch-sensitivity-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+            <ui:Label text="Touch Sensitivity:" class="option-label" style="width: 160px;" />
+            <ui:Slider name="touch-sensitivity-slider" lowValue="0.1" highValue="10" class="option-slider" style="flex-grow: 1;" />
+          </ui:VisualElement>
+          <ui:VisualElement name="gyro-enabled-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+            <ui:Label text="Gyro Control:" class="option-label" style="width: 160px;" />
+            <ui:Toggle name="gyro-toggle" class="option-toggle" text="Enable" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+      </ui:VisualElement>
+
+      <!-- Platform Specific Settings Section -->
+      <ui:VisualElement name="platform-section" class="settings-section" style="margin-top: 10px; margin-bottom: 20px;">
+        <ui:Label text="Platform Specific Settings" class="section-title" style="unity-font-style: bold; margin-top: 5px;" />
+
+        <!-- Android Specific Options -->
+        <ui:VisualElement name="android-section" class="platform-section" style="flex-direction: column; margin: 5px 0;">
+          <ui:Label text="Android" class="platform-label" style="unity-font-style: bold; margin-bottom: 3px;" />
+          <ui:VisualElement name="android-haptic-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+            <ui:Label text="Haptic Feedback:" class="option-label" style="width: 160px;" />
+            <ui:Toggle name="android-haptic-toggle" class="option-toggle" text="Enable" />
+          </ui:VisualElement>
+          <ui:VisualElement name="android-gesture-sensitivity" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+            <ui:Label text="Gesture Sensitivity:" class="option-label" style="width: 160px;" />
+            <ui:Slider name="android-gesture-slider" lowValue="0.1" highValue="10" class="option-slider" style="flex-grow: 1;" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Linux Specific Options -->
+        <ui:VisualElement name="linux-section" class="platform-section" style="flex-direction: column; margin: 5px 0;">
+          <ui:Label text="Linux" class="platform-label" style="unity-font-style: bold; margin-bottom: 3px;" />
+          <ui:VisualElement name="linux-input-method-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+            <ui:Label text="Input Method:" class="option-label" style="width: 160px;" />
+            <ui:DropdownField name="linux-input-method" class="option-select" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- macOS Specific Options -->
+        <ui:VisualElement name="mac-section" class="platform-section" style="flex-direction: column; margin: 5px 0;">
+          <ui:Label text="macOS" class="platform-label" style="unity-font-style: bold; margin-bottom: 3px;" />
+          <ui:VisualElement name="mac-touchbar-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+            <ui:Label text="Touch Bar:" class="option-label" style="width: 160px;" />
+            <ui:Toggle name="mac-touchbar-toggle" class="option-toggle" text="Enable" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- Windows Specific Options -->
+        <ui:VisualElement name="windows-section" class="platform-section" style="flex-direction: column; margin: 5px 0;">
+          <ui:Label text="Windows" class="platform-label" style="unity-font-style: bold; margin-bottom: 3px;" />
+          <ui:VisualElement name="windows-controller-support-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+            <ui:Label text="Controller Support:" class="option-label" style="width: 160px;" />
+            <ui:DropdownField name="windows-controller-support" class="option-select" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+
+        <!-- HTML Specific Options -->
+        <ui:VisualElement name="html-section" class="platform-section" style="flex-direction: column; margin: 5px 0;">
+          <ui:Label text="HTML" class="platform-label" style="unity-font-style: bold; margin-bottom: 3px;" />
+          <ui:VisualElement name="html-fullscreen-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+            <ui:Label text="Browser Fullscreen:" class="option-label" style="width: 160px;" />
+            <ui:Toggle name="html-fullscreen-toggle" class="option-toggle" text="Enable" />
+          </ui:VisualElement>
+          <ui:VisualElement name="html-touch-option" class="option-container" style="flex-direction: row; align-items: center; margin: 3px 0;">
+            <ui:Label text="Touch Emulation:" class="option-label" style="width: 160px;" />
+            <ui:Toggle name="html-touch-toggle" class="option-toggle" text="Enable" />
+          </ui:VisualElement>
+        </ui:VisualElement>
+      </ui:VisualElement>
+
+    </ui:ScrollView>
+
+    <!-- Action Buttons -->
+    <ui:VisualElement name="action-buttons" class="action-buttons" style="flex-direction: row; justify-content: space-between;">
+      <ui:Button text="Save" name="save-button" class="menu-button" style="flex-grow: 1; margin-right: 5px;" />
+      <ui:Button text="Back" name="back-button" class="menu-button" style="flex-grow: 1; margin-left: 5px;" />
+    </ui:VisualElement>
+
+    <!-- Warning Label for Reverting Settings -->
+    <ui:Label text="Settings will revert in 15 seconds if not confirmed"
+              name="revert-warning" class="warning-label"
+              style="color: red; text-align: center; margin-top: 10px; display: none;" />
+
+  </ui:VisualElement>
+</ui:UXML>

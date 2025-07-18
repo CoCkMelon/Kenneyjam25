@@ -1,0 +1,31 @@
+scene: "village_npc_01"
+lines:
+  - id: "greeting"
+    speaker: "Village Elder"
+    text: "Welcome, traveler! I haven't seen you around these parts before."
+    animation: "happy"
+    
+  - id: "question"
+    speaker: "Village Elder"
+    text: "What brings you to our humble village?"
+    animation: "curious"
+        
+  - id: "response"
+    speaker: "Village Elder"
+    text: "Ah, a wanderer! Well, you're welcome to rest here. The inn is just down the road."
+    animation: "idle"
+    
+  - id: "info"
+    speaker: "Village Elder"
+    text: "There have been strange sounds coming from the old ruins to the east lately..."
+    animation: "worried"
+    
+  - id: "directions"
+    speaker: "Village Elder"
+    text: "The main road to the capital is north of here. You can't miss it!"
+    animation: "helpful"
+    
+  - id: "farewell"
+    speaker: "Village Elder"
+    text: "Safe travels, friend. May your journey be swift and your path clear."
+    animation: "wave"

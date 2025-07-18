@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<engine:UXML
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="UnityEngine.UIElements"
+    xmlns:engine="UnityEditor.UIElements"
+    xsi:noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd"
+    xsi:nonamespaceschemalocation="../../UIElementsSchema/UIElements.xsd">
+
+  <ScrollView name="settingsScrollView" verticalScrollerVisibilityMode="Auto">
+    <VisualElement name="settingsContainer" style="flex-direction: column; padding: 10px; spacing: 15px;">
+
+      <!-- Graphics Settings -->
+      <Foldout name="graphicsFoldout" text="Graphics Settings" value="true">
+        <VisualElement name="graphicsContent" style="padding-left: 10px;">
+          <Label text="Resolution:" />
+          <PopupField<string> name="resolutionDropdown" />
+
+          <Toggle name="fullscreenToggle" text="Fullscreen Mode" />
+
+          <Label text="VSync:" />
+          <PopupField<string> name="vsyncDropdown" />
+
+          <Label text="Quality Level:" />
+          <PopupField<string> name="qualityDropdown" />
+
+          <Label text="Anti-Aliasing:" />
+          <PopupField<string> name="aaDropdown" />
+
+          <Label text="Shadow Distance:" />
+          <Slider name="shadowDistanceSlider" lowValue="10" highValue="200" showInputField="true" />
+
+          <Label text="Texture Quality:" />
+          <PopupField<string> name="textureQualityDropdown" />
+
+          <Label text="LOD Bias:" />
+          <Slider name="lodBiasSlider" lowValue="0.1" highValue="2.0" showInputField="true" />
+        </VisualElement>
+      </Foldout>
+
+      <!-- Audio Settings -->
+      <Foldout name="audioFoldout" text="Audio Settings" value="true">
+        <VisualElement name="audioContent" style="padding-left: 10px;">
+          <Label text="Master Volume:" />
+          <Slider name="masterVolumeSlider" lowValue="0" highValue="100" showInputField="true" />
+
+          <Label text="Music Volume:" />
+          <Slider name="musicVolumeSlider" lowValue="0" highValue="100" showInputField="true" />
+
+          <Label text="SFX Volume:" />
+          <Slider name="sfxVolumeSlider" lowValue="0" highValue="100" showInputField="true" />
+
+          <Label text="Voice Volume:" />
+          <Slider name="voiceVolumeSlider" lowValue="0" highValue="100" showInputField="true" />
+
+          <Toggle name="muteToggle" text="Mute All Sound" />
+        </VisualElement>
+      </Foldout>
+
+      <!-- Input Settings -->
+      <Foldout name="inputFoldout" text="Input Settings" value="true">
+        <VisualElement name="inputContent" style="padding-left: 10px;">
+          <Label text="Mouse Sensitivity:" />
+          <Slider name="mouseSensitivitySlider" lowValue="1" highValue="10" showInputField="true" />
+
+          <Label text="Invert Mouse Y:" />
+          <Toggle name="invertYToggle" />
+
+          <Label text="Controller Deadzone:" />
+          <Slider name="controllerDeadzoneSlider" lowValue="0.1" highValue="1.0" showInputField="true" />
+
+          <Label text="Touch Control Size:" visible="false" name="touchControlSizeLabel" />
+          <Slider name="touchControlSizeSlider" lowValue="0.5" highValue="2.0" showInputField="true" visible="false" />
+
+          <Label text="Remap Controls:" />
+          <Button name="keyboardRemapButton" text="Remap Keyboard" />
+          <Button name="gamepadRemapButton" text="Remap Gamepad" />
+          <Button name="touchRemapButton" text="Remap Touch Controls" visible="false" />
+        </VisualElement>
+      </Foldout>
+
+      <!-- Accessibility Settings -->
+      <Foldout name="accessibilityFoldout" text="Accessibility" value="true">
+        <VisualElement name="accessibilityContent" style="padding-left: 10px;">
+          <Label text="Colorblind Mode:" />
+          <PopupField<string> name="colorblindModeDropdown" />
+
+          <Toggle name="subtitlesToggle" text="Enable Subtitles" />
+
+          <Label text="UI Scale:" />
+          <Slider name="uiScaleSlider" lowValue="0.7" highValue="1.5" showInputField="true" />
+
+          <Toggle name="highContrastToggle" text="High Contrast Mode" />
+        </VisualElement>
+      </Foldout>
+
+      <!-- Gameplay Settings -->
+      <Foldout name="gameplayFoldout" text="Gameplay Settings" value="true">
+        <VisualElement name="gameplayContent" style="padding-left: 10px;">
+          <Label text="Difficulty Level:" />
+          <PopupField<string> name="difficultyDropdown" />
+
+          <Label text="Language:" />
+          <PopupField<string> name="languageDropdown" />
+
+          <Label text="Autosave Interval (minutes):" />
+          <IntegerField name="autosaveIntervalField" value="5" />
+
+          <Toggle name="showTooltipsToggle" text="Show Tooltips" />
+
+          <Toggle name="autoAimToggle" text="Enable Auto Aim" />
+        </VisualElement>
+      </Foldout>
+
+      <!-- Platform-Specific Settings -->
+      <Foldout name="platformFoldout" text="Platform-Specific Settings" value="true">
+        <VisualElement name="platformContent" style="padding-left: 10px;">
+          <Label text="Current Platform:" />
+          <Label name="currentPlatformLabel" text="Detecting..." />
+
+          <Label text="Target Frame Rate:" />
+          <PopupField<string> name="targetFramerateDropdown" />
+
+          <Toggle name="batterySaverToggle" text="Battery Saver Mode (Mobile)" />
+
+          <Toggle name="htmlLowBandwidthToggle" text="Optimize for Low Bandwidth (WebGL)" visible="false" />
+        </VisualElement>
+      </Foldout>
+
+      <!-- Performance Settings -->
+      <Foldout name="performanceFoldout" text="Performance Settings" value="true">
+        <VisualElement name="performanceContent" style="padding-left: 10px;">
+          <Label text="Dynamic Resolution Scaling:" />
+          <Toggle name="dynamicResToggle" />
+
+          <Label text="Anisotropic Filtering:" />
+          <PopupField<string> name="anisoFilterDropdown" />
+
+          <Label text="Particle Complexity:" />
+          <PopupField<string> name="particleComplexityDropdown" />
+
+          <Label text="Reflection Quality:" />
+          <PopupField<string> name="reflectionQualityDropdown" />
+        </VisualElement>
+      </Foldout>
+
+      <!-- Online / Network Settings -->
+      <Foldout name="networkFoldout" text="Online & Network" value="true">
+        <VisualElement name="networkContent" style="padding-left: 10px;">
+          <Label text="Preferred Region:" />
+          <PopupField<string> name="regionDropdown" />
+
+          <Label text="NAT Type Detection:" />
+          <Label name="natTypeLabel" text="Testing..." />
+
+          <Label text="Max Ping Threshold:" />
+          <SliderInt name="pingThresholdSlider" lowValue="50" highValue="500" showInputField="true" />
+
+          <Toggle name="matchmakingLogsToggle" text="Enable Matchmaking Logs" />
+        </VisualElement>
+      </Foldout>
+
+      <!-- Debug / Development Settings -->
+      <Foldout name="debugFoldout" text="Developer & Debug Tools" value="false">
+        <VisualElement name="debugContent" style="padding-left: 10px;">
+          <Toggle name="showFPSCounterToggle" text="Show FPS Counter" />
+
+          <Toggle name="enableLoggingToggle" text="Enable Debug Logging" />
+
+          <Toggle name="developerConsoleToggle" text="Enable Developer Console" />
+
+          <Label text="Log Level:" />
+          <PopupField<string> name="logLevelDropdown" />
+
+          <Toggle name="simulateLowMemoryToggle" text="Simulate Low Memory Device" />
+        </VisualElement>
+      </Foldout>
+
+      <!-- Save / Reset Buttons -->
+      <VisualElement name="actionButtons" style="flex-direction: row; justify-content: flex-end; spacing: 10px;">
+        <Button name="saveSettingsButton" text="Save Settings" />
+        <Button name="resetSettingsButton" text="Reset to Default" />
+        <Button name="closeSettingsButton" text="Close" />
+      </VisualElement>
+
+    </VisualElement>
+  </ScrollView>
+</engine:UXML>

@@ -1,0 +1,549 @@
+/* DialogueSystem.uss - Visual Novel style dialogue system for 3D platformer */
+
+/* Main dialogue container */
+.dialogue-root {
+    position: absolute;
+    bottom: 40px;
+    left: 50px;
+    right: 50px;
+    height: 280px;
+    background-color: rgba(20, 20, 30, 0.95);
+    border-radius: 12px;
+    border-width: 3px;
+    border-color: rgb(150, 150, 200);
+    flex-direction: row;
+    padding: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+
+/* Character portrait area */
+.character-portrait-container {
+    width: 180px;
+    height: 100%;
+    margin-right: 15px;
+    flex-direction: column;
+}
+
+.character-portrait-frame {
+    width: 100%;
+    height: 180px;
+    background-color: rgba(40, 40, 60, 0.8);
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgb(120, 120, 160);
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.character-portrait {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(60, 60, 80, 0.6);
+    border-radius: 6px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.character-portrait-placeholder {
+    font-size: 64px;
+    color: rgb(180, 180, 200);
+    -unity-text-align: middle-center;
+}
+
+.character-animation-indicator {
+    width: 100%;
+    height: 30px;
+    background-color: rgba(40, 40, 60, 0.7);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgb(100, 100, 140);
+    align-items: center;
+    justify-content: center;
+}
+
+.animation-status {
+    font-size: 12px;
+    color: rgb(150, 200, 150);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+/* Main dialogue content area */
+.dialogue-content-area {
+    flex: 1;
+    height: 100%;
+    flex-direction: column;
+}
+
+/* Speaker name bar */
+.speaker-name-bar {
+    width: 100%;
+    height: 40px;
+    background-color: rgba(60, 60, 100, 0.8);
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgb(120, 120, 180);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+    margin-bottom: 10px;
+}
+
+.speaker-name {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.speaker-mood-indicator {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(80, 80, 120, 0.6);
+    border-radius: 16px;
+    align-items: center;
+    justify-content: center;
+}
+
+.mood-icon {
+    font-size: 20px;
+    -unity-text-align: middle-center;
+}
+
+/* Dialogue text container */
+.dialogue-text-container {
+    flex: 1;
+    width: 100%;
+    background-color: rgba(30, 30, 50, 0.9);
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgb(100, 100, 140);
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.dialogue-text-scroll {
+    width: 100%;
+    height: 100%;
+}
+
+.dialogue-text {
+    font-size: 14px;
+    color: rgb(240, 240, 255);
+    -unity-font-style: normal;
+    white-space: normal;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    line-height: 1.4;
+    margin: 0;
+    padding: 5px;
+}
+
+.typing-indicator {
+    position: absolute;
+    bottom: 8px;
+    right: 12px;
+    width: 30px;
+    height: 16px;
+    background-color: rgba(80, 80, 120, 0.8);
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+}
+
+.typing-dots {
+    font-size: 12px;
+    color: rgb(200, 200, 255);
+    -unity-text-align: middle-center;
+    animation-name: blink;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+}
+
+/* Dialogue choices */
+.dialogue-choices-container {
+    width: 100%;
+    background-color: rgba(40, 40, 70, 0.9);
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgb(120, 120, 180);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.choices-prompt {
+    font-size: 13px;
+    color: rgb(200, 200, 255);
+    -unity-font-style: bold;
+    margin-bottom: 8px;
+}
+
+.choices-list {
+    flex-direction: column;
+}
+
+.choice-button {
+    width: 100%;
+    height: 32px;
+    background-color: rgba(60, 60, 100, 0.8);
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: rgb(100, 100, 140);
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: normal;
+    margin-bottom: 4px;
+    padding: 4px 8px;
+    transition-duration: 0.2s;
+    -unity-text-align: middle-left;
+}
+
+.choice-button:hover {
+    background-color: rgba(80, 80, 120, 0.9);
+    border-color: rgb(150, 150, 200);
+    scale: 1.02;
+}
+
+.choice-button:active {
+    background-color: rgba(100, 100, 140, 0.9);
+    scale: 0.98;
+}
+
+/* Dialogue controls */
+.dialogue-controls {
+    width: 100%;
+    height: 40px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.continue-button {
+    width: 80px;
+    height: 35px;
+    background-color: rgba(80, 150, 80, 0.8);
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: rgb(120, 200, 120);
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    transition-duration: 0.2s;
+}
+
+.continue-button:hover {
+    background-color: rgba(100, 180, 100, 0.9);
+    border-color: rgb(150, 255, 150);
+}
+
+.skip-button, .history-button, .close-button {
+    width: 60px;
+    height: 30px;
+    background-color: rgba(80, 80, 120, 0.8);
+    border-radius: 6px;
+    border-width: 2px;
+    border-color: rgb(120, 120, 160);
+    font-size: 11px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: normal;
+    transition-duration: 0.2s;
+}
+
+.skip-button:hover, .history-button:hover, .close-button:hover {
+    background-color: rgba(100, 100, 140, 0.9);
+    border-color: rgb(150, 150, 200);
+}
+
+.close-button {
+    background-color: rgba(150, 80, 80, 0.8);
+    border-color: rgb(200, 120, 120);
+}
+
+.close-button:hover {
+    background-color: rgba(180, 100, 100, 0.9);
+    border-color: rgb(255, 150, 150);
+}
+
+/* 3D World connection indicator */
+.world-connection-indicator {
+    position: absolute;
+    top: -20px;
+    right: 20px;
+    width: 100px;
+    height: 20px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.connection-line {
+    width: 60px;
+    height: 2px;
+    background-color: rgb(150, 150, 200);
+    border-radius: 1px;
+    margin-right: 5px;
+}
+
+.distance-indicator {
+    font-size: 10px;
+    color: rgb(180, 180, 220);
+    -unity-font-style: normal;
+    background-color: rgba(40, 40, 60, 0.8);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Dialogue history overlay */
+.dialogue-history-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.history-container {
+    width: 60%;
+    height: 70%;
+    background-color: rgba(30, 30, 50, 0.95);
+    border-radius: 12px;
+    border-width: 3px;
+    border-color: rgb(150, 150, 200);
+    flex-direction: column;
+}
+
+.history-header {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(60, 60, 100, 0.8);
+    border-radius: 8px 8px 0 0;
+    border-bottom-width: 2px;
+    border-bottom-color: rgb(120, 120, 180);
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 15px;
+}
+
+.history-title {
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+}
+
+.history-close-button {
+    width: 30px;
+    height: 30px;
+    background-color: rgba(150, 80, 80, 0.8);
+    border-radius: 15px;
+    border-width: 2px;
+    border-color: rgb(200, 120, 120);
+    font-size: 16px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+}
+
+.history-scroll {
+    flex: 1;
+    padding: 10px;
+}
+
+.history-content {
+    flex-direction: column;
+}
+
+.history-entry {
+    width: 100%;
+    background-color: rgba(40, 40, 70, 0.6);
+    border-radius: 6px;
+    border-width: 1px;
+    border-color: rgb(100, 100, 140);
+    padding: 8px;
+    margin-bottom: 8px;
+    flex-direction: column;
+}
+
+.history-speaker {
+    font-size: 12px;
+    color: rgb(200, 200, 255);
+    -unity-font-style: bold;
+    margin-bottom: 4px;
+}
+
+.history-text {
+    font-size: 11px;
+    color: rgb(220, 220, 240);
+    -unity-font-style: normal;
+    white-space: normal;
+}
+
+/* Speech bubble for 3D world positioning */
+.speech-bubble-container {
+    position: absolute;
+    /* Position will be set dynamically based on 3D character position */
+}
+
+.speech-bubble {
+    background-color: rgba(40, 40, 60, 0.95);
+    border-radius: 12px;
+    border-width: 2px;
+    border-color: rgb(120, 120, 180);
+    padding: 8px 12px;
+    position: relative;
+    max-width: 200px;
+    min-width: 80px;
+}
+
+.bubble-text {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: normal;
+    white-space: normal;
+    -unity-text-align: middle-center;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.bubble-tail {
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    translate: -50% 0;
+    width: 16px;
+    height: 16px;
+    background-color: rgba(40, 40, 60, 0.95);
+    border-left-width: 2px;
+    border-bottom-width: 2px;
+    border-left-color: rgb(120, 120, 180);
+    border-bottom-color: rgb(120, 120, 180);
+    rotate: 45deg;
+}
+
+/* Interaction prompt */
+.interaction-prompt {
+    position: absolute;
+    /* Position will be set dynamically based on NPC position */
+    flex-direction: row;
+    align-items: center;
+    background-color: rgba(40, 40, 60, 0.9);
+    border-radius: 8px;
+    border-width: 2px;
+    border-color: rgb(120, 120, 180);
+    padding: 6px 10px;
+}
+
+.interaction-key {
+    width: 24px;
+    height: 24px;
+    background-color: rgba(80, 80, 120, 0.8);
+    border-radius: 12px;
+    border-width: 1px;
+    border-color: rgb(150, 150, 200);
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    margin-right: 8px;
+}
+
+.interaction-text {
+    font-size: 12px;
+    color: rgb(255, 255, 255);
+    -unity-font-style: normal;
+}
+
+/* Animations */
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    .dialogue-root {
+        left: 20px;
+        right: 20px;
+        height: 240px;
+    }
+    
+    .character-portrait-container {
+        width: 120px;
+    }
+    
+    .character-portrait-frame {
+        height: 120px;
+    }
+    
+    .character-portrait-placeholder {
+        font-size: 48px;
+    }
+    
+    .dialogue-text {
+        font-size: 12px;
+    }
+    
+    .speaker-name {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dialogue-root {
+        left: 10px;
+        right: 10px;
+        height: 200px;
+        flex-direction: column;
+    }
+    
+    .character-portrait-container {
+        width: 100%;
+        height: 60px;
+        flex-direction: row;
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .character-portrait-frame {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+    
+    .character-portrait-placeholder {
+        font-size: 32px;
+    }
+    
+    .character-animation-indicator {
+        flex: 1;
+        height: 60px;
+    }
+    
+    .dialogue-text {
+        font-size: 11px;
+    }
+    
+    .speaker-name {
+        font-size: 12px;
+    }
+    
+    .dialogue-controls {
+        height: 35px;
+    }
+    
+    .continue-button {
+        width: 70px;
+        height: 30px;
+        font-size: 11px;
+    }
+    
+    .skip-button, .history-button, .close-button {
+        width: 50px;
+        height: 25px;
+        font-size: 10px;
+    }
+}

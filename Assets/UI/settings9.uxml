@@ -1,0 +1,153 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/theme.uss?fileID=7433441132597879392&amp;guid=b7c6cef5f2e8c11dcbf047d9d517e8ad&amp;type=3#theme" />
+    <ui:VisualElement name="option-panel" enabled="true" class="option-panel" style="display: flex;">
+        <ui:Label text="Options" name="option-title" class="option-title" />
+        <ui:ScrollView name="option-scroll-view" class="option-scroll-view">
+            <ui:VisualElement name="option-container" class="option-container">
+
+                <!-- Display Settings -->
+                <ui:Label text="Display" name="display-header" class="section-header" />
+
+                <ui:Label text="Screen:" name="screen-label" class="option-label" />
+                <ui:DropdownField name="screen-select" class="option-select" />
+
+                <ui:Label text="Resolution:" name="resolution-label" class="option-label" />
+                <ui:DropdownField name="resolution-select" class="option-select" />
+                <ui:TextField name="resolution-width" class="option-textfield" />
+                <ui:TextField name="resolution-height" class="option-textfield" />
+
+                <ui:Label text="Window Mode:" name="window-mode-label" class="option-label" />
+                <ui:DropdownField name="window-mode-select" class="option-select" />
+
+                <ui:Label text="VSync:" name="vsync-label" class="option-label" />
+                <ui:DropdownField name="vsync-select" class="option-select" />
+
+                <ui:Label text="Anti-Aliasing:" name="aa-label" class="option-label" />
+                <ui:DropdownField name="aa-select" class="option-select" />
+
+                <ui:Label text="Full Screen Mode:" name="fullscreen-mode-label" class="option-label" />
+                <ui:DropdownField name="fullscreen-mode-select" class="option-select" />
+
+                <ui:Label text="HDR:" name="hdr-label" class="option-label" />
+                <ui:Toggle name="hdr-toggle" class="option-toggle" />
+
+                <ui:Label text="Display Number:" name="display-number-label" class="option-label" />
+                <ui:DropdownField name="display-number-select" class="option-select" />
+
+                <!-- Graphics Settings -->
+                <ui:Label text="Graphics" name="graphics-header" class="section-header" />
+
+                <ui:Label text="Graphics Quality:" name="graphics-label" class="option-label" />
+                <ui:DropdownField name="graphics-select" class="option-select" />
+
+                <ui:Label text="Texture Quality:" name="texture-quality-label" class="option-label" />
+                <ui:DropdownField name="texture-quality-select" class="option-select" />
+
+                <ui:Label text="Shadow Quality:" name="shadow-quality-label" class="option-label" />
+                <ui:DropdownField name="shadow-quality-select" class="option-select" />
+
+                <ui:Label text="Anisotropic Filtering:" name="anisotropic-filtering-label" class="option-label" />
+                <ui:DropdownField name="anisotropic-filtering-select" class="option-select" />
+
+                <ui:Label text="Ambient Occlusion:" name="ambient-occlusion-label" class="option-label" />
+                <ui:DropdownField name="ambient-occlusion-select" class="option-select" />
+
+                <ui:Label text="Post Processing:" name="post-processing-label" class="option-label" />
+                <ui:Toggle name="post-processing-toggle" class="option-toggle" />
+
+                <ui:Label text="Render Scale:" name="render-scale-label" class="option-label" />
+                <ui:Slider name="render-scale-slider" lowValue="50" highValue="200" class="option-slider" />
+
+                <!-- Audio Settings -->
+                <ui:Label text="Audio" name="audio-header" class="section-header" />
+
+                <ui:Label text="Master Volume:" name="master-volume-label" class="option-label" />
+                <ui:Slider name="master-volume-slider" lowValue="0" highValue="100" class="option-slider" />
+
+                <ui:Label text="Sound Volume:" name="sound-volume-label" class="option-label" />
+                <ui:Slider name="sound-volume-slider" lowValue="0" highValue="100" class="option-slider" />
+
+                <ui:Label text="Music Volume:" name="music-volume-label" class="option-label" />
+                <ui:Slider name="music-volume-slider" lowValue="0" highValue="100" class="option-slider" />
+
+                <ui:Label text="SFX Volume:" name="sfx-volume-label" class="option-label" />
+                <ui:Slider name="sfx-volume-slider" lowValue="0" highValue="100" class="option-slider" />
+
+                <ui:Label text="Audio Device:" name="audio-device-label" class="option-label" />
+                <ui:DropdownField name="audio-device-select" class="option-select" />
+
+                <ui:Label text="Audio Output:" name="audio-output-label" class="option-label" />
+                <ui:DropdownField name="audio-output-select" class="option-select" />
+
+                <ui:Label text="Dolby Atmos:" name="dolby-atmos-label" class="option-label" />
+                <ui:Toggle name="dolby-atmos-toggle" class="option-toggle" />
+
+                <!-- Input Settings -->
+                <ui:Label text="Input" name="input-header" class="section-header" />
+
+                <ui:Label text="Mouse Sensitivity:" name="mouse-sensitivity-label" class="option-label" />
+                <ui:Slider name="mouse-sensitivity-slider" lowValue="0.1" highValue="5.0" class="option-slider" />
+
+                <ui:Label text="Keyboard Layout:" name="keyboard-layout-label" class="option-label" />
+                <ui:DropdownField name="keyboard-layout-select" class="option-select" />
+
+                <ui:Label text="Controller 1:" name="controller1-header" class="option-subheader" />
+                <ui:Label text="Controller 1 Enabled:" name="controller1-enabled-label" class="option-label" />
+                <ui:Toggle name="controller1-enabled-toggle" class="option-toggle" />
+                <ui:Label text="Controller 1 Type:" name="controller1-type-label" class="option-label" />
+                <ui:DropdownField name="controller1-type-select" class="option-select" />
+
+                <ui:Label text="Controller 2:" name="controller2-header" class="option-subheader" />
+                <ui:Label text="Controller 2 Enabled:" name="controller2-enabled-label" class="option-label" />
+                <ui:Toggle name="controller2-enabled-toggle" class="option-toggle" />
+                <ui:Label text="Controller 2 Type:" name="controller2-type-label" class="option-label" />
+                <ui:DropdownField name="controller2-type-select" class="option-select" />
+
+                <ui:Label text="Invert Mouse Y:" name="invert-mouse-y-label" class="option-label" />
+                <ui:Toggle name="invert-mouse-y-toggle" class="option-toggle" />
+
+                <!-- Network Settings -->
+                <ui:Label text="Network" name="network-header" class="section-header" />
+
+                <ui:Label text="Proxy Enabled:" name="proxy-enabled-label" class="option-label" />
+                <ui:Toggle name="proxy-enabled-toggle" class="option-toggle" />
+                <ui:Label text="Proxy Address:" name="proxy-address-label" class="option-label" />
+                <ui:TextField name="proxy-address-textfield" class="option-textfield" />
+                <ui:Label text="Proxy Port:" name="proxy-port-label" class="option-label" />
+                <ui:TextField name="proxy-port-textfield" class="option-textfield" />
+
+                <!-- Accessibility Settings -->
+                <ui:Label text="Accessibility" name="accessibility-header" class="section-header" />
+
+                <ui:Label text="Colorblind Mode:" name="colorblind-mode-label" class="option-label" />
+                <ui:DropdownField name="colorblind-mode-select" class="option-select" />
+
+                <ui:Label text="Text Size:" name="text-size-label" class="option-label" />
+                <ui:Slider name="text-size-slider" lowValue="0.8" highValue="1.5" class="option-slider" />
+
+                <ui:Label text="Narrator:" name="narrator-label" class="option-label" />
+                <ui:Toggle name="narrator-toggle" class="option-toggle" />
+
+                <!-- Platform Specific Settings -->
+                <ui:Label text="Platform Specific" name="platform-header" class="section-header" />
+
+                <ui:Label text="Android Back Button:" name="android-back-button-label" class="option-label" />
+                <ui:DropdownField name="android-back-button-select" class="option-select" />
+
+                <ui:Label text="HTML5 WebGL Context:" name="html5-webgl-context-label" class="option-label" />
+                <ui:DropdownField name="html5-webgl-context-select" class="option-select" />
+
+                <!-- Advanced Settings -->
+                <ui:Label text="Advanced" name="advanced-header" class="section-header" />
+                <ui:Label text="Developer Mode:" name="developer-mode-label" class="option-label" />
+                <ui:Toggle name="developer-mode-toggle" class="option-toggle" />
+                <ui:Label text="Show FPS:" name="show-fps-label" class="option-label" />
+                <ui:Toggle name="show-fps-toggle" class="option-toggle" />
+
+            </ui:VisualElement>
+        </ui:ScrollView>
+        <ui:Button text="Save" name="save-button" class="menu-button" />
+        <ui:Button text="Back" name="back-button" class="menu-button" />
+        <ui:Label text="Settings will revert in 15 seconds if not confirmed" name="revert-warning" style="display: none;" />
+    </ui:VisualElement>
+</ui:UXML>

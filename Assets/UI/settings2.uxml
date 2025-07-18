@@ -1,0 +1,395 @@
+<!-- SettingsMenu.uxml -->
+<UXML xmlns="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xmlns:vee="UnityEngine.UIElements.Experimental">
+    <Style src="SettingsMenu.uss" />
+
+    <VisualElement name="settings-container">
+        <VisualElement name="header">
+            <Label text="Game Settings" name="title" />
+            <Button name="back-button" text="Back" />
+        </VisualElement>
+
+        <VisualElement name="settings-tabs">
+            <Button name="general-tab" text="General" class="tab-button active-tab" />
+            <Button name="graphics-tab" text="Graphics" class="tab-button" />
+            <Button name="audio-tab" text="Audio" class="tab-button" />
+            <Button name="controls-tab" text="Controls" class="tab-button" />
+            <Button name="platform-tab" text="Platform" class="tab-button" />
+        </VisualElement>
+
+        <!-- General Settings Panel -->
+        <VisualElement name="general-panel" class="settings-panel">
+            <Label text="General Settings" class="panel-title" />
+
+            <VisualElement class="setting-group">
+                <Label text="Language" />
+                <DropdownField name="language-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Subtitles" />
+                <Toggle name="subtitles-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Subtitle Size" />
+                <Slider name="subtitle-size-slider" low-value="8" high-value="24" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Brightness" />
+                <Slider name="brightness-slider" low-value="0" high-value="100" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Enable Tutorials" />
+                <Toggle name="tutorials-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Enable Notifications" />
+                <Toggle name="notifications-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Data Collection" />
+                <Toggle name="data-collection-toggle" />
+                <Label text="Allow anonymous data collection to improve the game" class="description" />
+            </VisualElement>
+
+            <Button name="reset-general-button" text="Reset to Defaults" class="reset-button" />
+        </VisualElement>
+
+        <!-- Graphics Settings Panel -->
+        <VisualElement name="graphics-panel" class="settings-panel hidden">
+            <Label text="Graphics Settings" class="panel-title" />
+
+            <VisualElement class="setting-group">
+                <Label text="Graphics Quality" />
+                <DropdownField name="graphics-quality-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Resolution" />
+                <DropdownField name="resolution-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Fullscreen Mode" />
+                <DropdownField name="fullscreen-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="VSync" />
+                <Toggle name="vsync-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Anti-Aliasing" />
+                <DropdownField name="anti-aliasing-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Texture Quality" />
+                <DropdownField name="texture-quality-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Shadow Quality" />
+                <DropdownField name="shadow-quality-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Shadow Distance" />
+                <Slider name="shadow-distance-slider" low-value="0" high-value="100" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Render Scale" />
+                <Slider name="render-scale-slider" low-value="50" high-value="200" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Motion Blur" />
+                <Toggle name="motion-blur-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Bloom" />
+                <Toggle name="bloom-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Depth of Field" />
+                <Toggle name="dof-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Ambient Occlusion" />
+                <Toggle name="ao-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Screen Space Reflections" />
+                <Toggle name="ssr-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="FPS Limit" />
+                <Slider name="fps-limit-slider" low-value="30" high-value="240" show-input-field="true" />
+            </VisualElement>
+
+            <Button name="reset-graphics-button" text="Reset to Defaults" class="reset-button" />
+        </VisualElement>
+
+        <!-- Audio Settings Panel -->
+        <VisualElement name="audio-panel" class="settings-panel hidden">
+            <Label text="Audio Settings" class="panel-title" />
+
+            <VisualElement class="setting-group">
+                <Label text="Master Volume" />
+                <Slider name="master-volume-slider" low-value="0" high-value="100" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Music Volume" />
+                <Slider name="music-volume-slider" low-value="0" high-value="100" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="SFX Volume" />
+                <Slider name="sfx-volume-slider" low-value="0" high-value="100" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Voice Volume" />
+                <Slider name="voice-volume-slider" low-value="0" high-value="100" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="UI Volume" />
+                <Slider name="ui-volume-slider" low-value="0" high-value="100" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Dynamic Range" />
+                <DropdownField name="dynamic-range-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Audio Output Device" />
+                <DropdownField name="audio-device-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="3D Audio" />
+                <Toggle name="3d-audio-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="HRTF" />
+                <Toggle name="hrtf-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Audio Ducking" />
+                <Toggle name="audio-ducking-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Subtitle Audio Indicators" />
+                <Toggle name="subtitle-audio-indicators-toggle" />
+            </VisualElement>
+
+            <Button name="reset-audio-button" text="Reset to Defaults" class="reset-button" />
+        </VisualElement>
+
+        <!-- Controls Settings Panel -->
+        <VisualElement name="controls-panel" class="settings-panel hidden">
+            <Label text="Controls Settings" class="panel-title" />
+
+            <VisualElement class="setting-group">
+                <Label text="Input Device" />
+                <DropdownField name="input-device-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Control Scheme" />
+                <DropdownField name="control-scheme-dropdown" class="dropdown" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Mouse Sensitivity" />
+                <Slider name="mouse-sensitivity-slider" low-value="0.1" high-value="5" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Controller Sensitivity" />
+                <Slider name="controller-sensitivity-slider" low-value="0.1" high-value="5" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Invert Y-Axis" />
+                <Toggle name="invert-y-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Invert X-Axis" />
+                <Toggle name="invert-x-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Vibration" />
+                <Toggle name="vibration-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Vibration Intensity" />
+                <Slider name="vibration-intensity-slider" low-value="0" high-value="100" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Controller Deadzone" />
+                <Slider name="controller-deadzone-slider" low-value="0" high-value="1" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Mouse Acceleration" />
+                <Toggle name="mouse-acceleration-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Mouse Smoothing" />
+                <Toggle name="mouse-smoothing-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Touch Controls" />
+                <Toggle name="touch-controls-toggle" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Touch Control Size" />
+                <Slider name="touch-control-size-slider" low-value="0.5" high-value="2" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Touch Control Opacity" />
+                <Slider name="touch-control-opacity-slider" low-value="0" high-value="1" show-input-field="true" />
+            </VisualElement>
+
+            <VisualElement class="setting-group">
+                <Label text="Key Bindings" />
+                <Button name="key-bindings-button" text="Configure Key Bindings" />
+            </VisualElement>
+
+            <Button name="reset-controls-button" text="Reset to Defaults" class="reset-button" />
+        </VisualElement>
+
+        <!-- Platform Settings Panel -->
+        <VisualElement name="platform-panel" class="settings-panel hidden">
+            <Label text="Platform Settings" class="panel-title" />
+
+            <VisualElement class="setting-group">
+                <Label text="Platform Specific Settings" />
+                <Label text="These settings are specific to your current platform" class="description" />
+            </VisualElement>
+
+            <!-- Windows Specific -->
+            <VisualElement name="windows-settings" class="platform-specific hidden">
+                <Label text="Windows Settings" class="sub-panel-title" />
+
+                <VisualElement class="setting-group">
+                    <Label text="DPI Scaling" />
+                    <Toggle name="dpi-scaling-toggle" />
+                </VisualElement>
+
+                <VisualElement class="setting-group">
+                    <Label text="Hardware Acceleration" />
+                    <Toggle name="hardware-acceleration-toggle" />
+                </VisualElement>
+
+                <VisualElement class="setting-group">
+                    <Label text="Game Bar Integration" />
+                    <Toggle name="game-bar-toggle" />
+                </VisualElement>
+            </VisualElement>
+
+            <!-- Mac Specific -->
+            <VisualElement name="mac-settings" class="platform-specific hidden">
+                <Label text="Mac Settings" class="sub-panel-title" />
+
+                <VisualElement class="setting-group">
+                    <Label text="Retina Display Mode" />
+                    <DropdownField name="retina-mode-dropdown" class="dropdown" />
+                </VisualElement>
+
+                <VisualElement class="setting-group">
+                    <Label text="Metal API Validation" />
+                    <Toggle name="metal-validation-toggle" />
+                </VisualElement>
+            </VisualElement>
+
+            <!-- Linux Specific -->
+            <VisualElement name="linux-settings" class="platform-specific hidden">
+                <Label text="Linux Settings" class="sub-panel-title" />
+
+                <VisualElement class="setting-group">
+                    <Label text="Vulkan Validation" />
+                    <Toggle name="vulkan-validation-toggle" />
+                </VisualElement>
+
+                <VisualElement class="setting-group">
+                    <Label text="X11/Wayland" />
+                    <DropdownField name="display-server-dropdown" class="dropdown" />
+                </VisualElement>
+            </VisualElement>
+
+            <!-- Android Specific -->
+            <VisualElement name="android-settings" class="platform-specific hidden">
+                <Label text="Android Settings" class="sub-panel-title" />
+
+                <VisualElement class="setting-group">
+                    <Label text="Battery Optimization" />
+                    <Toggle name="battery-optimization-toggle" />
+                </VisualElement>
+
+                <VisualElement class="setting-group">
+                    <Label text="Performance Mode" />
+                    <DropdownField name="performance-mode-dropdown" class="dropdown" />
+                </VisualElement>
+
+                <VisualElement class="setting-group">
+                    <Label text="Install Location" />
+                    <DropdownField name="install-location-dropdown" class="dropdown" />
+                </VisualElement>
+            </VisualElement>
+
+            <!-- WebGL Specific -->
+            <VisualElement name="webgl-settings" class="platform-specific hidden">
+                <Label text="WebGL Settings" class="sub-panel-title" />
+
+                <VisualElement class="setting-group">
+                    <Label text="Browser Notifications" />
+                    <Toggle name="browser-notifications-toggle" />
+                </VisualElement>
+
+                <VisualElement class="setting-group">
+                    <Label text="WebGL Compression" />
+                    <DropdownField name="webgl-compression-dropdown" class="dropdown" />
+                </VisualElement>
+
+                <VisualElement class="setting-group">
+                    <Label text="Memory Size" />
+                    <Slider name="memory-size-slider" low-value="256" high-value="4096" show-input-field="true" />
+                </VisualElement>
+            </VisualElement>
+
+            <Button name="reset-platform-button" text="Reset to Defaults" class="reset-button" />
+        </VisualElement>
+
+        <VisualElement name="footer">
+            <Button name="apply-button" text="Apply" class="action-button" />
+            <Button name="cancel-button" text="Cancel" class="action-button" />
+        </VisualElement>
+    </VisualElement>
+</UXML>

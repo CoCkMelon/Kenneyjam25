@@ -1,0 +1,40 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI%20Toolkit/theme.uss?fileID=7433441132597879392&amp;guid=b7c6cef5f2e8c11dcbf047d9d517e8ad&amp;type=3#theme" />
+    <ui:VisualElement name="option-panel" enabled="true" class="option-panel" style="display: flex;">
+        <ui:Label text="Options" name="option-title" class="option-title" />
+        <ui:ScrollView name="option-scroll-view" class="option-scroll-view">
+            <ui:VisualElement name="option-container" class="option-container">
+                <ui:Label text="Screen:" name="screen-label" class="option-label" />
+                <ui:DropdownField name="screen-select" class="option-select" />
+                <ui:Label text="Resolution:" name="resolution-label" class="option-label" />
+                <ui:DropdownField name="resolution-select" class="option-select" />
+                <ui:TextField name="resolution-width" class="option-textfield" />
+                <ui:TextField name="resolution-height" class="option-textfield" />
+                <ui:Label text="Window Mode:" name="window-mode-label" class="option-label" />
+                <ui:DropdownField name="window-mode-select" class="option-select" />
+                <ui:Label text="VSync:" name="vsync-label" class="option-label" />
+                <ui:DropdownField name="vsync-select" class="option-select" />
+                <ui:Label text="Anti-Aliasing:" name="aa-label" class="option-label" />
+                <ui:DropdownField name="aa-select" class="option-select" />
+                <ui:Label text="Graphics Quality:" name="graphics-label" class="option-label" />
+                <ui:DropdownField name="graphics-select" class="option-select" />
+                <ui:Label text="Camera Smoothing:" name="camsmooth-label" class="option-label" />
+                <ui:Toggle name="camsmooth-toggle" class="option-toggle" />
+                <ui:Label text="Onscreen Controls:" name="virtjoy-label" class="option-label" />
+                <ui:DropdownField name="virtjoy-select" class="option-select" />
+                <ui:Label text="Sound Volume:" name="sound-volume-label" class="option-label" />
+                <ui:Slider name="sound-volume-slider" lowValue="0" highValue="100" class="option-slider" />
+                <ui:Label text="Music Volume:" name="music-volume-label" class="option-label" />
+                <ui:Slider name="music-volume-slider" lowValue="0" highValue="100" class="option-slider" />
+                <ui:Label text="Developer Mode:" name="developer-mode-label" class="option-label" />
+                <ui:Toggle name="developer-mode-toggle" class="option-toggle" />
+                <ui:Label text="Show FPS:" name="show-fps-label" class="option-label" />
+                <ui:Toggle name="show-fps-toggle" class="option-toggle" />
+                <ui:Button text="Reset settings" name="options-reset-button" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&amp;guid=8d6fd52a67ef150078db5d1e66b1f04b&amp;type=3#pixelplay&quot;);" />
+            </ui:VisualElement>
+        </ui:ScrollView>
+        <ui:Button text="Save" name="save-button" class="menu-button" />
+        <ui:Button text="Back" name="back-button" class="menu-button" />
+        <ui:Label text="Settings will revert in 15 seconds if not confirmed" name="revert-warning" style="display: none;" />
+    </ui:VisualElement>
+</ui:UXML>

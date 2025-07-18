@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:engine="UnityEngine.UIElements">
+    <!--
+        Exhaustive Settings Menu
+        - Tabbed interface for organization.
+        - Scrollable content for each category.
+        - Compact row-based layout.
+        - Platform-specific attributes (e.g., platform="pc") to be parsed by C#
+          to show/hide elements based on the target platform.
+    -->
+    <ui:VisualElement name="SettingsMenu" class="settings-menu-container">
+
+        <!-- HEADER -->
+        <ui:Label text="Settings" name="title" class="title-label" />
+
+        <!-- TAB BUTTONS -->
+        <ui:VisualElement name="TabContainer" class="tab-container">
+            <ui:Button text="Graphics" name="GraphicsTabButton" class="tab-button tab-button--active" />
+            <ui:Button text="Audio" name="AudioTabButton" class="tab-button" />
+            <ui:Button text="Controls" name="ControlsTabButton" class="tab-button" />
+            <ui:Button text="Gameplay" name="GameplayTabButton" class="tab-button" />
+        </ui:VisualElement>
+
+        <!-- CONTENT AREA (One panel visible at a time) -->
+        <ui:VisualElement name="ContentArea" class="content-area">
+
+            <!-- =============================================================================== -->
+            <!-- GRAPHICS SETTINGS PANEL -->
+            <!-- =============================================================================== -->
+            <ui:VisualElement name="GraphicsSettings" class="settings-panel">
+                <ui:ScrollView>
+                    <!-- Display Settings -->
+                    <ui:Label text="Display" class="category-header" platform="pc" />
+                    <ui:VisualElement class="setting-row" platform="pc">
+                        <ui:Label text="Display Monitor" class="setting-label" />
+                        <ui:DropdownField name="DisplayMonitorDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row" platform="pc">
+                        <ui:Label text="Window Mode" class="setting-label" />
+                        <ui:DropdownField name="WindowModeDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row" platform="pc web">
+                        <ui:Label text="Resolution" class="setting-label" />
+                        <ui:DropdownField name="ResolutionDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row" platform="pc">
+                        <ui:Label text="Refresh Rate" class="setting-label" />
+                        <ui:DropdownField name="RefreshRateDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="V-Sync" class="setting-label" />
+                        <ui:DropdownField name="VSyncDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Framerate Limit" class="setting-label" />
+                        <ui:SliderInt name="FramerateLimitSlider" class="setting-control" low-value="30" high-value="240" />
+                    </ui:VisualElement>
+
+                    <!-- Quality Settings -->
+                    <ui:Label text="Quality" class="category-header" />
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Quality Preset" class="setting-label" />
+                        <ui:DropdownField name="QualityPresetDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Texture Quality" class="setting-label" />
+                        <ui:DropdownField name="TextureQualityDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Shadow Quality" class="setting-label" />
+                        <ui:DropdownField name="ShadowQualityDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Anti-Aliasing (AA)" class="setting-label" />
+                        <ui:DropdownField name="AntiAliasingDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Post-Processing" tooltip="Effects like bloom and color correction." class="setting-label" />
+                        <ui:Toggle name="PostProcessingToggle" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Motion Blur" class="setting-label" />
+                        <ui:Toggle name="MotionBlurToggle" class="setting-control" />
+                    </ui:VisualElement>
+
+                    <!-- Accessibility & Other -->
+                    <ui:Label text="Accessibility" class="category-header" />
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Brightness" class="setting-label" />
+                        <ui:Slider name="BrightnessSlider" class="setting-control" low-value="0.5" high-value="1.5" value="1.0" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="UI Scale" class="setting-label" />
+                        <ui:Slider name="UIScaleSlider" class="setting-control" low-value="0.8" high-value="1.5" value="1.0" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Colorblind Mode" class="setting-label" />
+                        <ui:DropdownField name="ColorblindModeDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </ui:VisualElement>
+
+            <!-- =============================================================================== -->
+            <!-- AUDIO SETTINGS PANEL -->
+            <!-- =============================================================================== -->
+            <ui:VisualElement name="AudioSettings" class="settings-panel" style="display: none;">
+                <ui:ScrollView>
+                    <!-- Volume -->
+                    <ui:Label text="Volume" class="category-header" />
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Master Volume" class="setting-label" />
+                        <ui:SliderInt name="MasterVolumeSlider" class="setting-control" low-value="0" high-value="100" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Music" class="setting-label" />
+                        <ui:SliderInt name="MusicVolumeSlider" class="setting-control" low-value="0" high-value="100" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Sound Effects (SFX)" class="setting-label" />
+                        <ui:SliderInt name="SFXVolumeSlider" class="setting-control" low-value="0" high-value="100" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Dialogue" class="setting-label" />
+                        <ui:SliderInt name="DialogueVolumeSlider" class="setting-control" low-value="0" high-value="100" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="UI Sounds" class="setting-label" />
+                        <ui:SliderInt name="UIVolumeSlider" class="setting-control" low-value="0" high-value="100" />
+                    </ui:VisualElement>
+
+                    <!-- Output -->
+                    <ui:Label text="Output" class="category-header" />
+                    <ui:VisualElement class="setting-row" platform="pc">
+                        <ui:Label text="Output Device" class="setting-label" />
+                        <ui:DropdownField name="AudioOutputDeviceDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row" platform="pc">
+                        <ui:Label text="Speaker Configuration" class="setting-label" />
+                        <ui:DropdownField name="SpeakerConfigDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row" platform="pc web">
+                        <ui:Label text="Mute in Background" class="setting-label" />
+                        <ui:Toggle name="MuteInBackgroundToggle" class="setting-control" />
+                    </ui:VisualElement>
+
+                    <!-- Subtitles -->
+                    <ui:Label text="Subtitles" class="category-header" />
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Enable Subtitles" class="setting-label" />
+                        <ui:Toggle name="SubtitlesEnabledToggle" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Subtitle Size" class="setting-label" />
+                        <ui:DropdownField name="SubtitleSizeDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Subtitle Background" class="setting-label" />
+                        <ui:Toggle name="SubtitleBackgroundToggle" class="setting-control" />
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </ui:VisualElement>
+
+            <!-- =============================================================================== -->
+            <!-- CONTROLS SETTINGS PANEL -->
+            <!-- =============================================================================== -->
+            <ui:VisualElement name="ControlsSettings" class="settings-panel" style="display: none;">
+                <ui:ScrollView>
+                    <!-- Mouse & Keyboard (PC-only) -->
+                    <ui:VisualElement name="PCControls" platform="pc web">
+                        <ui:Label text="Mouse &amp; Keyboard" class="category-header" />
+                        <ui:VisualElement class="setting-row">
+                            <ui:Label text="Mouse Sensitivity" class="setting-label" />
+                            <ui:Slider name="MouseSensitivitySlider" class="setting-control" low-value="0.1" high-value="10" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="setting-row">
+                            <ui:Label text="Invert Mouse Y-Axis" class="setting-label" />
+                            <ui:Toggle name="MouseInvertYToggle" class="setting-control" />
+                        </ui:VisualElement>
+                        <ui:Label text="Key Bindings" class="category-header" />
+                        <ui:VisualElement name="KeyBindingContainer">
+                            <!-- C# will populate this area with key-binding-row elements -->
+                            <ui:Label text="Loading..." style="unity-text-align: center;" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+
+                    <!-- Controller -->
+                    <ui:VisualElement name="ControllerControls" platform="pc mobile">
+                        <ui:Label text="Controller" class="category-header" />
+                        <ui:VisualElement class="setting-row">
+                            <ui:Label text="Controller Sensitivity (X)" class="setting-label" />
+                            <ui:Slider name="ControllerSensitivityXSlider" class="setting-control" low-value="0.1" high-value="10" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="setting-row">
+                            <ui:Label text="Controller Sensitivity (Y)" class="setting-label" />
+                            <ui:Slider name="ControllerSensitivityYSlider" class="setting-control" low-value="0.1" high-value="10" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="setting-row">
+                            <ui:Label text="Invert Controller Y-Axis" class="setting-label" />
+                            <ui:Toggle name="ControllerInvertYToggle" class="setting-control" />
+                        </ui:VisualElement>
+                        <ui:VisualElement class="setting-row">
+                            <ui:Label text="Vibration / Haptics" class="setting-label" />
+                            <ui:Toggle name="ControllerVibrationToggle" class="setting-control" />
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+
+                    <!-- Touch (Mobile-only) -->
+                    <ui:VisualElement name="MobileControls" platform="mobile">
+                        <ui:Label text="Touch Controls" class="category-header" />
+                         <ui:VisualElement class="setting-row">
+                            <ui:Label text="Touch Sensitivity" class="setting-label" />
+                            <ui:Slider name="TouchSensitivitySlider" class="setting-control" low-value="0.1" high-value="5" />
+                        </ui:VisualElement>
+                        <ui:Button name="CustomizeTouchLayoutButton" text="Customize On-Screen Controls" class="full-width-button" />
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </ui:VisualElement>
+
+            <!-- =============================================================================== -->
+            <!-- GAMEPLAY & ACCESSIBILITY SETTINGS PANEL -->
+            <!-- =============================================================================== -->
+            <ui:VisualElement name="GameplaySettings" class="settings-panel" style="display: none;">
+                <ui:ScrollView>
+                    <!-- Gameplay -->
+                    <ui:Label text="Gameplay" class="category-header" />
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Language" class="setting-label" />
+                        <ui:DropdownField name="LanguageDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Difficulty" class="setting-label" />
+                        <ui:DropdownField name="DifficultyDropdown" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Show Tutorials" class="setting-label" />
+                        <ui:Toggle name="ShowTutorialsToggle" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Camera Shake" class="setting-label" />
+                        <ui:Toggle name="CameraShakeToggle" class="setting-control" />
+                    </ui:VisualElement>
+
+                    <!-- Accessibility -->
+                    <ui:Label text="Accessibility" class="category-header" />
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Reduce Flashing Effects" tooltip="Important for players with photosensitive epilepsy." class="setting-label" />
+                        <ui:Toggle name="ReduceFlashingToggle" class="setting-control" />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="Aim Action" class="setting-label" />
+                        <ui:DropdownField name="AimActionDropdown" class="setting-control" tooltip="Choose between holding or toggling the aim button." />
+                    </ui:VisualElement>
+                    <ui:VisualElement class="setting-row">
+                        <ui:Label text="UI Text-to-Speech" tooltip="Reads UI elements aloud." class="setting-label" />
+                        <ui:Toggle name="TextToSpeechToggle" class="setting-control" />
+                    </ui:VisualElement>
+                </ui:ScrollView>
+            </ui:VisualElement>
+
+        </ui:VisualElement>
+
+        <!-- FOOTER -->
+        <ui:VisualElement name="Footer" class="footer-container">
+            <ui:Label name="RevertWarningLabel" class="revert-warning" text="Applying new graphics settings... Reverting in 15s." style="display: none;" />
+            <ui:VisualElement name="FooterButtons" class="footer-buttons">
+                <ui:Button text="Reset to Defaults" name="ResetButton" class="button--secondary" />
+                <ui:VisualElement style="flex-grow: 1;" /> <!-- Spacer -->
+                <ui:Button text="Back" name="BackButton" class="button--secondary" />
+                <ui:Button text="Apply" name="ApplyButton" class="button--primary" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+
+    </ui:VisualElement>
+</ui:UXML>

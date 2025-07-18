@@ -1,0 +1,130 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/GameHUD.uss?fileID=7433441132597879392&amp;guid=9f9e7a998b356b1368191af6695ccab7&amp;type=3#GameHUD" />
+    <ui:VisualElement name="hud-root" class="hud-root">
+        <ui:VisualElement name="health-container" class="health-container">
+            <ui:VisualElement name="health-bar-bg" class="health-bar-bg">
+                <ui:VisualElement name="health-bar-fill" class="health-bar-fill" />
+            </ui:VisualElement>
+            <ui:Label name="health-text" text="100/100" class="health-text" />
+        </ui:VisualElement>
+        <ui:VisualElement name="stats-panel" class="stats-panel">
+            <ui:Label name="stats-title" text="Stats" class="stats-title" />
+            <ui:VisualElement name="stats-content" class="stats-content">
+                <ui:Label name="level-text" text="Level: 1" class="stat-label" />
+                <ui:Label name="attack-text" text="ATK: 10" class="stat-label" />
+                <ui:Label name="defense-text" text="DEF: 5" class="stat-label" />
+                <ui:Label name="speed-text" text="SPD: 8" class="stat-label" />
+                <ui:Label name="currency-text" text="Gold: 0" class="stat-label" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="inventory-quick-access" class="inventory-quick-access">
+            <ui:Label name="inventory-title" text="Inventory" class="inventory-title" />
+            <ui:VisualElement name="quick-slots" class="quick-slots">
+                <ui:VisualElement name="quick-slot-1" class="quick-slot">
+                    <ui:Label name="slot-1-icon" text="⚔️" class="slot-icon" />
+                    <ui:Label name="slot-1-key" text="1" class="slot-key" />
+                </ui:VisualElement>
+                <ui:VisualElement name="quick-slot-2" class="quick-slot">
+                    <ui:Label name="slot-2-icon" text="🛡️" class="slot-icon" />
+                    <ui:Label name="slot-2-key" text="2" class="slot-key" />
+                </ui:VisualElement>
+                <ui:VisualElement name="quick-slot-3" class="quick-slot">
+                    <ui:Label name="slot-3-icon" text="🏹" class="slot-icon" />
+                    <ui:Label name="slot-3-key" text="3" class="slot-key" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:Button name="inventory-button" text="I" class="inventory-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="status-area" class="status-area">
+            <ui:Label name="fps-counter" text="FPS: 60" class="fps-counter" />
+            <ui:Label name="debug-info" class="debug-info" />
+        </ui:VisualElement>
+        <ui:VisualElement name="top-bar" class="top-bar">
+            <ui:Button name="pause-button" text="⏸" focusable="false" class="pause-button" />
+        </ui:VisualElement>
+        <ui:VisualElement name="mobile-controls" class="mobile-controls" style="top: 216px;">
+            <ui:VisualElement name="virtual-joystick-area" class="virtual-joystick-area">
+                <ui:VisualElement name="dpad-container" class="dpad-container">
+                    <ui:Button name="dpad-up" text="↑" class="dpad-button dpad-up" />
+                    <ui:VisualElement name="dpad-middle-row" class="dpad-middle-row">
+                        <ui:Button name="dpad-left" text="←" class="dpad-button dpad-left" />
+                        <ui:VisualElement name="dpad-center" class="dpad-center" />
+                        <ui:Button name="dpad-right" text="→" class="dpad-button dpad-right" />
+                    </ui:VisualElement>
+                    <ui:Button name="dpad-down" text="↓" class="dpad-button dpad-down" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="action-buttons-area" class="action-buttons-area">
+                <ui:Button name="action-button-a" text="A" class="action-button action-button-a" />
+                <ui:Button name="action-button-b" text="B" class="action-button action-button-b" />
+                <ui:Button name="action-button-x" text="X" class="action-button action-button-x" />
+                <ui:Button name="action-button-y" text="Y" class="action-button action-button-y" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="dialogue-root" class="dialogue-root" style="display: flex; width: auto; margin-left: 10%; margin-right: 10%; max-width: 2000px; min-width: 600px;">
+            <ui:VisualElement name="character-portrait-container" class="character-portrait-container">
+                <ui:VisualElement name="character-portrait-frame" class="character-portrait-frame">
+                    <ui:VisualElement name="character-portrait" class="character-portrait">
+                        <ui:Label name="character-portrait-placeholder" text="👤" class="character-portrait-placeholder" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="character-animation-indicator" class="character-animation-indicator">
+                    <ui:Label name="animation-status" text="idle" class="animation-status" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="dialogue-content-area" class="dialogue-content-area">
+                <ui:VisualElement name="speaker-name-bar" class="speaker-name-bar">
+                    <ui:Label name="speaker-name" text="Character Name" class="speaker-name" />
+                    <ui:VisualElement name="speaker-mood-indicator" class="speaker-mood-indicator">
+                        <ui:Label name="mood-icon" text="😊" class="mood-icon" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="dialogue-text-container" class="dialogue-text-container">
+                    <ui:ScrollView name="dialogue-text-scroll" class="dialogue-text-scroll">
+                        <ui:Label name="dialogue-text" text="This is where the dialogue text will appear. It supports multiple lines and can be quite long..." class="dialogue-text" />
+                    </ui:ScrollView>
+                    <ui:VisualElement name="typing-indicator" class="typing-indicator">
+                        <ui:Label name="typing-dots" text="..." class="typing-dots" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="dialogue-choices-container" class="dialogue-choices-container" style="display: none;">
+                    <ui:Label name="choices-prompt" text="Choose your response:" class="choices-prompt" />
+                    <ui:VisualElement name="choices-list" class="choices-list" />
+                </ui:VisualElement>
+                <ui:VisualElement name="dialogue-controls" class="dialogue-controls">
+                    <ui:Button name="continue-button" text="Continue" class="continue-button" />
+                    <ui:Button name="skip-button" text="Skip" class="skip-button" />
+                    <ui:Button name="history-button" text="History" class="history-button" />
+                    <ui:Button name="close-button" text="Close" class="close-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="world-connection-indicator" class="world-connection-indicator">
+                <ui:VisualElement name="connection-line" class="connection-line" />
+                <ui:Label name="distance-indicator" text="12m" class="distance-indicator" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="inventory-overlay" class="inventory-overlay" style="display: none;" />
+        <ui:VisualElement name="quest-tracker-overlay" class="quest-tracker-overlay" style="display: none;" />
+        <ui:VisualElement name="dialogue-history-overlay" class="dialogue-history-overlay" style="display: none;">
+            <ui:VisualElement name="history-container" class="history-container">
+                <ui:VisualElement name="history-header" class="history-header">
+                    <ui:Label name="history-title" text="Dialogue History" class="history-title" />
+                    <ui:Button name="history-close-button" text="×" class="history-close-button" />
+                </ui:VisualElement>
+                <ui:ScrollView name="history-scroll" class="history-scroll">
+                    <ui:VisualElement name="history-content" class="history-content" />
+                </ui:ScrollView>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="speech-bubble-container" class="speech-bubble-container" style="display: none;">
+            <ui:VisualElement name="speech-bubble" class="speech-bubble">
+                <ui:Label name="bubble-text" text="Hello there!" class="bubble-text" />
+                <ui:VisualElement name="bubble-tail" class="bubble-tail" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="interaction-prompt" class="interaction-prompt" style="display: none;">
+            <ui:Label name="interaction-key" text="E" class="interaction-key" />
+            <ui:Label name="interaction-text" text="Talk" class="interaction-text" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

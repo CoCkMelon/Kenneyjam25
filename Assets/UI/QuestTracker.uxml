@@ -1,0 +1,102 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="quest-tracker-container" style="flex-grow: 1; position: absolute; top: 20px; right: 20px; width: 350px; max-height: 600px; background-color: rgba(0, 0, 0, 0.8); border-radius: 10px; padding: 15px;">
+        
+        <!-- Header -->
+        <ui:VisualElement name="header" style="flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 15px; border-bottom-width: 2px; border-bottom-color: rgba(255, 255, 255, 0.3); padding-bottom: 10px;">
+            <ui:Label text="Quest Tracker" name="title" style="font-size: 18px; color: rgb(255, 255, 255); font-weight: bold; -unity-font-style: bold;" />
+            <ui:Button name="toggle-button" text="─" style="width: 30px; height: 30px; background-color: rgba(255, 255, 255, 0.2); border-radius: 15px; font-size: 16px; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+        
+        <!-- Quest List Container -->
+        <ui:VisualElement name="quest-list-container" style="flex-grow: 1; max-height: 500px;">
+            <ui:ScrollView name="quest-scroll-view" style="flex-grow: 1;">
+                
+                <!-- Active Quests Section -->
+                <ui:VisualElement name="active-quests-section" style="margin-bottom: 20px;">
+                    <ui:Label text="Active Quests" name="active-quests-header" style="font-size: 14px; color: rgb(255, 215, 0); font-weight: bold; margin-bottom: 10px; -unity-font-style: bold;" />
+                    
+                    <!-- Active Quest Item Template -->
+                    <ui:VisualElement name="active-quest-item" class="quest-item" style="background-color: rgba(0, 100, 200, 0.3); border-radius: 8px; padding: 12px; margin-bottom: 10px; border-left-width: 4px; border-left-color: rgb(0, 150, 255);">
+                        <ui:VisualElement name="quest-header" style="flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                            <ui:Label text="Quest Title" name="quest-title" style="font-size: 14px; color: rgb(255, 255, 255); font-weight: bold; flex-grow: 1; -unity-font-style: bold;" />
+                            <ui:Label text="Level 5" name="quest-level" style="font-size: 12px; color: rgb(255, 215, 0); background-color: rgba(255, 215, 0, 0.2); padding: 2px 6px; border-radius: 10px;" />
+                        </ui:VisualElement>
+                        
+                        <ui:Label text="Quest description goes here..." name="quest-description" style="font-size: 12px; color: rgb(200, 200, 200); margin-bottom: 8px; white-space: normal;" />
+                        
+                        <!-- Progress Bar -->
+                        <ui:VisualElement name="progress-container" style="margin-bottom: 8px;">
+                            <ui:VisualElement name="progress-bar-bg" style="height: 6px; background-color: rgba(255, 255, 255, 0.2); border-radius: 3px; margin-bottom: 4px;">
+                                <ui:VisualElement name="progress-bar-fill" style="height: 100%; background-color: rgb(0, 255, 0); border-radius: 3px; width: 60%;" />
+                            </ui:VisualElement>
+                            <ui:Label text="3/5 completed" name="progress-text" style="font-size: 11px; color: rgb(180, 180, 180);" />
+                        </ui:VisualElement>
+                        
+                        <!-- Objectives -->
+                        <ui:VisualElement name="objectives-container">
+                            <ui:VisualElement name="objective-item" style="flex-direction: row; align-items: center; margin-bottom: 4px;">
+                                <ui:Label text="✓" name="objective-status" style="font-size: 12px; color: rgb(0, 255, 0); margin-right: 6px; width: 15px;" />
+                                <ui:Label text="Collect 10 herbs" name="objective-text" style="font-size: 11px; color: rgb(180, 180, 180); flex-grow: 1;" />
+                            </ui:VisualElement>
+                            <ui:VisualElement name="objective-item" style="flex-direction: row; align-items: center; margin-bottom: 4px;">
+                                <ui:Label text="○" name="objective-status" style="font-size: 12px; color: rgb(120, 120, 120); margin-right: 6px; width: 15px;" />
+                                <ui:Label text="Return to NPC" name="objective-text" style="font-size: 11px; color: rgb(120, 120, 120); flex-grow: 1;" />
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                        
+                        <!-- Rewards Preview -->
+                        <ui:VisualElement name="rewards-container" style="flex-direction: row; margin-top: 8px; padding-top: 8px; border-top-width: 1px; border-top-color: rgba(255, 255, 255, 0.2);">
+                            <ui:Label text="Rewards:" name="rewards-label" style="font-size: 11px; color: rgb(255, 215, 0); margin-right: 8px;" />
+                            <ui:VisualElement name="rewards-list" style="flex-direction: row; flex-wrap: wrap;">
+                                <ui:VisualElement name="reward-item" style="flex-direction: row; align-items: center; margin-right: 12px;">
+                                    <ui:Label text="💰" name="reward-icon" style="font-size: 12px; margin-right: 4px;" />
+                                    <ui:Label text="100 XP" name="reward-text" style="font-size: 11px; color: rgb(180, 180, 180);" />
+                                </ui:VisualElement>
+                                <ui:VisualElement name="reward-item" style="flex-direction: row; align-items: center;">
+                                    <ui:Label text="💎" name="reward-icon" style="font-size: 12px; margin-right: 4px;" />
+                                    <ui:Label text="50 Gold" name="reward-text" style="font-size: 11px; color: rgb(180, 180, 180);" />
+                                </ui:VisualElement>
+                            </ui:VisualElement>
+                        </ui:VisualElement>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- Completed Quests Section -->
+                <ui:VisualElement name="completed-quests-section" style="margin-bottom: 20px;">
+                    <ui:VisualElement name="completed-header" style="flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                        <ui:Label text="Completed Quests" name="completed-quests-header" style="font-size: 14px; color: rgb(0, 255, 0); font-weight: bold; -unity-font-style: bold;" />
+                        <ui:Button name="toggle-completed" text="▼" style="width: 20px; height: 20px; background-color: rgba(255, 255, 255, 0.2); border-radius: 10px; font-size: 12px; color: rgb(255, 255, 255);" />
+                    </ui:VisualElement>
+                    
+                    <ui:VisualElement name="completed-quest-item" class="quest-item" style="background-color: rgba(0, 150, 0, 0.2); border-radius: 8px; padding: 12px; margin-bottom: 8px; border-left-width: 4px; border-left-color: rgb(0, 255, 0);">
+                        <ui:VisualElement name="quest-header" style="flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <ui:Label text="Completed Quest" name="quest-title" style="font-size: 14px; color: rgb(200, 255, 200); font-weight: bold; flex-grow: 1; -unity-font-style: bold;" />
+                            <ui:Label text="✓" name="completion-status" style="font-size: 16px; color: rgb(0, 255, 0);" />
+                        </ui:VisualElement>
+                        <ui:Label text="Quest was completed successfully!" name="quest-description" style="font-size: 12px; color: rgb(150, 200, 150); white-space: normal;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+                <!-- Available Quests Section -->
+                <ui:VisualElement name="available-quests-section">
+                    <ui:Label text="Available Quests" name="available-quests-header" style="font-size: 14px; color: rgb(255, 255, 255); font-weight: bold; margin-bottom: 10px; -unity-font-style: bold;" />
+                    
+                    <ui:VisualElement name="available-quest-item" class="quest-item" style="background-color: rgba(100, 100, 100, 0.3); border-radius: 8px; padding: 12px; margin-bottom: 8px; border-left-width: 4px; border-left-color: rgb(150, 150, 150);">
+                        <ui:VisualElement name="quest-header" style="flex-direction: row; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+                            <ui:Label text="New Quest Available" name="quest-title" style="font-size: 14px; color: rgb(200, 200, 200); font-weight: bold; flex-grow: 1; -unity-font-style: bold;" />
+                            <ui:Label text="!" name="new-indicator" style="font-size: 16px; color: rgb(255, 255, 0);" />
+                        </ui:VisualElement>
+                        <ui:Label text="Talk to NPC to start this quest" name="quest-description" style="font-size: 12px; color: rgb(150, 150, 150); white-space: normal;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                
+            </ui:ScrollView>
+        </ui:VisualElement>
+        
+        <!-- Footer -->
+        <ui:VisualElement name="footer" style="margin-top: 15px; padding-top: 10px; border-top-width: 1px; border-top-color: rgba(255, 255, 255, 0.2); flex-direction: row; justify-content: space-between; align-items: center;">
+            <ui:Label text="Press J to toggle" name="hint-text" style="font-size: 10px; color: rgb(120, 120, 120);" />
+            <ui:Button name="open-journal" text="Open Journal" style="background-color: rgba(255, 255, 255, 0.2); border-radius: 4px; padding: 4px 8px; font-size: 11px; color: rgb(255, 255, 255);" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

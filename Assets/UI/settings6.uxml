@@ -1,0 +1,57 @@
+<ui:VisualElement name="settings-panel" class="settings-panel" style="display: none;">
+    <ui:Label text="Settings" name="settings-title" class="settings-title" />
+    <ui:ScrollView name="settings-scroll-view" class="settings-scroll-view">
+        <ui:VisualElement name="settings-container" class="settings-container">
+
+            <!-- Graphics Settings -->
+            <ui:Label text="Graphics" name="graphics-label" class="settings-section-title" />
+            <ui:Label text="Resolution:" name="resolution-label" class="settings-label" />
+            <ui:DropdownField name="resolution-select" class="settings-select" />
+            <ui:Label text="Window Mode:" name="window-mode-label" class="settings-label" />
+            <ui:DropdownField name="window-mode-select" class="settings-select" />
+            <ui:Label text="VSync:" name="vsync-label" class="settings-label" />
+            <ui:DropdownField name="vsync-select" class="settings-select" />
+            <ui:Label text="Anti-Aliasing:" name="aa-label" class="settings-label" />
+            <ui:DropdownField name="aa-select" class="settings-select" />
+            <ui:Label text="Graphics Quality:" name="graphics-quality-label" class="settings-label" />
+            <ui:DropdownField name="graphics-quality-select" class="settings-select" />
+            <ui:Label text="Shadow Quality:" name="shadow-quality-label" class="settings-label" />
+            <ui:DropdownField name="shadow-quality-select" class="settings-select" />
+            <ui:Label text="Texture Quality:" name="texture-quality-label" class="settings-label" />
+            <ui:DropdownField name="texture-quality-select" class="settings-select" />
+
+            <!-- Sound Settings -->
+            <ui:Label text="Sound" name="sound-label" class="settings-section-title" />
+            <ui:Label text="Sound Volume:" name="sound-volume-label" class="settings-label" />
+            <ui:Slider name="sound-volume-slider" lowValue="0" highValue="100" class="settings-slider" />
+            <ui:Label text="Music Volume:" name="music-volume-label" class="settings-label" />
+            <ui:Slider name="music-volume-slider" lowValue="0" highValue="100" class="settings-slider" />
+            <ui:Label text="SFX Volume:" name="sfx-volume-label" class="settings-label" />
+            <ui:Slider name="sfx-volume-slider" lowValue="0" highValue="100" class="settings-slider" />
+
+            <!-- Input Settings -->
+            <ui:Label text="Input" name="input-label" class="settings-section-title" />
+            <ui:Label text="Mouse Sensitivity:" name="mouse-sensitivity-label" class="settings-label" />
+            <ui:Slider name="mouse-sensitivity-slider" lowValue="0" highValue="100" class="settings-slider" />
+            <ui:Label text="Controller Sensitivity:" name="controller-sensitivity-label" class="settings-label" />
+            <ui:Slider name="controller-sensitivity-slider" lowValue="0" highValue="100" class="settings-slider" />
+            <ui:Label text="Invert Y-Axis:" name="invert-y-axis-label" class="settings-label" />
+            <ui:Toggle name="invert-y-axis-toggle" class="settings-toggle" />
+
+            <!-- General Settings -->
+            <ui:Label text="General" name="general-label" class="settings-section-title" />
+            <ui:Label text="Language:" name="language-label" class="settings-label" />
+            <ui:DropdownField name="language-select" class="settings-select" />
+            <ui:Label text="Fullscreen:" name="fullscreen-label" class="settings-label" />
+            <ui:Toggle name="fullscreen-toggle" class="settings-toggle" />
+            <ui:Label text="Auto-Save:" name="auto-save-label" class="settings-label" />
+            <ui:Toggle name="auto-save-toggle" class="settings-toggle" />
+            <ui:Label text="Show FPS:" name="show-fps-label" class="settings-label" />
+            <ui:Toggle name="show-fps-toggle" class="settings-toggle" />
+
+        </ui:VisualElement>
+    </ui:ScrollView>
+    <ui:Button text="Save" name="save-button" class="menu-button" />
+    <ui:Button text="Back" name="back-button" class="menu-button" />
+    <ui:Label text="Settings will revert in 15 seconds if not confirmed" name="revert-warning" style="display: none;" />
+</ui:VisualElement>

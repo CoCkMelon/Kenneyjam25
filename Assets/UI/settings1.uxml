@@ -1,0 +1,86 @@
+<UXML xmlns="UnityEngine.UIElements">
+    <VisualElement name="SettingsMenu" style="flex-direction: column; align-items: stretch;">
+        <!-- Sound Settings -->
+        <VisualElement name="SoundSettings" style="margin-bottom: 20px;">
+            <Label text="Sound Settings" style="font-size: 20px; margin-bottom: 10px;" />
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Master Volume:" style="flex-grow: 1;" />
+                <Slider name="MasterVolumeSlider" low-value="0" high-value="1" value="0.5" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Music Volume:" style="flex-grow: 1;" />
+                <Slider name="MusicVolumeSlider" low-value="0" high-value="1" value="0.5" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center;">
+                <Label text="SFX Volume:" style="flex-grow: 1;" />
+                <Slider name="SFXVolumeSlider" low-value="0" high-value="1" value="0.5" style="flex-grow: 2;" />
+            </VisualElement>
+        </VisualElement>
+
+        <!-- Graphics Settings -->
+        <VisualElement name="GraphicsSettings" style="margin-bottom: 20px;">
+            <Label text="Graphics Settings" style="font-size: 20px; margin-bottom: 10px;" />
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Resolution:" style="flex-grow: 1;" />
+                <DropdownField name="ResolutionDropdown" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Quality:" style="flex-grow: 1;" />
+                <DropdownField name="QualityDropdown" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="V-Sync:" style="flex-grow: 1;" />
+                <Toggle name="VSyncToggle" value="true" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center;">
+                <Label text="Fullscreen:" style="flex-grow: 1;" />
+                <Toggle name="FullscreenToggle" value="true" style="flex-grow: 2;" />
+            </VisualElement>
+        </VisualElement>
+
+        <!-- Input Settings -->
+        <VisualElement name="InputSettings" style="margin-bottom: 20px;">
+            <Label text="Input Settings" style="font-size: 20px; margin-bottom: 10px;" />
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Sensitivity:" style="flex-grow: 1;" />
+                <Slider name="SensitivitySlider" low-value="0.1" high-value="10" value="1" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Invert Y-Axis:" style="flex-grow: 1;" />
+                <Toggle name="InvertYAxisToggle" value="false" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center;">
+                <Label text="Controller Support:" style="flex-grow: 1;" />
+                <Toggle name="ControllerSupportToggle" value="true" style="flex-grow: 2;" />
+            </VisualElement>
+        </VisualElement>
+
+        <!-- Platform-Specific Settings -->
+        <VisualElement name="PlatformSettings" style="margin-bottom: 20px;">
+            <Label text="Platform-Specific Settings" style="font-size: 20px; margin-bottom: 10px;" />
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Android Specific Setting:" style="flex-grow: 1;" />
+                <TextField name="AndroidSettingTextField" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Linux Specific Setting:" style="flex-grow: 1;" />
+                <TextField name="LinuxSettingTextField" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Mac Specific Setting:" style="flex-grow: 1;" />
+                <TextField name="MacSettingTextField" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center; margin-bottom: 5px;">
+                <Label text="Windows Specific Setting:" style="flex-grow: 1;" />
+                <TextField name="WindowsSettingTextField" style="flex-grow: 2;" />
+            </VisualElement>
+            <VisualElement style="display: flex; flex-direction: row; align-items: center;">
+                <Label text="HTML Specific Setting:" style="flex-grow: 1;" />
+                <TextField name="HTMLSettingTextField" style="flex-grow: 2;" />
+            </VisualElement>
+        </VisualElement>
+
+        <!-- Save Button -->
+        <Button name="SaveButton" text="Save Settings" style="align-self: flex-end;" />
+    </VisualElement>
+</UXML>

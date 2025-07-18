@@ -1,0 +1,99 @@
+.container {
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+}
+
+.title {
+    font-size: 48px;
+    color: white;
+    -unity-font-style: bold;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 0px #000;
+    font-weight: bold;
+    text-rendering: geometricPrecision;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+}
+
+Label {
+    font-size: 14px;
+    color: white;
+    text-rendering: geometricPrecision;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+}
+
+.button-container {
+    width: 200px;
+    image-rendering: pixelated;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+}
+
+.menu-button {
+    height: 50px;
+    margin: 10px 0;
+    font-size: 29px;
+    background-color: rgb(219, 207, 0);
+    color: rgb(84, 56, 1);
+    border-width: 0;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+    font-family: "pixelplay";
+    text-shadow: 1px 1px 0px #000;
+    image-rendering: pixelated;
+    -ms-interpolation-mode: nearest-neighbor;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.menu-button:hover {
+    background-color: rgb(183, 171, 0);
+    scale: 1.05;
+    transform-origin: center;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.menu-button:active {
+    background-color: rgb(204, 165, 0);
+    scale: 0.95;
+    transform-origin: center;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.option-select {
+    width: 200px;
+    margin: 5px 0;
+    font-family: "pixelplay";
+    text-shadow: 1px 1px 0px #000;
+    image-rendering: pixelated;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+}
+
+.option-slider {
+    width: 200px;
+    margin: 5px 0;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+}
+
+.option-textfield {
+    width: 100px;
+    margin: 5px 0;
+    font-family: "pixelplay";
+    text-shadow: 1px 1px 0px #000;
+    image-rendering: pixelated;
+    -unity-font-definition: url("project://database/Assets/Fonts/pixelplay.ttf?fileID=12800000&guid=8d6fd52a67ef150078db5d1e66b1f04b&type=3#pixelplay");
+}

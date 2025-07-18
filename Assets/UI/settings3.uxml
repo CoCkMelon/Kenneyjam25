@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  This UXML file defines a settings menu for a Unity project that targets Android, Linux, macOS, Windows, and HTML.
+  It covers sound settings, graphics settings, and various input device configurations.
+  Every section has been designed to be compact and is grouped into its own VisualElement.
+  The ScrollView container ensures that the entire list is scrollable.
+-->
+<engine:UXML
+    xmlns:engine="UnityEngine.UIElements"
+    xmlns:uie="UnityEngine.Experimental.UIElements"
+    xmlns:editor="UnityEditor.UIElements">
+
+  <!-- A ScrollView to wrap all settings elements -->
+  <engine:ScrollView name="settingsScrollView" style="flex-grow: 1; overflow-y: auto;">
+
+    <!-- Main container for all settings sections -->
+    <engine:VisualElement name="settingsContainer" style="padding: 10; flex-direction: column; gap: 10;">
+
+      <!-- Title of the Settings Menu -->
+      <engine:Label name="menuTitle" text="Settings Menu" style="unity-font-style: bold; font-size: 20; margin-bottom: 10;" />
+
+      <!-- Platform Settings section -->
+      <engine:VisualElement name="platformSettings" style="border-bottom: 1px solid #666; padding-bottom: 10;">
+        <engine:Label text="Platform Settings" style="font-size: 16; unity-font-style: bold; margin-bottom: 5;" />
+        <!-- Android -->
+        <engine:Toggle name="toggleAndroid"
+                       text="Enable Android Features"
+                       value="true"
+                       style="font-size: 14; margin-left: 10;" />
+        <!-- Linux -->
+        <engine:Toggle name="toggleLinux"
+                       text="Enable Linux Features"
+                       value="true"
+                       style="font-size: 14; margin-left: 10;" />
+        <!-- macOS -->
+        <engine:Toggle name="toggleMac"
+                       text="Enable macOS Features"
+                       value="true"
+                       style="font-size: 14; margin-left: 10;" />
+        <!-- Windows -->
+        <engine:Toggle name="toggleWindows"
+                       text="Enable Windows Features"
+                       value="true"
+                       style="font-size: 14; margin-left: 10;" />
+        <!-- HTML -->
+        <engine:Toggle name="toggleHTML"
+                       text="Enable HTML Features"
+                       value="false"
+                       style="font-size: 14; margin-left: 10;" />
+      </engine:VisualElement>
+
+      <!-- Sound Settings section -->
+      <engine:VisualElement name="soundSettings" style="border-bottom: 1px solid #666; padding-bottom: 10;">
+        <engine:Label text="Sound Settings" style="font-size: 16; unity-font-style: bold; margin-bottom: 5;" />
+
+        <!-- Master Volume -->
+        <engine:Slider name="sliderMasterVolume"
+                       label="Master Volume"
+                       lowValue="0"
+                       highValue="100"
+                       value="80"
+                       style="margin-left: 10; margin-bottom: 5;" />
+        <!-- Music Volume -->
+        <engine:Slider name="sliderMusicVolume"
+                       label="Music Volume"
+                       lowValue="0"
+                       highValue="100"
+                       value="70"
+                       style="margin-left: 10; margin-bottom: 5;" />
+        <!-- SFX Volume -->
+        <engine:Slider name="sliderSFXVolume"
+                       label="SFX Volume"
+                       lowValue="0"
+                       highValue="100"
+                       value="75"
+                       style="margin-left: 10; margin-bottom: 5;" />
+        <!-- Mute Option -->
+        <engine:Toggle name="toggleMuteAll"
+                       text="Mute All Sound"
+                       value="false"
+                       style="font-size: 14; margin-left: 10;" />
+      </engine:VisualElement>
+
+      <!-- Graphics Settings section -->
+      <engine:VisualElement name="graphicsSettings" style="border-bottom: 1px solid #666; padding-bottom: 10;">
+        <engine:Label text="Graphics Settings" style="font-size: 16; unity-font-style: bold; margin-bottom: 5;" />
+
+        <!-- Graphics Quality Dropdown -->
+        <engine:PopupField name="popupGraphicsQuality"
+                           label="Quality"
+                           choices="Low;Medium;High;Ultra"
+                           style="margin-left: 10; margin-bottom: 5;" />
+        <!-- Resolution Dropdown -->
+        <engine:PopupField name="popupResolution"
+                           label="Resolution"
+                           choices="1920x1080;1280x720;2560x1440;3840x2160"
+                           style="margin-left: 10; margin-bottom: 5;" />
+        <!-- Fullscreen Toggle -->
+        <engine:Toggle name="toggleFullscreen"
+                       text="Fullscreen Mode"
+                       value="true"
+                       style="font-size: 14; margin-left: 10; margin-bottom: 5;" />
+        <!-- VSync Toggle -->
+        <engine:Toggle name="toggleVSync"
+                       text="Enable VSync"
+                       value="false"
+                       style="font-size: 14; margin-left: 10;" />
+      </engine:VisualElement>
+
+      <!-- Input Device Settings section -->
+      <engine:VisualElement name="inputSettings" style="border-bottom: 1px solid #666; padding-bottom: 10;">
+        <engine:Label text="Input Device Settings" style="font-size: 16; unity-font-style: bold; margin-bottom: 5;" />
+
+        <!-- Keyboard / Mouse Settings -->
+        <engine:Foldout name="foldoutKeyboardMouse"
+                         text="Keyboard &amp; Mouse"
+                         value="true"
+                         style="margin-left: 10; margin-bottom: 5;">
+          <engine:Toggle name="toggleInvertMouse"
+                         text="Invert Mouse"
+                         value="false"
+                         style="font-size: 14; margin-left: 10; margin-bottom: 5;" />
+          <engine:Toggle name="toggleKeyboardShortcuts"
+                         text="Enable Shortcuts"
+                         value="true"
+                         style="font-size: 14; margin-left: 10;" />
+        </engine:Foldout>
+
+        <!-- Gamepad Settings -->
+        <engine:Foldout name="foldoutGamepad"
+                         text="Gamepad Settings"
+                         value="false"
+                         style="margin-left: 10; margin-bottom: 5;">
+          <engine:Toggle name="toggleEnableGamepad"
+                         text="Enable Gamepad"
+                         value="true"
+                         style="font-size: 14; margin-left: 10; margin-bottom: 5;" />
+          <engine:PopupField name="popupGamepadMapping"
+                             label="Mapping"
+                             choices="Default;Custom"
+                             style="margin-left: 10;" />
+        </engine:Foldout>
+
+        <!-- Touch Controls Settings -->
+        <engine:Foldout name="foldoutTouch"
+                         text="Touch Controls"
+                         value="false"
+                         style="margin-left: 10; margin-bottom: 5;">
+          <engine:Toggle name="toggleEnableTouch"
+                         text="Enable Touch Controls"
+                         value="true"
+                         style="font-size: 14; margin-left: 10;" />
+        </engine:Foldout>
+      </engine:VisualElement>
+
+      <!-- Optionally, you might add extra categories here such as Network Options or VR settings if needed. -->
+
+      <!-- Save/Apply Button -->
+      <engine:Button name="buttonSave"
+                     text="Save Settings"
+                     style="align-self: center; margin-top: 10;" />
+
+    </engine:VisualElement>
+  </engine:ScrollView>
+</engine:UXML>
