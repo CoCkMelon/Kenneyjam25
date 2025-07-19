@@ -120,7 +120,7 @@ public class GameHUDController : MonoBehaviour
         questProgressText = root.Q<Label>("quest-progress-text");
 
         // Register button callbacks
-        if (pauseButton != null)
+        // if (pauseButton != null)
             pauseButton.clicked += TogglePause;
         
         // Movement buttons - use mouse events for continuous input

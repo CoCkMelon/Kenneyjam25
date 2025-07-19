@@ -20,11 +20,6 @@ lines:
     text: "The sleigh responds to momentum and physics - it accelerates gradually and carries speed through turns. Feel the weight!"
     animation: "idle"
     
-  - id: "mouse_controls"
-    speaker: "Tutorial Guide"
-    text: "With mouse controls, move left and right to steer smoothly. Click to boost forward when you need extra speed."
-    animation: "curious"
-    
   - id: "touch_controls"
     speaker: "Tutorial Guide"
     text: "On touch devices, tap the left or right sides to turn, or tap the center for forward thrust. Hold for continuous input."

@@ -29,10 +29,19 @@ public class SleightHUDExtension : MonoBehaviour
     private Label statusText;
     private VisualElement lightSpeedIndicator;
     
+    // Distance UI
+    private Label distanceIndicator;
+    private VisualElement worldConnectionIndicator;
+    
     // References
     private SleightController sleightController;
     private SleightPowerSystem powerSystem;
     private GameHUDController gameHUD;
+    
+    [Header("Distance Tracking")]
+    [SerializeField] private Transform targetDestination;
+    [SerializeField] private bool showDistanceToDestination = true;
+    [SerializeField] private bool showDistanceToNearestPowerOrb = false;
     
     void OnEnable()
     {
@@ -85,11 +94,16 @@ public class SleightHUDExtension : MonoBehaviour
         statusText = root.Q<Label>("status-text");
         lightSpeedIndicator = root.Q<VisualElement>("light-speed-indicator");
         
+        // Initialize distance UI
+        distanceIndicator = root.Q<Label>("distance-indicator");
+        worldConnectionIndicator = root.Q<VisualElement>("world-connection-indicator");
+        
         // Set initial states
         UpdatePowerDisplay();
         UpdateSpeedDisplay();
         UpdateComboDisplay();
         UpdateStatusDisplay();
+        UpdateDistanceDisplay();
     }
     
     private void SubscribeToEvents()
@@ -128,6 +142,7 @@ public class SleightHUDExtension : MonoBehaviour
     {
         UpdateComboTimer();
         UpdateStatusDisplay();
+        UpdateDistanceDisplay();
     }
     
     private void UpdatePowerDisplay()
@@ -285,6 +300,115 @@ public class SleightHUDExtension : MonoBehaviour
         }
     }
     
+    private void UpdateDistanceDisplay()
+    {
+        if (sleightController == null) return;
+        
+        float distance = 0f;
+        bool hasValidDistance = false;
+        
+        // Calculate distance based on current settings
+        if (showDistanceToDestination && targetDestination != null)
+        {
+            distance = CalculateDistanceToTarget(targetDestination);
+            hasValidDistance = true;
+        }
+        else if (showDistanceToNearestPowerOrb)
+        {
+            Transform nearestOrb = FindNearestPowerOrb();
+            if (nearestOrb != null)
+            {
+                distance = CalculateDistanceToTarget(nearestOrb);
+                hasValidDistance = true;
+            }
+        }
+        else if (targetDestination != null)
+        {
+            // Default to destination if available
+            distance = CalculateDistanceToTarget(targetDestination);
+            hasValidDistance = true;
+        }
+        
+        // Update distance indicator
+        if (distanceIndicator != null)
+        {
+            if (hasValidDistance)
+            {
+                distanceIndicator.text = FormatDistance(distance);
+                distanceIndicator.style.display = DisplayStyle.Flex;
+            }
+            else
+            {
+                distanceIndicator.style.display = DisplayStyle.None;
+            }
+        }
+        
+        // Update world connection indicator visibility
+        if (worldConnectionIndicator != null)
+        {
+            worldConnectionIndicator.style.display = hasValidDistance ? DisplayStyle.Flex : DisplayStyle.None;
+        }
+    }
+    
+    private float CalculateDistanceToTarget(Transform target)
+    {
+        if (target == null || sleightController == null) return 0f;
+        
+        Vector3 sleightPosition = sleightController.transform.position;
+        Vector3 targetPosition = target.position;
+        
+        // Calculate 3D distance
+        float distance = Vector3.Distance(sleightPosition, targetPosition);
+        
+        return distance;
+    }
+    
+    private Transform FindNearestPowerOrb()
+    {
+        // Find all power orbs in the scene
+        PowerOrb[] powerOrbs = FindObjectsByType<PowerOrb>(FindObjectsSortMode.None);
+        
+        if (powerOrbs.Length == 0) return null;
+        
+        Transform nearestOrb = null;
+        float nearestDistance = float.MaxValue;
+        
+        Vector3 sleightPosition = sleightController.transform.position;
+        
+        foreach (PowerOrb orb in powerOrbs)
+        {
+            if (orb == null) continue;
+            
+            float distance = Vector3.Distance(sleightPosition, orb.transform.position);
+            if (distance < nearestDistance)
+            {
+                nearestDistance = distance;
+                nearestOrb = orb.transform;
+            }
+        }
+        
+        return nearestOrb;
+    }
+    
+    private string FormatDistance(float distance)
+    {
+        if (distance < 1f)
+        {
+            // Show in centimeters for very close distances
+            return $"{Mathf.RoundToInt(distance * 100)}cm";
+        }
+        else if (distance < 1000f)
+        {
+            // Show in meters with one decimal place
+            return $"{distance:F1}m";
+        }
+        else
+        {
+            // Show in kilometers for large distances
+            return $"{(distance / 1000f):F2}km";
+        }
+    }
+    
     // Event handlers
     private void OnPowerChanged(float newPower)
     {
@@ -342,5 +466,42 @@ public class SleightHUDExtension : MonoBehaviour
         {
             comboContainer.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
         }
+    }
+    
+    // Public methods for distance indicator control
+    public void SetTargetDestination(Transform target)
+    {
+        targetDestination = target;
+    }
+    
+    public void SetDistanceMode(bool showDestination, bool showNearestPowerOrb)
+    {
+        showDistanceToDestination = showDestination;
+        showDistanceToNearestPowerOrb = showNearestPowerOrb;
+    }
+    
+    public void SetDistanceIndicatorVisible(bool visible)
+    {
+        if (worldConnectionIndicator != null)
+        {
+            worldConnectionIndicator.style.display = visible ? DisplayStyle.Flex : DisplayStyle.None;
+        }
+    }
+    
+    public float GetCurrentDistance()
+    {
+        if (showDistanceToDestination && targetDestination != null)
+        {
+            return CalculateDistanceToTarget(targetDestination);
+        }
+        else if (showDistanceToNearestPowerOrb)
+        {
+            Transform nearestOrb = FindNearestPowerOrb();
+            if (nearestOrb != null)
+            {
+                return CalculateDistanceToTarget(nearestOrb);
+            }
+        }
+        return 0f;
     }
 }

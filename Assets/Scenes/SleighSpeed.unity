@@ -6882,6 +6882,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hudDocument: {fileID: 448625147}
+  targetDestination: {fileID: 1709591919}
+  showDistanceToDestination: 1
+  showDistanceToNearestPowerOrb: 1
 --- !u!114 &448625149
 MonoBehaviour:
   m_ObjectHideFlags: 0

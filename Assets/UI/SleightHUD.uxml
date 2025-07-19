@@ -19,9 +19,6 @@
             <ui:Label name="fps-counter" text="FPS: 60" class="fps-counter" />
             <ui:Label name="debug-info" class="debug-info" />
         </ui:VisualElement>
-        <ui:VisualElement name="top-bar" class="top-bar">
-            <ui:Button name="pause-button" text="⏸" focusable="false" class="pause-button" />
-        </ui:VisualElement>
         <ui:VisualElement name="mobile-controls" class="mobile-controls">
             <ui:VisualElement name="virtual-joystick-area" class="virtual-joystick-area">
                 <ui:VisualElement name="dpad-container" class="dpad-container">
@@ -43,7 +40,7 @@
             <ui:VisualElement name="character-portrait-container" class="character-portrait-container">
                 <ui:VisualElement name="character-portrait-frame" class="character-portrait-frame">
                     <ui:VisualElement name="character-portrait" class="character-portrait">
-                        <ui:Label name="character-portrait-placeholder" text="👤" class="character-portrait-placeholder" />
+                        <ui:Label name="character-portrait-placeholder" text="👤" class="character-portrait-placeholder" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/JoyPixels.ttf?fileID=12800000&amp;guid=9bf87be2e18f5953a920abf439f46834&amp;type=3#JoyPixels&quot;);" />
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="character-animation-indicator" class="character-animation-indicator">
@@ -54,7 +51,7 @@
                 <ui:VisualElement name="speaker-name-bar" class="speaker-name-bar">
                     <ui:Label name="speaker-name" text="Character Name" class="speaker-name" />
                     <ui:VisualElement name="speaker-mood-indicator" class="speaker-mood-indicator">
-                        <ui:Label name="mood-icon" text="😊" class="mood-icon" />
+                        <ui:Label name="mood-icon" text="😊" class="mood-icon" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/JoyPixels.ttf?fileID=12800000&amp;guid=9bf87be2e18f5953a920abf439f46834&amp;type=3#JoyPixels&quot;);" />
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="dialogue-text-container" class="dialogue-text-container">
@@ -104,6 +101,8 @@
             <ui:Label name="interaction-key" text="E" class="interaction-key" />
             <ui:Label name="interaction-text" text="Talk" class="interaction-text" />
         </ui:VisualElement>
+        <ui:VisualElement name="top-bar" class="top-bar">
+            <ui:Button name="pause-button" text="⏸" focusable="false" class="pause-button" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/JoyPixels.ttf?fileID=12800000&amp;guid=9bf87be2e18f5953a920abf439f46834&amp;type=3#JoyPixels&quot;); overflow: visible;" />
+        </ui:VisualElement>
     </ui:VisualElement>
 </ui:UXML>
-
