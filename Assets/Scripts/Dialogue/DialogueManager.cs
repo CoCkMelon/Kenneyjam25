@@ -124,8 +124,24 @@ public class DialogueManager : MonoBehaviour
 
     public void LoadScene(string nextScene)
     {
-        // Logic to switch/load scenes
-        Debug.Log($"Switch to scene: {nextScene}");
+        if (string.IsNullOrEmpty(nextScene))
+        {
+            Debug.LogWarning("LoadScene called with empty scene name");
+            return;
+        }
+        
+        // Check if it's a dialogue scene transition
+        if (nextScene.Contains("_") || nextScene.Contains("puzzle") || nextScene.Contains("complete"))
+        {
+            // Load as dialogue scene from StoryRoutes
+            LoadAndStartSceneFromResources($"StoryRoutes/{nextScene}");
+        }
+        else
+        {
+            // Load as Unity scene
+            Debug.Log($"Loading Unity scene: {nextScene}");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(nextScene);
+        }
     }
 
     public void SelectChoice(string nextLineId)

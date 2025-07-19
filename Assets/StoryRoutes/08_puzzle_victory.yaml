@@ -1,0 +1,42 @@
+scene: "puzzle_victory"
+lines:
+  - id: "final_success"
+    speaker: "Sled Operator"
+    text: "The grid is complete! I can feel the sled's quantum state fully stabilizing. We did it!"
+    animation: "triumphant"
+    
+  - id: "skeleton_celebration"
+    speaker: "Dr. Mortimer Bones"
+    text: "Magnificent! You have mastered all three disciplines - memory, flow, and sleight. The sled is now truly faster than light!"
+    animation: "jubilant"
+    sprite: "skeleton_mage"
+    
+  - id: "nutcracker_pride"
+    speaker: "The Nutcracker"
+    text: "You have cracked the greatest puzzle of all - the mystery of controlled impossibility. The sled now obeys your will completely."
+    animation: "proud"
+    sprite: "nutcracker"
+    
+  - id: "snowman_blessing"
+    speaker: "Cornelius Frost"
+    text: "Through all seasons of challenge, you persevered. The sled is no longer bound by the laws of ordinary reality."
+    animation: "blessing"
+    sprite: "snowman"
+    
+  - id: "transformation_complete"
+    speaker: "Narrator"
+    text: "The sled gleams with pure luminous energy, its wooden frame now infused with the power of possibility itself."
+    animation: "epic"
+    cutscene: "sled_final_transformation"
+    
+  - id: "new_mastery"
+    speaker: "Sled Operator"
+    text: "I understand now. Speed was never the goal - it was mastery over the impossible. The sled and I are one."
+    animation: "enlightened"
+    
+  - id: "endless_possibilities"
+    speaker: "Narrator"
+    text: "With the puzzles solved and the sled stabilized, infinite horizons await. The impossible has become merely another path to explore..."
+    animation: "poetic"
+    cutscene: "infinite_horizons"
+    trigger: "unlock_free_play_mode"

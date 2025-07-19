@@ -1,0 +1,71 @@
+scene: "tutorial_sled"
+lines:
+  - id: "intro"
+    speaker: "Tutorial Guide"
+    text: "Welcome to your enchanted sleigh! This isn't just any sleigh - it has physical properties that will grow stronger as you journey."
+    animation: "happy"
+    
+  - id: "basic_movement"
+    speaker: "Tutorial Guide"
+    text: "Your sleigh moves forward automatically, guided by ancient magic. You control the steering and can boost when needed."
+    animation: "helpful"
+    
+  - id: "keyboard_controls"
+    speaker: "Tutorial Guide"
+    text: "Use WASD or Arrow Keys to steer. A/D or Left/Right Arrows turn the sleigh. W or Up Arrow gives extra forward thrust."
+    animation: "helpful"
+        
+  - id: "momentum_physics"
+    speaker: "Tutorial Guide"
+    text: "The sleigh responds to momentum and physics - it accelerates gradually and carries speed through turns. Feel the weight!"
+    animation: "idle"
+    
+  - id: "mouse_controls"
+    speaker: "Tutorial Guide"
+    text: "With mouse controls, move left and right to steer smoothly. Click to boost forward when you need extra speed."
+    animation: "curious"
+    
+  - id: "touch_controls"
+    speaker: "Tutorial Guide"
+    text: "On touch devices, tap the left or right sides to turn, or tap the center for forward thrust. Hold for continuous input."
+    animation: "helpful"
+    
+  - id: "auto_movement"
+    speaker: "Tutorial Guide"
+    text: "Notice how the sleigh moves on its own? It's drawn forward by physical forces, avoiding major obstacles automatically."
+    animation: "mystical"
+    
+  - id: "power_orbs"
+    speaker: "Tutorial Guide"
+    text: "Collect glowing power orbs scattered throughout your path! They're the key to unlocking your sleigh's true potential."
+    animation: "excited"
+    
+  - id: "power_collection"
+    speaker: "Tutorial Guide"
+    text: "Power orbs have a magnetic pull - get close and they'll be drawn to you. Each one increases your sleigh's strength and speed!"
+    animation: "helpful"
+    
+  - id: "combo_system"
+    speaker: "Tutorial Guide"
+    text: "Collect orbs quickly in succession for combo multipliers! The faster you gather them, the more power you gain."
+    animation: "energetic"
+    
+  - id: "speed_progression"
+    speaker: "Tutorial Guide"
+    text: "As you gain power, your sleigh will move faster and handle differently. Embrace the growing speed - you'll need it!"
+    animation: "anticipation"
+    
+  - id: "pause_controls"
+    speaker: "Tutorial Guide"
+    text: "Press P to pause the game at any time. This gives you a moment to plan your route or simply catch your breath."
+    animation: "calm"
+    
+  - id: "light_speed_hint"
+    speaker: "Tutorial Guide"
+    text: "Legend speaks of a critical threshold... when enough power is gathered, something extraordinary happens. Seek the light!"
+    animation: "mysterious"
+    
+  - id: "practice"
+    speaker: "Tutorial Guide"
+    text: "Now practice! Feel the sleigh's momentum, collect those glowing orbs, and begin building the power that will change everything."
+    animation: "wave"

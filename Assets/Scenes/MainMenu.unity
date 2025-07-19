@@ -1313,7 +1313,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   optionsUI: {fileID: 940902757}
-  playSceneName: GameScene
+  playSceneName: SleighSpeed
   hoverScaleMultiplier: 1.2
   clickScaleMultiplier: 0.8
   hoverTweenDuration: 0.2

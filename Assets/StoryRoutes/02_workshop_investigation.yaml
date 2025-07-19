@@ -1,0 +1,43 @@
+scene: "workshop_investigation"
+lines:
+  - id: "workshop_intro"
+    speaker: "Narrator"
+    text: "In the cluttered workshop filled with brass instruments and arcane machinery, a skeletal figure hunches over his calculations..."
+    animation: "mysterious"
+    
+  - id: "skeleton_mage_greeting"
+    speaker: "Dr. Mortimer Bones"
+    text: "Fascinating! Another individual affected by the luminous phenomenon! Please, do come closer."
+    animation: "excited"
+    sprite: "skeleton_mage"
+    
+  - id: "skeleton_introduction"
+    speaker: "Dr. Mortimer Bones"
+    text: "I am Dr. Mortimer Bones, former professor of Theoretical Physics. A laboratory accident left me... somewhat reduced."
+    animation: "sheepish"
+    
+  - id: "player_concern"
+    speaker: "Sled Operator"
+    text: "Your condition appears... unusual, Doctor. But you seem to understand these orbs better than anyone."
+    animation: "curious"
+    
+  - id: "skeleton_theory"
+    speaker: "Dr. Mortimer Bones"
+    text: "Indeed! These orbs appear to be condensed kinetic energy. With enough of them, theoretical velocities could exceed even light itself!"
+    animation: "academic_excitement"
+    
+  - id: "sled_examination"
+    speaker: "Dr. Mortimer Bones"
+    text: "Your sled... it's already showing signs of energy absorption. The molecular structure is shifting, becoming more... ethereal."
+    animation: "analytical"
+    
+  - id: "moral_choice"
+    speaker: "Dr. Mortimer Bones"
+    text: "But beware! Such power comes with responsibility. Will you use this gift wisely, or let ambition consume you?"
+    animation: "warning"
+    
+  - id: "player_response"
+    speaker: "Sled Operator"
+    text: "I seek only to push the boundaries of what's possible. To see what lies beyond the horizon of speed itself."
+    animation: "determined"
+    trigger: "unlock_speed_research"

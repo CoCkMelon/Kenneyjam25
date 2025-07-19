@@ -1,0 +1,40 @@
+scene: "city_streets_discovery"
+lines:
+  - id: "narrator_intro"
+    speaker: "Narrator"
+    text: "In the industrial district, where smoke stacks pierce the grey sky, something extraordinary begins to unfold..."
+    animation: "dramatic"
+    
+  - id: "factory_worker_surprise"
+    speaker: "Factory Worker"
+    text: "By the gears and pistons! What are those glowing things floating about?"
+    animation: "surprised"
+    sprite: "gingerbread-man"
+    
+  - id: "newspaper_vendor_excitement"
+    speaker: "Newspaper Vendor"
+    text: "EXTRA! EXTRA! Mysterious orbs appear throughout the city! Scientists baffled!"
+    animation: "excited"
+    sprite: "gingerbread-woman"
+    
+  - id: "player_first_observation"
+    speaker: "Sled Operator"
+    text: "These strange orbs... they seem to pulse with some kind of energy. Perhaps they could power my sled?"
+    animation: "curious"
+    
+  - id: "nutcracker_appears"
+    speaker: "The Nutcracker"
+    text: "Ah, another soul drawn to the luminous mystery! These orbs are not mere curiosities, I assure you."
+    animation: "wise"
+    sprite: "nutcracker"
+    
+  - id: "nutcracker_explanation"
+    speaker: "The Nutcracker"
+    text: "I have observed them for days. They respond to intention, to will. Your sled, perhaps, could harness their power."
+    animation: "thoughtful"
+    
+  - id: "player_decision"
+    speaker: "Sled Operator"
+    text: "My sled has always been swift, but with these orbs... perhaps I could achieve the impossible."
+    animation: "determined"
+    trigger: "enable_orb_collection"

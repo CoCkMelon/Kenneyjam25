@@ -1,0 +1,47 @@
+scene: "faster_than_light"
+lines:
+  - id: "light_speed_achieved"
+    speaker: "Narrator"
+    text: "In a blinding flash of luminous energy, the sled breaks through the barriers of possibility itself..."
+    animation: "epic"
+    cutscene: "light_speed_sequence"
+    
+  - id: "reality_warping"
+    speaker: "Sled Operator"
+    text: "The world... it's stretching, bending, becoming something entirely new! Time itself seems to slow and race simultaneously!"
+    animation: "transcendent"
+    
+  - id: "skeleton_amazement"
+    speaker: "Dr. Mortimer Bones"
+    text: "Magnificent! You've achieved what I only theorized! The very fabric of space-time yields to your velocity!"
+    animation: "scientific_awe"
+    sprite: "skeleton_mage"
+    
+  - id: "beyond_physics"
+    speaker: "Narrator"
+    text: "Faster than light, faster than thought, the sled transcends the mundane world and enters a realm of pure possibility..."
+    animation: "mystical"
+    
+  - id: "snowman_reflection"
+    speaker: "Cornelius Frost"
+    text: "And so another soul learns that the impossible is merely the untested. The winter of limitation melts before the spring of wonder."
+    animation: "philosophical"
+    sprite: "snowman"
+    
+  - id: "nutcracker_conclusion"
+    speaker: "The Nutcracker"
+    text: "You have cracked the hardest nut of all - the shell of ordinary reality. What emerges now is limited only by your imagination."
+    animation: "satisfied"
+    sprite: "nutcracker"
+    
+  - id: "new_reality"
+    speaker: "Sled Operator"
+    text: "I am no longer bound by the rules of the world I knew. Speed is no longer a limitation, but a doorway to infinite possibilities."
+    animation: "enlightened"
+    
+  - id: "eternal_journey"
+    speaker: "Narrator"
+    text: "And so the sled rider joins the eternal dance of light and shadow, forever racing between worlds, carrying the dreams of those who dare to believe in the impossible..."
+    animation: "poetic"
+    cutscene: "eternal_journey"
+    trigger: "transcendence_complete"

@@ -6,7 +6,7 @@ public class MainMenu3D : MonoBehaviour
 {
     [Header("Menu Settings")]
     public GameObject optionsUI;
-    public string playSceneName = "GameScene";
+    public string playSceneName = "SleightSpeed";
     
     [Header("Animation Settings")]
     public float hoverScaleMultiplier = 1.2f;

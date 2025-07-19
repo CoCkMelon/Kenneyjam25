@@ -1,0 +1,30 @@
+scene: "memory_puzzle_complete"
+lines:
+  - id: "pattern_success"
+    speaker: "Sled Operator"
+    text: "The pattern is complete! I can feel the quantum field beginning to stabilize around the sled."
+    animation: "relieved"
+    
+  - id: "skeleton_approval"
+    speaker: "Dr. Mortimer Bones"
+    text: "Excellent work! But this is only the first stabilization. The power flow network must be properly aligned."
+    animation: "academic_excitement"
+    sprite: "skeleton_mage"
+    
+  - id: "power_flow_explanation"
+    speaker: "Dr. Mortimer Bones"
+    text: "The orbs form an interconnected energy grid. You must activate the correct nodes to create a stable power flow."
+    animation: "explanatory"
+    
+  - id: "nutcracker_metaphor"
+    speaker: "The Nutcracker"
+    text: "Think of it as a dance of light and shadow. Each orb must find its perfect partner in the cosmic ballet."
+    animation: "poetic"
+    sprite: "nutcracker"
+    
+  - id: "power_flow_challenge"
+    speaker: "Sled Operator"
+    text: "The energy patterns are more complex now. I need to understand how each activation affects the whole network."
+    animation: "determined"
+    trigger: "start_power_flow_puzzle"
+    next_scene: "power_flow_puzzle"

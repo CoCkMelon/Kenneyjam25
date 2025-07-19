@@ -1,0 +1,29 @@
+---
+scenes:
+  - Scene: "City Streets"
+    events:
+      - description: "The bustling city hums with the industrial era's energy. The characters speak in low, curious tones about a powerful sled, said to travel faster than light."
+      - character: "Gingerbread Vendor"
+        dialogue: "Have you heard about the sled? They say it's faster than light!"
+      - character: "Nutcracker"
+        dialogue: "Faster than light, you say? Sounds preposterous!"
+  - Scene: "The Workshop"
+    events:
+      - description: "The Workshop is filled with the clattering of machines and the murmurs of spectral figures working tirelessly."
+      - character: "Skeleton Professor"
+        dialogue: "They say the sled harnesses some elusive energy... perhaps the city will witness history."
+      - trigger: "Investigate the sled"
+  - Scene: "Sled's Ascension"
+    events:
+      - description: "The sled is mounted and begins to glow, the air crackling with energy as it prepares for its momentous journey."
+      - character: "Gingerbread Vendor"
+        dialogue: "Look! It's glowing like the very stars themselves!"
+      - trigger: "Initiate Light Speed"
+  - Scene: "Faster than Light"
+    events:
+      - description: "The sled bursts forth with unimaginable speed, transcending time and space, leaving the onlookers in awe."
+      - character: "Skeleton Professor"
+        dialogue: "So this is what it means to surpass the horizon of reality..."
+      - trigger: "End of Sequence"
+...
+

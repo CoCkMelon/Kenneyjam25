@@ -1,0 +1,47 @@
+scene: "sled_ascension"
+lines:
+  - id: "preparation_begins"
+    speaker: "Narrator"
+    text: "As more orbs are collected, the sled begins to transform. Its wooden frame shimmers with otherworldly energy..."
+    animation: "dramatic"
+    cutscene: "sled_transformation"
+    
+  - id: "snowman_witness"
+    speaker: "Cornelius Frost"
+    text: "I have stood in this park through countless seasons, and never have I witnessed such a phenomenon..."
+    animation: "ancient_wisdom"
+    sprite: "snowman"
+    
+  - id: "snowman_warning"
+    speaker: "Cornelius Frost"
+    text: "Young sledder, you approach the threshold between possible and impossible. Are you prepared for what lies beyond?"
+    animation: "ominous"
+    
+  - id: "sled_glowing"
+    speaker: "Sled Operator"
+    text: "The sled... it's no longer just wood and metal. It hums with energy, as if eager to break free from earthly constraints."
+    animation: "wonder"
+    
+  - id: "crowd_gathering"
+    speaker: "Factory Worker"
+    text: "Look! The sled is glowing like captured starlight! What manner of sorcery is this?"
+    animation: "amazed"
+    sprite: "gingerbread-man"
+    
+  - id: "nutcracker_observation"
+    speaker: "The Nutcracker"
+    text: "The transformation is nearly complete. Soon, the laws of physics will bend to your will."
+    animation: "knowing"
+    sprite: "nutcracker"
+    
+  - id: "final_preparation"
+    speaker: "Sled Operator"
+    text: "I can feel it... the power building. The very air around the sled crackles with potential energy."
+    animation: "exhilarated"
+    
+  - id: "countdown_begins"
+    speaker: "Dr. Mortimer Bones"
+    text: "By my calculations, you've reached the critical threshold! Prepare for light-speed velocity!"
+    animation: "urgent"
+    sprite: "skeleton_mage"
+    trigger: "prepare_light_speed_sequence"

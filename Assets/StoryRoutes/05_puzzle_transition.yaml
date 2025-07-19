@@ -1,0 +1,41 @@
+scene: "puzzle_transition"
+lines:
+  - id: "reality_stabilizing"
+    speaker: "Narrator"
+    text: "Having transcended the speed of light, the sled now exists in a state of quantum flux. Reality bends and warps around it..."
+    animation: "mysterious"
+    cutscene: "reality_distortion"
+    
+  - id: "sled_instability"
+    speaker: "Sled Operator"
+    text: "Something's wrong! The sled is phasing in and out of existence. I can barely maintain control!"
+    animation: "worried"
+    
+  - id: "skeleton_urgent"
+    speaker: "Dr. Mortimer Bones"
+    text: "The quantum field is destabilizing! You need to recalibrate the energy patterns before the sled tears itself apart!"
+    animation: "urgent"
+    sprite: "skeleton_mage"
+    
+  - id: "nutcracker_guidance"
+    speaker: "The Nutcracker"
+    text: "Fear not! The path back to stability lies through understanding. You must solve the riddles of the luminous orbs."
+    animation: "wise"
+    sprite: "nutcracker"
+    
+  - id: "first_puzzle_intro"
+    speaker: "Dr. Mortimer Bones"
+    text: "The memory patterns of the orbs hold the key! You must recreate the sequences to stabilize the quantum field."
+    animation: "explanatory"
+    
+  - id: "memory_puzzle_setup"
+    speaker: "The Nutcracker"
+    text: "Watch carefully as the orbs reveal their ancient pattern. Your mind must become one with their luminous dance."
+    animation: "mystical"
+    trigger: "start_memory_puzzle"
+    
+  - id: "puzzle_instructions"
+    speaker: "Sled Operator"
+    text: "I must focus... recreate the pattern exactly as the orbs showed me. The stability of reality itself depends on it."
+    animation: "concentrated"
+    next_scene: "memory_pattern_puzzle"

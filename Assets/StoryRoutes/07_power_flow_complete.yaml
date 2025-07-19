@@ -1,0 +1,36 @@
+scene: "power_flow_complete"
+lines:
+  - id: "flow_stabilized"
+    speaker: "Sled Operator"
+    text: "The energy grid is flowing perfectly! The sled's quantum state is becoming more stable."
+    animation: "satisfied"
+    
+  - id: "skeleton_warning"
+    speaker: "Dr. Mortimer Bones"
+    text: "We're not finished yet! The final challenge requires mastery of sleight itself - the art of precise manipulation."
+    animation: "serious"
+    sprite: "skeleton_mage"
+    
+  - id: "sleight_explanation"
+    speaker: "The Nutcracker"
+    text: "The ancient art of sleight is more than mere trickery. It is the precise arrangement of forces to achieve the impossible."
+    animation: "wise"
+    sprite: "nutcracker"
+    
+  - id: "snowman_ancient_wisdom"
+    speaker: "Cornelius Frost"
+    text: "I have witnessed many attempt the sleight grid puzzle. Only those who understand balance and constraint can succeed."
+    animation: "ancient_wisdom"
+    sprite: "snowman"
+    
+  - id: "grid_challenge_intro"
+    speaker: "Dr. Mortimer Bones"
+    text: "The grid follows magical constraints. Each row, each column must satisfy the ancient rules of power distribution."
+    animation: "academic"
+    
+  - id: "final_puzzle_setup"
+    speaker: "Sled Operator"
+    text: "This is it - the final test. The sled's fate, and my mastery of these forces, will be decided here."
+    animation: "determined"
+    trigger: "start_sleight_grid_puzzle"
+    next_scene: "sleight_grid_puzzle"

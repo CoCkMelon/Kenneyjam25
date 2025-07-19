@@ -11,5 +11,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 8ac32849ebc5bf4a59de911e5bcb3c86
+  - enabled: 1
+    path: Assets/Scenes/SleighSpeed.unity
+    guid: a0e7bfd2b9dbd4261b520214fbfa83a7
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0
