@@ -3,7 +3,7 @@ name: Unity Multi-Platform Build CI
 on: [push]
 
 env:
-  UNITY_PROJECT_NAME: "somegame"  # Change this to your project name
+  UNITY_PROJECT_NAME: "SleightOfLight"  # Change this to your project name
   BUILD_VERSION: "1"               # Set your version
 
 jobs:
@@ -52,6 +52,11 @@ jobs:
         run: |
           sudo chown -R $USER:$USER build
 
+      - name: Copy StoryRoutes to Build
+        run: |
+          mkdir -p "build/${{ env.UNITY_PROJECT_NAME }}-${{ matrix.targetPlatform }}-${{ env.BUILD_VERSION }}/Assets"
+          cp -r "Assets/StoryRoutes" "build/${{ env.UNITY_PROJECT_NAME }}-${{ matrix.targetPlatform }}-${{ env.BUILD_VERSION }}/Assets/"
+
       - name: Organize Build Artifacts
         run: |
           mv "build/${{ matrix.targetPlatform }}" "build/${{ env.UNITY_PROJECT_NAME }}-${{ matrix.targetPlatform }}-${{ env.BUILD_VERSION }}"
@@ -90,6 +95,11 @@ jobs:
           targetPlatform: StandaloneWindows64
           buildName: ${{ env.UNITY_PROJECT_NAME }}
 
+      - name: Copy StoryRoutes to Build
+        run: |
+          mkdir -p "build/${{ env.UNITY_PROJECT_NAME }}-Windows64-${{ env.BUILD_VERSION }}/Assets"
+          cp -r "Assets/StoryRoutes" "build/${{ env.UNITY_PROJECT_NAME }}-Windows64-${{ env.BUILD_VERSION }}/Assets/"
+
       - name: Organize Build Artifacts
         run: |
           mv "build/StandaloneWindows64" "build/${{ env.UNITY_PROJECT_NAME }}-Windows64-${{ env.BUILD_VERSION }}/"
@@ -127,6 +137,11 @@ jobs:
         with:
           targetPlatform: StandaloneOSX
           buildName: ${{ env.UNITY_PROJECT_NAME }}
+
+      - name: Copy StoryRoutes to Build
+        run: |
+          mkdir -p "build/${{ env.UNITY_PROJECT_NAME }}-macOS-${{ env.BUILD_VERSION }}/Assets"
+          cp -r "Assets/StoryRoutes" "build/${{ env.UNITY_PROJECT_NAME }}-macOS-${{ env.BUILD_VERSION }}/Assets/"
 
       - name: Organize Build Artifacts
         run: |
