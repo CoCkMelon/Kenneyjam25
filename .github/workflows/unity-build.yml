@@ -52,14 +52,14 @@ jobs:
         run: |
           sudo chown -R $USER:$USER build
 
-      - name: Copy StoryRoutes to Build
-        run: |
-          mkdir -p "build/${{ env.UNITY_PROJECT_NAME }}-${{ matrix.targetPlatform }}-${{ env.BUILD_VERSION }}/Assets"
-          cp -r "Assets/StoryRoutes" "build/${{ env.UNITY_PROJECT_NAME }}-${{ matrix.targetPlatform }}-${{ env.BUILD_VERSION }}/Assets/"
-
       - name: Organize Build Artifacts
         run: |
           mv "build/${{ matrix.targetPlatform }}" "build/${{ env.UNITY_PROJECT_NAME }}-${{ matrix.targetPlatform }}-${{ env.BUILD_VERSION }}"
+
+      - name: Copy StoryRoutes to Build
+        run: |
+          mkdir -p "build/${{ env.UNITY_PROJECT_NAME }}-${{ matrix.targetPlatform }}-${{ env.BUILD_VERSION }}/${{ matrix.targetPlatform }}/Assets"
+          cp -r "Assets/StoryRoutes" "build/${{ env.UNITY_PROJECT_NAME }}-${{ matrix.targetPlatform }}-${{ env.BUILD_VERSION }}/${{ matrix.targetPlatform }}/Assets/"
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
@@ -95,14 +95,14 @@ jobs:
           targetPlatform: StandaloneWindows64
           buildName: ${{ env.UNITY_PROJECT_NAME }}
 
-      - name: Copy StoryRoutes to Build
-        run: |
-          mkdir -p "build/${{ env.UNITY_PROJECT_NAME }}-Windows64-${{ env.BUILD_VERSION }}/Assets"
-          cp -r "Assets/StoryRoutes" "build/${{ env.UNITY_PROJECT_NAME }}-Windows64-${{ env.BUILD_VERSION }}/Assets/"
-
       - name: Organize Build Artifacts
         run: |
           mv "build/StandaloneWindows64" "build/${{ env.UNITY_PROJECT_NAME }}-Windows64-${{ env.BUILD_VERSION }}/"
+
+      - name: Copy StoryRoutes to Build
+        run: |
+          mkdir -p "build/${{ env.UNITY_PROJECT_NAME }}-Windows64-${{ env.BUILD_VERSION }}/StandaloneWindows64/Assets"
+          cp -r "Assets/StoryRoutes" "build/${{ env.UNITY_PROJECT_NAME }}-Windows64-${{ env.BUILD_VERSION }}/StandaloneWindows64/Assets/"
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
@@ -138,14 +138,14 @@ jobs:
           targetPlatform: StandaloneOSX
           buildName: ${{ env.UNITY_PROJECT_NAME }}
 
-      - name: Copy StoryRoutes to Build
-        run: |
-          mkdir -p "build/${{ env.UNITY_PROJECT_NAME }}-macOS-${{ env.BUILD_VERSION }}/Assets"
-          cp -r "Assets/StoryRoutes" "build/${{ env.UNITY_PROJECT_NAME }}-macOS-${{ env.BUILD_VERSION }}/Assets/"
-
       - name: Organize Build Artifacts
         run: |
           mv "build/StandaloneOSX" "build/${{ env.UNITY_PROJECT_NAME }}-macOS-${{ env.BUILD_VERSION }}/"
+
+      - name: Copy StoryRoutes to Build
+        run: |
+          mkdir -p "build/${{ env.UNITY_PROJECT_NAME }}-macOS-${{ env.BUILD_VERSION }}/StandaloneOSX/Assets"
+          cp -r "Assets/StoryRoutes" "build/${{ env.UNITY_PROJECT_NAME }}-macOS-${{ env.BUILD_VERSION }}/StandaloneOSX/Assets/"
 
       - name: Upload Build Artifact
         uses: actions/upload-artifact@v4
