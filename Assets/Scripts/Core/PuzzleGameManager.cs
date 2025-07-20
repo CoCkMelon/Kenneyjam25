@@ -331,6 +331,13 @@ public class PuzzleGameManager : MonoBehaviour
         OnAllPuzzlesCompleted?.Invoke();
         
         Debug.Log($"All puzzles completed! Total time: {totalGameTime:F2}s, Final score: {currentScore}");
+        
+        // Save final progress
+        SaveProgress();
+        
+        // Trigger win scene
+        yield return new WaitForSeconds(3f); // Allow time to see completion message
+        WinSceneController.TriggerWin();
     }
     
     private int CalculatePuzzleScore(float completionTime)

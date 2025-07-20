@@ -89,6 +89,12 @@ public class Health : MonoBehaviour
         OnDeath?.Invoke();
         Debug.Log($"{gameObject.name} has died!");
         
+        // Trigger game over if this is the player
+        if (gameObject.CompareTag("Player"))
+        {
+            GameOverSceneController.TriggerGameOverDeath();
+        }
+        
         // You can add death effects here
         // For example: disable player controls, play death animation, etc.
     }
