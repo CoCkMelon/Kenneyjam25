@@ -1,0 +1,490 @@
+/* Puzzle HUD Styles */
+
+.puzzle-hud-root {
+    flex-grow: 1;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+/* Top Status Bar */
+.top-bar {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    height: 80px;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    padding: 10px;
+    justify-content: space-between;
+    align-items: center;
+    pointer-events: auto;
+}
+
+.puzzle-info {
+    flex-direction: column;
+    justify-content: center;
+    min-width: 200px;
+}
+
+.puzzle-title {
+    font-size: 18px;
+    color: white;
+    -unity-font-style: bold;
+    margin-bottom: 2px;
+}
+
+.puzzle-progress {
+    font-size: 14px;
+    color: #cccccc;
+}
+
+.timing-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 120px;
+}
+
+.current-puzzle-time {
+    font-size: 24px;
+    color: #00ff88;
+    -unity-font-style: bold;
+    margin-bottom: 2px;
+}
+
+.total-game-time {
+    font-size: 12px;
+    color: #88ccff;
+}
+
+.score-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 100px;
+}
+
+.current-score {
+    font-size: 20px;
+    color: #ffdd00;
+    -unity-font-style: bold;
+}
+
+.pause-button {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-color: rgba(255, 255, 255, 0.4);
+    border-width: 2px;
+    border-radius: 25px;
+    color: white;
+}
+
+.pause-button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Puzzle Status Panel */
+.puzzle-status {
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    right: 10px;
+    height: 100px;
+    background-color: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    padding: 15px;
+    justify-content: space-between;
+    pointer-events: auto;
+}
+
+.puzzle-instruction {
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    -unity-font-style: bold;
+    margin-bottom: 10px;
+}
+
+.progress-container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.puzzle-progress-bar {
+    width: 300px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.progress-text {
+    font-size: 14px;
+    color: #cccccc;
+    min-width: 50px;
+}
+
+/* Hint System */
+.hint-panel {
+    position: absolute;
+    top: 220px;
+    left: 10px;
+    width: 200px;
+    height: 80px;
+    background-color: rgba(255, 193, 7, 0.8);
+    border-radius: 8px;
+    padding: 10px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    pointer-events: auto;
+}
+
+.hint-button {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    color: #333;
+    -unity-font-style: bold;
+}
+
+.hint-button:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+.hint-button:disabled {
+    background-color: rgba(128, 128, 128, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.hint-counter {
+    align-items: center;
+    justify-content: center;
+}
+
+.hints-remaining {
+    font-size: 16px;
+    color: #333;
+    -unity-font-style: bold;
+}
+
+/* Control Instructions */
+.controls-panel {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 200px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    padding: 10px;
+    pointer-events: auto;
+}
+
+.control-row {
+    flex-direction: row;
+    margin-bottom: 5px;
+    align-items: center;
+}
+
+.control-key {
+    width: 40px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    font-size: 12px;
+    color: white;
+    -unity-font-style: bold;
+    text-align: center;
+    margin-right: 10px;
+    -unity-text-align: middle-center;
+}
+
+.control-desc {
+    font-size: 12px;
+    color: #cccccc;
+}
+
+/* Completion Overlay */
+.completion-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.completion-content {
+    width: 400px;
+    height: 300px;
+    background-color: rgba(0, 200, 100, 0.9);
+    border-radius: 20px;
+    padding: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.completion-title {
+    font-size: 32px;
+    color: white;
+    -unity-font-style: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.completion-time {
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.completion-score {
+    font-size: 24px;
+    color: #ffdd00;
+    -unity-font-style: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.completion-stars {
+    flex-direction: row;
+    justify-content: center;
+}
+
+.star {
+    font-size: 30px;
+    margin: 0 5px;
+}
+
+/* Final Game Completion */
+.game-complete-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.game-complete-content {
+    width: 500px;
+    height: 400px;
+    background-color: rgba(128, 0, 255, 0.9);
+    border-radius: 20px;
+    padding: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.game-complete-title {
+    font-size: 36px;
+    color: white;
+    -unity-font-style: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.final-stats {
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.final-stat {
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.completion-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.completion-button {
+    width: 140px;
+    height: 50px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 25px;
+    color: #333;
+    -unity-font-style: bold;
+}
+
+.completion-button:hover {
+    background-color: white;
+    transform: scale(1.05);
+}
+
+/* Hint Display */
+.hint-display {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 150px;
+    background-color: rgba(255, 193, 7, 0.95);
+    border-radius: 15px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.hint-content {
+    align-items: center;
+    justify-content: center;
+}
+
+.hint-icon {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hint-text {
+    font-size: 18px;
+    color: #333;
+    -unity-font-style: bold;
+    text-align: center;
+}
+
+/* Debug Panel */
+.debug-panel {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 150px;
+    background-color: rgba(255, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 10px;
+    display: none; /* Hide by default, shown only in debug builds */
+}
+
+.fps-counter {
+    font-size: 12px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.debug-info {
+    font-size: 10px;
+    color: #ffcccc;
+    margin-bottom: 10px;
+}
+
+.debug-controls {
+    margin-top: 5px;
+}
+
+.debug-control {
+    font-size: 10px;
+    color: #ffcccc;
+    margin-bottom: 2px;
+}
+
+/* Mobile Controls */
+.mobile-controls {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 200px;
+    height: 60px;
+    pointer-events: auto;
+}
+
+.mobile-buttons {
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mobile-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 25px;
+    border-width: 2px;
+    border-color: rgba(0, 0, 0, 0.2);
+}
+
+.mobile-button:hover {
+    background-color: white;
+    transform: scale(1.1);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+}
+
+.loading-content {
+    align-items: center;
+    justify-content: center;
+}
+
+.loading-text {
+    font-size: 24px;
+    color: white;
+    -unity-font-style: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.loading-spinner {
+    align-items: center;
+    justify-content: center;
+}
+
+.spinner-text {
+    font-size: 48px;
+    color: white;
+}
+
+/* Animations (basic - Unity UI Elements has limited animation support) */
+.star {
+    transition-duration: 0.3s;
+    transition-property: opacity, transform;
+}
+
+.hint-button {
+    transition-duration: 0.2s;
+    transition-property: background-color, transform;
+}
+
+.completion-button {
+    transition-duration: 0.2s;
+    transition-property: background-color, transform;
+}
+
+.mobile-button {
+    transition-duration: 0.2s;
+    transition-property: background-color, transform;
+}

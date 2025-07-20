@@ -134,7 +134,7 @@ public class GameSetup : MonoBehaviour
         
         // Create puzzle objects (initially disabled)
         CreatePuzzleObject<MemoryPatternPuzzle>(memoryPuzzlePrefab, "MemoryPuzzle", false);
-        CreatePuzzleObject<PowerFlowPuzzleSingle>(powerFlowPuzzlePrefab, "PowerFlowPuzzle", false);
+        CreatePuzzleObject<PowerFlowPuzzleSingleFile>(powerFlowPuzzlePrefab, "PowerFlowPuzzle", false);
         CreatePuzzleObject<SleightGridPuzzle>(sleightGridPuzzlePrefab, "SleightGridPuzzle", false);
         
         OnPuzzleSystemsReady?.Invoke();

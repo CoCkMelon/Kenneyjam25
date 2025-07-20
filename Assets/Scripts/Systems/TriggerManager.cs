@@ -16,7 +16,7 @@ public class TriggerManager : MonoBehaviour
     
     [Header("Puzzle References")]
     [SerializeField] private MemoryPatternPuzzle memoryPuzzle;
-    [SerializeField] private PowerFlowPuzzleSingle powerFlowPuzzle;
+    [SerializeField] private PowerFlowPuzzleSingleFile powerFlowPuzzle;
     [SerializeField] private SleightGridPuzzle sleightGridPuzzle;
     
     [Header("Story State")]
@@ -63,7 +63,7 @@ public class TriggerManager : MonoBehaviour
         if (memoryPuzzle == null)
             memoryPuzzle = FindFirstObjectByType<MemoryPatternPuzzle>();
         if (powerFlowPuzzle == null)
-            powerFlowPuzzle = FindFirstObjectByType<PowerFlowPuzzleSingle>();
+            powerFlowPuzzle = FindFirstObjectByType<PowerFlowPuzzleSingleFile>();
         if (sleightGridPuzzle == null)
             sleightGridPuzzle = FindFirstObjectByType<SleightGridPuzzle>();
             

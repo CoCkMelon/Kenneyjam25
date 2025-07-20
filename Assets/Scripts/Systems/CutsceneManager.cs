@@ -273,6 +273,9 @@ public class CutsceneManager : MonoBehaviour
         
         // Notify cutscene end
         OnCutsceneEnd?.Invoke();
+        
+        // Trigger transition to next scene
+        TriggerSceneTransition();
     }
     
     public void SkipCutscene()
@@ -307,5 +310,36 @@ public class CutsceneManager : MonoBehaviour
     {
         cameraStartOffset = startOffset;
         cameraEndOffset = endOffset;
+    }
+    
+    private void TriggerSceneTransition()
+    {
+        // Find SceneTransitionManager and trigger appropriate transition
+        SceneTransitionManager sceneManager = SceneTransitionManager.Instance;
+        if (sceneManager != null)
+        {
+            // Depending on the current scene, transition to the appropriate next scene
+            string currentScene = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+            
+            if (currentScene == "SleighSpeed")
+            {
+                // After FTL cutscene in sleigh scene, go to puzzle scene
+                sceneManager.GoToPuzzleScene();
+            }
+            else if (currentScene == "FTLCutscene")
+            {
+                // After dedicated FTL cutscene, go to puzzle scene
+                sceneManager.GoToPuzzleScene();
+            }
+            else
+            {
+                // Default behavior - go to next logical scene
+                Debug.Log("Cutscene completed, but no specific transition defined for scene: " + currentScene);
+            }
+        }
+        else
+        {
+            Debug.LogWarning("SceneTransitionManager not found!");
+        }
     }
 }

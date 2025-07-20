@@ -1,0 +1,58 @@
+scene: "math_puzzle_complete"
+lines:
+  - id: "math_mastery_achieved"
+    speaker: "Sled Operator"
+    text: "The numbers align perfectly! Each equation solved brought clarity to the quantum mathematics governing the sled's existence."
+    animation: "triumphant"
+    
+  - id: "skeleton_mathematical_approval"
+    speaker: "Dr. Mortimer Bones"
+    text: "Magnificent! You've demonstrated mastery over the fundamental language of reality. Mathematics is indeed the key to all understanding!"
+    animation: "academic_joy"
+    sprite: "skeleton_mage"
+    
+  - id: "nutcracker_numbers_wisdom"
+    speaker: "The Nutcracker"
+    text: "Numbers dance to your command now! Addition, subtraction, multiplication, division - all bow before your computational prowess."
+    animation: "theatrical_praise"
+    sprite: "nutcracker"
+    
+  - id: "snowman_ancient_calculation"
+    speaker: "Cornelius Frost"
+    text: "In my eternal existence, I have seen many attempt such calculations. Few possess the mental precision you have demonstrated here."
+    animation: "impressed"
+    sprite: "snowman"
+    
+  - id: "quantum_field_stabilization"
+    speaker: "Sled Operator"
+    text: "The sled's quantum field resonates with mathematical harmony! The chaotic energies are aligning into stable patterns."
+    animation: "amazed"
+    
+  - id: "reality_mathematics_connection"
+    speaker: "Dr. Mortimer Bones"
+    text: "You see? Mathematics isn't mere symbols on a page - it's the very fabric from which reality is woven! Your calculations reshape existence itself."
+    animation: "philosophical"
+    
+  - id: "puzzle_mastery_reflection"
+    speaker: "The Nutcracker"
+    text: "Memory, power flow, sleight, and now mathematics - you've conquered each fundamental force. The sled recognizes your worthiness!"
+    animation: "proud"
+    sprite: "nutcracker"
+    
+  - id: "final_stabilization_phase"
+    speaker: "Cornelius Frost"
+    text: "The quantum convergence is nearly complete. One final synthesis remains before the sled achieves perfect stability."
+    animation: "ancient_knowledge"
+    sprite: "snowman"
+    
+  - id: "mathematical_harmony_achieved"
+    speaker: "Dr. Mortimer Bones"
+    text: "The Mathematical Harmony Puzzle has unlocked the numerical secrets of quantum mechanics. Reality bends to logical precision!"
+    animation: "scientific_wonder"
+    
+  - id: "sled_transformation_beginning"
+    speaker: "Sled Operator"
+    text: "I can feel it... the sled is transforming! All the puzzle mastery is culminating in something beyond my wildest imagination!"
+    animation: "awestruck"
+    trigger: "math_puzzle_complete"
+    next_scene: "puzzle_synthesis_finale"

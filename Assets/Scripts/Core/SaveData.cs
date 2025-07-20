@@ -26,6 +26,7 @@ public class SaveData
     public List<string> unlockedAreas = new List<string>();
     public List<string> discoveredCheckpoints = new List<string>();
     public float playtime;
+    public int puzzleProgress;
     
     [Header("Settings")]
     public float masterVolume = 1f;
@@ -50,6 +51,7 @@ public class SaveData
         lastCheckpointId = "";
         currency = 0;
         playtime = 0f;
+        puzzleProgress = 0;
         enemiesDefeated = 0;
         itemsCollected = 0;
         timesRevived = 0;

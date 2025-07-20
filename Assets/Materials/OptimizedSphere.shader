@@ -4,7 +4,7 @@ Shader "Custom/URP/OptimizedSphere"
     {
         _BaseColor ("Base Color", Color) = (1, 1, 1, 1)
         _Smoothness ("Smoothness", Range(0, 1)) = 0.1
-        _Radius ("Sphere Radius", Range(0.1, 2.0)) = 0.5
+        _Radius ("Sphere Radius", Range(0.01, 2.0)) = 0.5
         _RimPower ("Rim Power", Range(0.1, 5.0)) = 2.0
         _RimColor ("Rim Color", Color) = (1, 1, 1, 1)
         [Toggle] _EnableRim ("Enable Rim Lighting", Float) = 0

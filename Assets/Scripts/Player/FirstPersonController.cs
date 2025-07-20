@@ -40,11 +40,7 @@ public class FirstPersonController : MonoBehaviour
             Debug.LogError("PlayerInput component not found! Please add PlayerInput to the player GameObject.");
         }
         
-        // Lock cursor for desktop
-        if (!Application.isMobilePlatform)
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-        }
+        // Cursor locking managed by InputModeController
         
         // Create ground check if it doesn't exist
         if (groundCheck == null)

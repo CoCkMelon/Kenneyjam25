@@ -1,0 +1,143 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/PuzzleHUD.uss?fileID=7433441132597879392&amp;guid=0f0c8ffcf8079ffe49a7773795fc6474&amp;type=3#PuzzleHUD" />
+    <Style src="project://database/Assets/UI/GameHUD.uss?fileID=7433441132597879392&amp;guid=9f9e7a998b356b1368191af6695ccab7&amp;type=3#GameHUD" />
+    <ui:VisualElement name="puzzle-hud-root" class="puzzle-hud-root">
+        <ui:VisualElement name="top-bar" class="top-bar">
+            <ui:VisualElement name="puzzle-info" class="puzzle-info">
+                <ui:Label name="puzzle-title" text="Memory Pattern Puzzle" class="puzzle-title" />
+                <ui:Label name="puzzle-progress" text="Puzzle 1 of 3" class="puzzle-progress" />
+            </ui:VisualElement>
+            <ui:VisualElement name="timing-info" class="timing-info">
+                <ui:Label name="current-puzzle-time" text="00:15" class="current-puzzle-time" />
+                <ui:Label name="total-game-time" text="Total: 02:45" class="total-game-time" />
+            </ui:VisualElement>
+            <ui:VisualElement name="score-info" class="score-info">
+                <ui:Label name="current-score" text="Score: 150" class="current-score" />
+            </ui:VisualElement>
+            <ui:Button name="pause-button" text="⏸" class="pause-button" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/JoyPixels.ttf?fileID=12800000&amp;guid=9bf87be2e18f5953a920abf439f46834&amp;type=3#JoyPixels&quot;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="puzzle-status" class="puzzle-status">
+            <ui:Label name="puzzle-instruction" text="Watch the pattern carefully..." class="puzzle-instruction" />
+            <ui:VisualElement name="progress-container" class="progress-container">
+                <ui:ProgressBar name="puzzle-progress-bar" value="0" class="puzzle-progress-bar" />
+                <ui:Label name="progress-text" text="0/0" class="progress-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="hint-panel" class="hint-panel">
+            <ui:Button name="hint-button" text="💡 Hint" class="hint-button" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/JoyPixels.ttf?fileID=12800000&amp;guid=9bf87be2e18f5953a920abf439f46834&amp;type=3#JoyPixels&quot;);" />
+            <ui:VisualElement name="hint-counter" class="hint-counter">
+                <ui:Label name="hints-remaining" text="3/3" class="hints-remaining" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="controls-panel" class="controls-panel">
+            <ui:VisualElement name="control-row" class="control-row">
+                <ui:Label name="control-key-esc" text="ESC" class="control-key" />
+                <ui:Label name="control-desc-pause" text="Pause" class="control-desc" />
+            </ui:VisualElement>
+            <ui:VisualElement name="control-row" class="control-row">
+                <ui:Label name="control-key-h" text="H" class="control-key" />
+                <ui:Label name="control-desc-hint" text="Hint" class="control-desc" />
+            </ui:VisualElement>
+            <ui:VisualElement name="control-row" class="control-row">
+                <ui:Label name="control-key-r" text="R" class="control-key" />
+                <ui:Label name="control-desc-reset" text="Reset" class="control-desc" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="completion-overlay" class="completion-overlay" style="display: none;">
+            <ui:VisualElement name="completion-content" class="completion-content">
+                <ui:Label name="completion-title" text="Puzzle Complete!" class="completion-title" />
+                <ui:Label name="completion-time" text="Time: 00:45" class="completion-time" />
+                <ui:Label name="completion-score" text="+75 Points!" class="completion-score" />
+                <ui:VisualElement name="completion-stars" class="completion-stars">
+                    <ui:Label name="star1" text="⭐" class="star" />
+                    <ui:Label name="star2" text="⭐" class="star" />
+                    <ui:Label name="star3" text="⭐" class="star" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="game-complete-overlay" class="game-complete-overlay" style="display: none;">
+            <ui:VisualElement name="game-complete-content" class="game-complete-content">
+                <ui:Label name="game-complete-title" text="All Puzzles Complete!" class="game-complete-title" />
+                <ui:VisualElement name="final-stats" class="final-stats">
+                    <ui:Label name="final-time" text="Total Time: 15:32" class="final-stat" />
+                    <ui:Label name="final-score" text="Final Score: 450" class="final-stat" />
+                    <ui:Label name="final-hints" text="Hints Used: 2/9" class="final-stat" />
+                </ui:VisualElement>
+                <ui:VisualElement name="completion-buttons" class="completion-buttons">
+                    <ui:Button name="restart-button" text="Play Again" class="completion-button" />
+                    <ui:Button name="main-menu-button" text="Main Menu" class="completion-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="hint-display" class="hint-display" style="display: none;">
+            <ui:VisualElement name="hint-content" class="hint-content">
+                <ui:Label name="hint-icon" text="💡" class="hint-icon" />
+                <ui:Label name="hint-text" text="Try watching the pattern more carefully!" class="hint-text" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="debug-panel" class="debug-panel">
+            <ui:Label name="fps-counter" text="FPS: 60" class="fps-counter" />
+            <ui:Label name="debug-info" text="Debug Mode" class="debug-info" />
+            <ui:VisualElement name="debug-controls" class="debug-controls">
+                <ui:Label name="debug-skip" text="N - Skip Puzzle" class="debug-control" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="mobile-controls" class="mobile-controls" style="display: none;">
+            <ui:VisualElement name="mobile-buttons" class="mobile-buttons">
+                <ui:Button name="mobile-hint" text="💡" class="mobile-button" />
+                <ui:Button name="mobile-reset" text="🔄" class="mobile-button" />
+                <ui:Button name="mobile-pause" text="⏸" class="mobile-button" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="dialogue-root" class="dialogue-root" style="display: flex; width: auto; margin-left: 10%; margin-right: 10%; max-width: 2000px; min-width: 600px;">
+            <ui:VisualElement name="character-portrait-container" class="character-portrait-container">
+                <ui:VisualElement name="character-portrait-frame" class="character-portrait-frame">
+                    <ui:VisualElement name="character-portrait" class="character-portrait">
+                        <ui:Label name="character-portrait-placeholder" text="👤" class="character-portrait-placeholder" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/JoyPixels.ttf?fileID=12800000&amp;guid=9bf87be2e18f5953a920abf439f46834&amp;type=3#JoyPixels&quot;);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="character-animation-indicator" class="character-animation-indicator">
+                    <ui:Label name="animation-status" text="idle" class="animation-status" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="dialogue-content-area" class="dialogue-content-area">
+                <ui:VisualElement name="speaker-name-bar" class="speaker-name-bar">
+                    <ui:Label name="speaker-name" text="Character Name" class="speaker-name" />
+                    <ui:VisualElement name="speaker-mood-indicator" class="speaker-mood-indicator">
+                        <ui:Label name="mood-icon" text="😊" class="mood-icon" style="-unity-font-definition: url(&quot;project://database/Assets/Fonts/JoyPixels.ttf?fileID=12800000&amp;guid=9bf87be2e18f5953a920abf439f46834&amp;type=3#JoyPixels&quot;);" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="dialogue-text-container" class="dialogue-text-container">
+                    <ui:ScrollView name="dialogue-text-scroll" class="dialogue-text-scroll">
+                        <ui:Label name="dialogue-text" text="This is where the dialogue text will appear. It supports multiple lines and can be quite long..." class="dialogue-text" />
+                    </ui:ScrollView>
+                    <ui:VisualElement name="typing-indicator" class="typing-indicator">
+                        <ui:Label name="typing-dots" text="..." class="typing-dots" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="dialogue-choices-container" class="dialogue-choices-container" style="display: none;">
+                    <ui:Label name="choices-prompt" text="Choose your response:" class="choices-prompt" />
+                    <ui:VisualElement name="choices-list" class="choices-list" />
+                </ui:VisualElement>
+                <ui:VisualElement name="dialogue-controls" class="dialogue-controls">
+                    <ui:Button name="continue-button" text="Continue" class="continue-button" />
+                    <ui:Button name="skip-button" text="Skip" class="skip-button" />
+                    <ui:Button name="history-button" text="History" class="history-button" />
+                    <ui:Button name="close-button" text="Close" class="close-button" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement name="world-connection-indicator" class="world-connection-indicator">
+                <ui:VisualElement name="connection-line" class="connection-line" />
+                <ui:Label name="distance-indicator" text="12m" class="distance-indicator" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="loading-overlay" class="loading-overlay" style="display: none;">
+            <ui:VisualElement name="loading-content" class="loading-content">
+                <ui:Label name="loading-text" text="Loading Next Puzzle..." class="loading-text" />
+                <ui:VisualElement name="loading-spinner" class="loading-spinner">
+                    <ui:Label name="spinner-text" text="⟳" class="spinner-text" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

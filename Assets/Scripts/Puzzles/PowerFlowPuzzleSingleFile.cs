@@ -3,9 +3,9 @@ using UnityEngine.Events;
 
 /// <summary>
 /// Simplified single-file Power Flow Puzzle
-/// Use MenuButton3D for interaction
+/// Use PuzzleButton3D for interaction
 /// </summary>
-public class PowerFlowPuzzleSingle : MonoBehaviour
+public class PowerFlowPuzzleSingleFile : MonoBehaviour
 {
     [Header("Grid Settings")]
     [SerializeField] private int gridSize = 5;
@@ -28,6 +28,9 @@ public class PowerFlowPuzzleSingle : MonoBehaviour
     private bool[,] isActive;
     private GameObject[,] buttons;
     private bool puzzleComplete;
+    
+    // Public property for completion status
+    public bool IsPuzzleComplete => puzzleComplete;
 
     void Start()
     {
@@ -55,9 +58,9 @@ public class PowerFlowPuzzleSingle : MonoBehaviour
         button.name = $"Button_{x}_{y}";
         buttons[x, y] = button;
 
-        var menuButton = button.GetComponent<MenuButton3D>();
-        if (menuButton == null)
-            menuButton = button.AddComponent<MenuButton3D>();
+        var puzzleButton = button.GetComponent<PuzzleButton3D>();
+        if (puzzleButton == null)
+            puzzleButton = button.AddComponent<PuzzleButton3D>();
 
         PowerFlowButtonHandler clickHandler = button.AddComponent<PowerFlowButtonHandler>();
         clickHandler.Setup(this, x, y);
@@ -107,10 +110,10 @@ public class PowerFlowPuzzleSingle : MonoBehaviour
 
 public class PowerFlowButtonHandler : MonoBehaviour
 {
-    private PowerFlowPuzzleSingle puzzle;
+    private PowerFlowPuzzleSingleFile puzzle;
     private int x, y;
 
-    public void Setup(PowerFlowPuzzleSingle parentPuzzle, int xCoord, int yCoord)
+    public void Setup(PowerFlowPuzzleSingleFile parentPuzzle, int xCoord, int yCoord)
     {
         puzzle = parentPuzzle;
         x = xCoord;
