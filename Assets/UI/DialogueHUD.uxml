@@ -1,0 +1,50 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements">
+    <ui:VisualElement name="dialogue-root" style="display: none; position: absolute; bottom: 50px; left: 50px; right: 50px; height: 200px; background-color: rgba(0, 0, 0, 0.8); border-radius: 10px; padding: 20px;">
+        <ui:VisualElement name="character-info" style="flex-direction: row; margin-bottom: 10px;">
+            <ui:VisualElement name="character-portrait" style="width: 60px; height: 60px; background-color: gray; border-radius: 30px; margin-right: 15px;" />
+            <ui:VisualElement style="flex-grow: 1;">
+                <ui:Label name="speaker-name" text="Speaker Name" style="color: white; font-size: 18px; -unity-font-style: bold; margin-bottom: 5px;" />
+                <ui:VisualElement style="flex-direction: row;">
+                    <ui:Label name="mood-icon" text="😊" style="font-size: 16px; margin-right: 10px;" />
+                    <ui:Label name="animation-status" text="idle" style="color: yellow; font-size: 12px;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <ui:VisualElement name="dialogue-content" style="flex-grow: 1; background-color: rgba(255, 255, 255, 0.1); border-radius: 5px; padding: 15px;">
+            <ui:Label name="dialogue-text" text="Dialogue text will appear here..." style="color: white; font-size: 16px; white-space: normal; flex-grow: 1;" />
+            <ui:VisualElement name="typing-indicator" style="display: none; position: absolute; bottom: 5px; right: 5px;">
+                <ui:Label text="..." style="color: white; font-size: 12px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        
+        <ui:VisualElement name="dialogue-choices-container" style="display: none; margin-top: 10px;">
+            <ui:VisualElement name="choices-list" style="flex-direction: column;" />
+        </ui:VisualElement>
+        
+        <ui:VisualElement name="dialogue-controls" style="flex-direction: row; justify-content: space-between; margin-top: 10px;">
+            <ui:Button name="continue-button" text="Continue" style="background-color: rgba(0, 100, 200, 0.8); color: white; border-width: 0; padding: 8px 15px; border-radius: 5px;" />
+            <ui:VisualElement style="flex-direction: row;">
+                <ui:Button name="skip-button" text="Skip" style="background-color: rgba(100, 100, 100, 0.6); color: white; border-width: 0; padding: 5px 10px; border-radius: 3px; margin-right: 5px;" />
+                <ui:Button name="history-button" text="History" style="background-color: rgba(100, 100, 100, 0.6); color: white; border-width: 0; padding: 5px 10px; border-radius: 3px; margin-right: 5px;" />
+                <ui:Button name="close-button" text="×" style="background-color: rgba(200, 50, 50, 0.8); color: white; border-width: 0; padding: 5px 10px; border-radius: 3px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+    
+    <ui:VisualElement name="dialogue-history-overlay" style="display: none; position: absolute; top: 0; bottom: 0; left: 0; right: 0; background-color: rgba(0, 0, 0, 0.9);">
+        <ui:VisualElement style="position: absolute; top: 10%; bottom: 10%; left: 10%; right: 10%; background-color: rgba(50, 50, 50, 0.95); border-radius: 10px; padding: 20px;">
+            <ui:Label text="Dialogue History" style="color: white; font-size: 24px; margin-bottom: 20px; -unity-font-style: bold;" />
+            <ui:ScrollView name="history-content" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0.5); border-radius: 5px; padding: 10px;" />
+            <ui:Button name="history-close-button" text="Close" style="background-color: rgba(0, 100, 200, 0.8); color: white; border-width: 0; padding: 10px 20px; border-radius: 5px; margin-top: 10px;" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+    
+    <ui:VisualElement name="speech-bubble-container" style="display: none; position: absolute; background-color: rgba(255, 255, 255, 0.9); border-radius: 10px; padding: 10px; max-width: 200px;">
+        <ui:Label name="bubble-text" text="Speech bubble text" style="color: black; font-size: 14px; white-space: normal;" />
+    </ui:VisualElement>
+    
+    <ui:VisualElement name="interaction-prompt" style="display: none; position: absolute; background-color: rgba(255, 255, 0, 0.8); border-radius: 15px; padding: 5px 10px;">
+        <ui:Label name="interaction-key" text="E" style="color: black; font-size: 16px; -unity-font-style: bold;" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -14,8 +14,8 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -6455,7 +6455,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 5fead4a65979b456d950d06409c12bf3, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fead4a65979b456d950d06409c12bf3, type: 3}
       propertyPath: m_LocalScale.y
@@ -6463,7 +6463,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fead4a65979b456d950d06409c12bf3, type: 3}
       propertyPath: m_LocalScale.z
-      value: 1000
+      value: 10000
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fead4a65979b456d950d06409c12bf3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6507,7 +6507,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 5fead4a65979b456d950d06409c12bf3, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5fead4a65979b456d950d06409c12bf3, type: 3}
       propertyPath: m_Name
@@ -7534,7 +7534,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.4
   m_Center: {x: 0.25, y: 0.4, z: 0.27}
@@ -7555,7 +7555,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.6250001, y: 0.04, z: 1}
   m_Center: {x: -0.000000014901161, y: 0.33, z: 0}
@@ -7576,7 +7576,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.11, y: 0.375335, z: 0.8}
   m_Center: {x: 0.26, y: 0.1876675, z: -0.1}
@@ -7597,7 +7597,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 0.11, y: 0.375335, z: 0.8}
   m_Center: {x: -0.26, y: 0.1876675, z: -0.1}
@@ -7713,7 +7713,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_Radius: 0.4
   m_Center: {x: -0.25, y: 0.4, z: 0.27}
@@ -7831,7 +7831,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.6250001, y: 0.375335, z: 1}
   m_Center: {x: -0.000000014901161, y: 0.1876675, z: 0}
@@ -8251,32 +8251,77 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 491383469}
   objectsToSpawn:
-  - {fileID: 7744833595391348098, guid: 14431d1c6f4d04884ad96a6369bd1eb4, type: 3}
-  - {fileID: 6720725968875215813, guid: 91f9c7e1cc2d5e5788d4a80a9c08a4f8, type: 3}
-  - {fileID: 2481076523538807404, guid: b51693bbfbe253cff84db046b4415978, type: 3}
-  - {fileID: 4284613330074785659, guid: 2e5f504f2e6678d96a07040df7dd8b8f, type: 3}
-  - {fileID: 2705980880889609468, guid: 506da31dbd422b63b9ebbdf6fc95d498, type: 3}
-  - {fileID: 784491337171281037, guid: f117cd501ccc1de869d23fcd4a817f79, type: 3}
-  - {fileID: 8226199583855343480, guid: 5d97a2174f872716c92619d0e0b25549, type: 3}
-  - {fileID: 7780591835454954018, guid: 3cddd301b5bd2e146b0d8be1d4de2a1d, type: 3}
-  - {fileID: 7780591835454954018, guid: 3cddd301b5bd2e146b0d8be1d4de2a1d, type: 3}
-  - {fileID: 3075541911708338674, guid: 0d5e194410ae0d0a986efb1d1fd5a676, type: 3}
-  - {fileID: 3201891850026988550, guid: 12c15b8ca4eeeac8485b5bfd2dc0d8b3, type: 3}
-  - {fileID: 919132149155446097, guid: 92a304f86b4e2ffc581217fdd1fda5cf, type: 3}
-  - {fileID: 919132149155446097, guid: 715422b9ff75746eca96e249185e4d72, type: 3}
-  - {fileID: 919132149155446097, guid: 196175eab04537270a235f592753d851, type: 3}
-  - {fileID: 919132149155446097, guid: 2d540792c4adda074aa813265cc66c70, type: 3}
-  - {fileID: 919132149155446097, guid: 4e25aaa60a403bd92a0f754b19ba8853, type: 3}
-  - {fileID: 919132149155446097, guid: da23903480975831c9ad1d723e3f4cec, type: 3}
-  - {fileID: 919132149155446097, guid: b23be59ef827cbf23a00b31149067a35, type: 3}
-  - {fileID: 919132149155446097, guid: a3c01ade8ff9a1579bb1d1a3e1b4e32f, type: 3}
-  - {fileID: 919132149155446097, guid: 9cc26c91e8f17549db28b3b57741abbb, type: 3}
-  - {fileID: 919132149155446097, guid: 5e558418c21ceeff4a9ee86344ba9ca9, type: 3}
-  - {fileID: 919132149155446097, guid: d7ac4b9a9962d20e6a5d9cbc87d74f6d, type: 3}
-  - {fileID: 919132149155446097, guid: 2eb2ffa80bf5dc47284e1a5894479f1d, type: 3}
+  - prefab: {fileID: 7744833595391348098, guid: 14431d1c6f4d04884ad96a6369bd1eb4, type: 3}
+    frequency: 0.5
+    yOffset: -13
+    minPerChunk: 0
+    maxPerChunk: 1
+  - prefab: {fileID: 6720725968875215813, guid: 91f9c7e1cc2d5e5788d4a80a9c08a4f8, type: 3}
+    frequency: 1
+    yOffset: -13
+    minPerChunk: 1
+    maxPerChunk: 52
+  - prefab: {fileID: 3201891850026988550, guid: 12c15b8ca4eeeac8485b5bfd2dc0d8b3, type: 3}
+    frequency: 0.125
+    yOffset: -13
+    minPerChunk: 0
+    maxPerChunk: 1
+  - prefab: {fileID: 3075541911708338674, guid: 0d5e194410ae0d0a986efb1d1fd5a676, type: 3}
+    frequency: 0.5
+    yOffset: -13
+    minPerChunk: 0
+    maxPerChunk: 1
+  - prefab: {fileID: 7780591835454954018, guid: 3cddd301b5bd2e146b0d8be1d4de2a1d, type: 3}
+    frequency: 0.5
+    yOffset: -13
+    minPerChunk: 1
+    maxPerChunk: 1
+  - prefab: {fileID: 7881215976698571188, guid: a2143a7f966dcc4429ae00fba3c86c2a, type: 3}
+    frequency: 0.5
+    yOffset: -13
+    minPerChunk: 1
+    maxPerChunk: 1
+  - prefab: {fileID: 5946082692854330594, guid: 9c84b59a1d3732251bf8e68086306c1b, type: 3}
+    frequency: 0.5
+    yOffset: -13
+    minPerChunk: 1
+    maxPerChunk: 1
+  - prefab: {fileID: 8226199583855343480, guid: 5d97a2174f872716c92619d0e0b25549, type: 3}
+    frequency: 0.5
+    yOffset: -13
+    minPerChunk: 1
+    maxPerChunk: 1
+  - prefab: {fileID: 784491337171281037, guid: f117cd501ccc1de869d23fcd4a817f79, type: 3}
+    frequency: 0.5
+    yOffset: -13
+    minPerChunk: 1
+    maxPerChunk: 1
+  - prefab: {fileID: 2705980880889609468, guid: 506da31dbd422b63b9ebbdf6fc95d498, type: 3}
+    frequency: 0.5
+    yOffset: -13
+    minPerChunk: 1
+    maxPerChunk: 1
+  - prefab: {fileID: 4284613330074785659, guid: 2e5f504f2e6678d96a07040df7dd8b8f, type: 3}
+    frequency: 0.5
+    yOffset: -13
+    minPerChunk: 1
+    maxPerChunk: 1
+  - prefab: {fileID: 2481076523538807404, guid: b51693bbfbe253cff84db046b4415978, type: 3}
+    frequency: 0.039
+    yOffset: 500
+    minPerChunk: 0
+    maxPerChunk: 1
   chunkSize: 1000
   spawnDistance: 500
-  Y: -13
+  baseY: 0
+  spawnRadius: 2
+  forwardSpawnDistance: 3
+  sideSpawnRadius: 1
+  enableMassiveSpawning: 1
+  maxTotalObjectsPerFrame: 100
+  spawnAheadOfMovement: 1
+  cleanupDistance: 2000
+  enableCleanup: 1
 --- !u!1 &679329563
 GameObject:
   m_ObjectHideFlags: 0
@@ -9437,8 +9482,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 3
+  far clip plane: 200
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -9465,13 +9510,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1114451444}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.32611418, y: 1.2900686, z: -16.210442}
+  m_LocalRotation: {x: 0.17364816, y: 0, z: 0, w: 0.9848078}
+  m_LocalPosition: {x: 0, y: 3.24, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 491383469}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 0, z: 0}
 --- !u!1001 &1131407464
 PrefabInstance:
   m_ObjectHideFlags: 0
