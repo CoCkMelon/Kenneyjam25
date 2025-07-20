@@ -211,6 +211,15 @@ public class TriggerManager : MonoBehaviour
     private void TranscendenceComplete()
     {
         Debug.Log("Transcendence achieved! The sled has mastered faster-than-light travel.");
+        SceneTransitionManager sceneManager = SceneTransitionManager.Instance;
+        if (sceneManager != null)
+        {
+            sceneManager.GoToPuzzleScene();
+        }
+        else
+        {
+            Debug.LogWarning("SceneTransitionManager not found!");
+        }
     }
     
     #endregion

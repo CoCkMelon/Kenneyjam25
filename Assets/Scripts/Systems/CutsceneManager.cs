@@ -324,7 +324,7 @@ public class CutsceneManager : MonoBehaviour
             if (currentScene == "SleighSpeed")
             {
                 // After FTL cutscene in sleigh scene, go to puzzle scene
-                sceneManager.GoToPuzzleScene();
+                UnityEngine.SceneManagement.SceneManager.LoadScene("FTLCutscene");
             }
             else if (currentScene == "FTLCutscene")
             {

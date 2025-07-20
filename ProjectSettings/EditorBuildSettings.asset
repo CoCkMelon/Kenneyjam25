@@ -7,26 +7,26 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
-    guid: 8ac32849ebc5bf4a59de911e5bcb3c86
+    guid: 3d0b51ab20904485d935a8e1834e27a5
   - enabled: 1
     path: Assets/Scenes/SleighSpeed.unity
     guid: a0e7bfd2b9dbd4261b520214fbfa83a7
   - enabled: 1
     path: Assets/Scenes/PuzzleScene.unity
-    guid: 9fc0d4010bbf28b4594072e725a0e740
+    guid: 8546e543161ce402c9b3db1c069c3b7b
   - enabled: 1
     path: Assets/Scenes/FTLCutscene.unity
-    guid: 1a2b3c4d5e6f7890abcdef1234567890
+    guid: 805f7ecd70eb94f5981dc1d2780a9e5e
   - enabled: 1
     path: Assets/Scenes/TransitionScene.unity
-    guid: 2a3b4c5d6e7f8901bcdef12345678901
-  - enabled: 1
+    guid: 70bae8988693dc572ade8e2c396edd5f
+  - enabled: 0
     path: Assets/Scenes/WinScene.unity
     guid: 3a4b5c6d7e8f9012cdef123456789012
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameOverScene.unity
     guid: 4a5b6c7d8e9f0123def1234567890123
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/EndingScene.unity
     guid: 5a6b7c8d9e0f1234ef12345678901234
   m_configObjects: {}

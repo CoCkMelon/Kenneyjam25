@@ -134,7 +134,7 @@ public class DialogueManager : MonoBehaviour
         if (nextScene.Contains("_") || nextScene.Contains("puzzle") || nextScene.Contains("complete"))
         {
             // Load as dialogue scene from StoryRoutes
-            LoadAndStartSceneFromResources($"StoryRoutes/{nextScene}");
+            LoadAndStartSceneFromResources($"Assets/StoryRoutes/{nextScene}");
         }
         else
         {

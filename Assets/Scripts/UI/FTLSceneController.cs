@@ -82,7 +82,7 @@ public class FTLSceneController : MonoBehaviour
         if (dialogueManager != null && !dialogueStarted)
         {
             Debug.Log($"Starting FTL dialogue scene: {dialogueScenePath}");
-            dialogueManager.LoadAndStartSceneFromResources(dialogueScenePath);
+            dialogueManager.LoadAndStartScene(dialogueScenePath);
             dialogueStarted = true;
         }
         else
@@ -97,20 +97,20 @@ public class FTLSceneController : MonoBehaviour
         Debug.Log("FTL dialogue complete, proceeding with scene transition");
         
         // Fade out audio
-        if (audioSource != null && audioSource.isPlaying)
-        {
-            StartCoroutine(FadeOutAudio());
-        }
+        // if (audioSource != null && audioSource.isPlaying)
+        // {
+            // StartCoroutine(FadeOutAudio());
+        // }
         
         // Trigger scene transition after a brief delay
-        StartCoroutine(DelayedSceneTransition());
+        // StartCoroutine(DelayedSceneTransition());
     }
     
     private IEnumerator FadeOutAudio()
     {
         float startVolume = audioSource.volume;
         float elapsedTime = 0f;
-        float fadeTime = 2f;
+        float fadeTime = 20f;
         
         while (elapsedTime < fadeTime)
         {
@@ -124,18 +124,18 @@ public class FTLSceneController : MonoBehaviour
     
     private IEnumerator DelayedSceneTransition()
     {
-        yield return new WaitForSeconds(2f);
-        
+        yield return new WaitForSeconds(60f);
+
         // Trigger scene transition
-        SceneTransitionManager sceneManager = SceneTransitionManager.Instance;
-        if (sceneManager != null)
-        {
-            sceneManager.GoToPuzzleScene();
-        }
-        else
-        {
-            Debug.LogWarning("SceneTransitionManager not found!");
-        }
+        // SceneTransitionManager sceneManager = SceneTransitionManager.Instance;
+        // if (sceneManager != null)
+        // {
+        //     sceneManager.GoToPuzzleScene();
+        // }
+        // else
+        // {
+        //     Debug.LogWarning("SceneTransitionManager not found!");
+        // }
     }
     
     void Update()
